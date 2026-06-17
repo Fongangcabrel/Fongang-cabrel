@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fongang Cabrel — Software Developer, Data Science enthusiast & founder of HellooTech. Building efficient information systems from Douala, Cameroon.">
+    <title>FONGANG CABREL | Software Engineer | Aspiring Data Scientist</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="shortcut icon" href="assets/favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ══════════════════════════ NAVBAR ══════════════════════════ -->
+<nav class="navbar" id="navbar">
+    <div class="nav-container">
+        <a href="#home" class="nav-logo">
+            <span class="logo-bracket">&lt;</span>FC<span class="logo-bracket">/&gt;</span>
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#about"      class="nav-link" data-i18n="nav.about">About</a></li>
+            <li><a href="#skills"     class="nav-link" data-i18n="nav.skills">Skills</a></li>
+            <li><a href="#experience" class="nav-link" data-i18n="nav.experience">Experience</a></li>
+            <li><a href="#projects"   class="nav-link" data-i18n="nav.projects">Projects</a></li>
+            <li><a href="#startup"    class="nav-link" data-i18n="nav.startup">HellooTech</a></li>
+            <li><a href="#contact" class="btn btn-primary btn-sm nav-cta" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+        <div class="lang-switcher" id="langSwitcher">
+            <button class="lang-btn" id="langBtn" aria-label="Change language">
+                <span class="lang-flag" id="langFlag">🇬🇧</span>
+                <span class="lang-code" id="langCode">EN</span>
+                <i class="fas fa-chevron-down lang-chevron"></i>
+            </button>
+            <div class="lang-menu" id="langMenu">
+                <button class="lang-opt" data-lang="en"><span class="flag">🇬🇧</span> English</button>
+                <button class="lang-opt" data-lang="fr"><span class="flag">🇫🇷</span> Français</button>
+            </div>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- ══════════════════════════ HERO ══════════════════════════ -->
+<section class="hero" id="home">
+    <canvas class="hero-canvas" id="heroCanvas"></canvas>
+    <div class="hero-grid-overlay"></div>
+
+    <div class="hero-container">
+        <div class="hero-content">
+            <div class="hero-badge" data-aos="fade-down" data-aos-delay="100">
+                <span class="badge-pulse"></span>
+                <span data-i18n="hero.badge">Available for opportunities</span>
+            </div>
+
+            <h1 class="hero-name" data-aos="fade-up" data-aos-delay="200">
+                Fongang<br>
+                <span class="gradient-text">Cabrel.</span>
+            </h1>
+
+            <p class="hero-role" data-aos="fade-up" data-aos-delay="300">
+                <span class="mono">{&nbsp;</span>
+                <span class="role-label">role</span>
+                <span class="mono">:&nbsp;"</span>
+                <span id="typedText" class="typed-output"></span>
+                <span class="typed-cursor">|</span>
+                <span class="mono">"&nbsp;}</span>
+            </p>
+
+            <p class="hero-desc" data-aos="fade-up" data-aos-delay="400" data-i18n-html="hero.desc">
+                Software engineer passionate about building efficient information systems,
+                data-driven solutions and digital transformation.
+                Based in <strong>Douala, Cameroon | Remote</strong>.
+            </p>
+
+            <div class="hero-actions" data-aos="fade-up" data-aos-delay="500">
+                <a href="#projects" class="btn btn-primary">
+                    <i class="fas fa-rocket"></i> <span data-i18n="hero.btn_projects">View Projects</span>
+                </a>
+                <a href="#contact" class="btn btn-outline">
+                    <i class="fas fa-envelope"></i> <span data-i18n="hero.btn_contact">Get In Touch</span>
+                </a>
+            </div>
+
+            <div class="hero-stats" data-aos="fade-up" data-aos-delay="600">
+                <div class="stat">
+                    <span class="stat-num">8+</span>
+                    <span class="stat-lbl" data-i18n="hero.stat1_lbl">Projects</span>
+                </div>
+                <div class="stat-sep"></div>
+                <div class="stat">
+                    <span class="stat-num">3</span>
+                    <span class="stat-lbl" data-i18n="hero.stat2_lbl">Internships</span>
+                </div>
+                <div class="stat-sep"></div>
+                <div class="stat">
+                    <span class="stat-num">2+</span>
+                    <span class="stat-lbl" data-i18n="hero.stat3_lbl">Years Coding</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-visual" data-aos="fade-left" data-aos-delay="300">
+            <div class="visual-ring outer-ring">
+                <div class="visual-ring mid-ring">
+                    <div class="visual-ring inner-ring">
+                        <div class="visual-avatar">
+                            <span>FC</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="floating-tags">
+                <span class="ftag" style="--i:0;  --c:#3776AB"><i class="fab fa-python"></i>Python</span>
+                <span class="ftag" style="--i:1;  --c:#059669"><i class="fas fa-bolt"></i>FastAPI</span>
+                <span class="ftag" style="--i:2;  --c:#61DAFB"><i class="fab fa-react"></i>React.js</span>
+                <span class="ftag" style="--i:3;  --c:#3178C6"><i class="fas fa-code"></i>TypeScript</span>
+                <span class="ftag" style="--i:4;  --c:#CC2927"><i class="fas fa-database"></i>SQL Server</span>
+                <span class="ftag" style="--i:5;  --c:#336791"><i class="fas fa-database"></i>PostgreSQL</span>
+                <span class="ftag" style="--i:6;  --c:#DC382D"><i class="fas fa-memory"></i>Redis</span>
+                <span class="ftag" style="--i:7;  --c:#8B5CF6"><i class="fas fa-satellite-dish"></i>WebSockets</span>
+                <span class="ftag" style="--i:8;  --c:#F2C811"><i class="fas fa-chart-pie"></i>Power BI</span>
+                <span class="ftag" style="--i:9;  --c:#00C896"><i class="fas fa-credit-card"></i>Notchpay</span>
+                <span class="ftag" style="--i:10; --c:#FCC624"><i class="fab fa-linux"></i>Linux CLI</span>
+                <span class="ftag" style="--i:11; --c:#F0F6FC"><i class="fab fa-github"></i>GitHub CI/CD</span>
+            </div>
+        </div>
+    </div>
+
+    <a href="#about" class="scroll-cue">
+        <span class="scroll-text">Scroll</span>
+        <div class="scroll-track"><div class="scroll-thumb"></div></div>
+    </a>
+</section>
+
+<!-- ══════════════════════════ ABOUT ══════════════════════════ -->
+<section class="section about" id="about">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-tag" data-i18n="about.tag">About me</span>
+            <h2 class="section-title" data-i18n="about.title">Who I Am</h2>
+        </div>
+
+        <div class="about-grid">
+            <div class="about-text" data-aos="fade-right">
+                <p class="lead" data-i18n-html="about.lead">
+                    I didn't just want to write code — I wanted to build systems that solve real problems.
+                    That conviction led me to computer science at IME, where I quickly discovered my
+                    true passion: the intersection of <strong>data, automation, and system design</strong>.
+                </p>
+                <p data-i18n-html="about.p1">
+                    Every project I take on starts with one question: <em>"What decision does this need to
+                    enable?"</em> Whether it's a stock alert engine that wakes up a manager at 7am with
+                    exactly the right information, a ticketing platform that handles real payments for a
+                    live event, or a network monitoring script that eliminates manual pinging — the
+                    technology is always in service of a concrete outcome.
+                </p>
+                <p data-i18n-html="about.p2">
+                    My hybrid profile bridges <strong>back-end development</strong>, data engineering and
+                    IT infrastructure — which means I can see a problem end-to-end and build the full
+                    solution, not just one layer of it.
+                </p>
+
+                <div class="about-meta">
+                    <div class="meta-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span data-i18n="about.meta_location">Douala-Yassa, Cameroon</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span data-i18n="about.meta_edu">HND Computer Science — IME</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-language"></i>
+                        <span data-i18n="about.meta_lang">French (Fluent) · English (Technical)</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-envelope"></i>
+                        <span data-i18n="about.meta_email">Fongangcabrel2007@gmail.com</span>
+                    </div>
+                </div>
+
+                <div class="about-actions">
+                    <a href="#contact" class="btn btn-primary btn-sm">
+                        <i class="fas fa-paper-plane"></i> <span data-i18n="about.btn_hire">Hire Me</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/fongang-cabrel-81b9b83aa" target="_blank" class="btn btn-ghost btn-sm">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                </div>
+            </div>
+
+            <div class="about-cards" data-aos="fade-left" data-aos-delay="100">
+                <div class="acard">
+                    <div class="acard-icon"><i class="fas fa-code"></i></div>
+                    <h3 data-i18n="about.card1_title">Full-Stack Dev</h3>
+                    <p data-i18n="about.card1_desc">Web & PWA apps from back to front with Python, PHP, React and FastAPI.</p>
+                </div>
+                <div class="acard">
+                    <div class="acard-icon"><i class="fas fa-database"></i></div>
+                    <h3 data-i18n="about.card2_title">Data & Automation</h3>
+                    <p data-i18n="about.card2_desc">ETL pipelines, SQL Server KPI consolidation and automation scripting.</p>
+                </div>
+                <div class="acard">
+                    <div class="acard-icon"><i class="fas fa-network-wired"></i></div>
+                    <h3 data-i18n="about.card3_title">Infra Monitoring</h3>
+                    <p data-i18n="about.card3_desc">Real-time infrastructure monitoring, VPS config and network management.</p>
+                </div>
+                <div class="acard">
+                    <div class="acard-icon"><i class="fas fa-chart-bar"></i></div>
+                    <h3 data-i18n="about.card4_title">Data Visualization</h3>
+                    <p data-i18n="about.card4_desc">Dashboards and reports using Power BI and Python-based solutions.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════ SKILLS ══════════════════════════ -->
+<section class="section skills" id="skills">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-tag" data-i18n="skills.tag">Tech Stack</span>
+            <h2 class="section-title" data-i18n="skills.title">Skills & Technologies</h2>
+        </div>
+
+        <div class="skills-tabs" data-aos="fade-up" data-aos-delay="100">
+            <button class="tab-btn active" data-tab="all"     data-i18n="skills.tab_all">All</button>
+            <button class="tab-btn"        data-tab="dev"     data-i18n="skills.tab_dev">Development</button>
+            <button class="tab-btn"        data-tab="data"    data-i18n="skills.tab_data">Data & DB</button>
+            <button class="tab-btn"        data-tab="infra"    data-i18n="skills.tab_infra">Infra & Systems</button>
+            <button class="tab-btn"        data-tab="payment"  data-i18n="skills.tab_payment">Payment</button>
+            <button class="tab-btn"        data-tab="methods"  data-i18n="skills.tab_methods">Methods</button>
+        </div>
+
+        <div class="skills-grid" id="skillsGrid" data-aos="fade-up" data-aos-delay="200"></div>
+    </div>
+</section>
+
+<!-- ══════════════════════════ EXPERIENCE ══════════════════════════ -->
+<section class="section experience" id="experience">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-tag" data-i18n="exp.tag">Career</span>
+            <h2 class="section-title" data-i18n="exp.title">Professional Experience</h2>
+        </div>
+
+        <div class="timeline">
+            <div class="tl-item" data-aos="fade-up">
+                <div class="tl-marker">
+                    <div class="tl-dot active"></div>
+                    <div class="tl-line"></div>
+                </div>
+                <div class="tl-card">
+                    <div class="tl-header">
+                        <div>
+                            <h3 class="tl-role" data-i18n="exp.role1">IT Intern</h3>
+                            <p class="tl-company" data-i18n="exp.company1">BEETLE HERITAGE HOLDING</p>
+                        </div>
+                        <div class="tl-right">
+                            <span class="tl-date"><i class="far fa-calendar-alt"></i> <span data-i18n="exp.date1">Jan 2026 – Present</span></span>
+                            <span class="tl-badge current" data-i18n="exp.current">Current</span>
+                        </div>
+                    </div>
+                    <p class="tl-story" data-i18n-html="exp.story1"></p>
+                    <ul class="tl-tasks" id="tasks1"></ul>
+                    <div class="tl-tags">
+                        <span>Python</span><span>SQL Server</span><span>ETL</span><span>Excel</span><span>Automation</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tl-item" data-aos="fade-up" data-aos-delay="100">
+                <div class="tl-marker">
+                    <div class="tl-dot"></div>
+                    <div class="tl-line"></div>
+                </div>
+                <div class="tl-card">
+                    <div class="tl-header">
+                        <div>
+                            <h3 class="tl-role" data-i18n="exp.role2">Digital Solutions Intern</h3>
+                            <p class="tl-company" data-i18n="exp.company2">HELLOSem</p>
+                        </div>
+                        <div class="tl-right">
+                            <span class="tl-date"><i class="far fa-calendar-alt"></i> <span data-i18n="exp.date2">Jul – Sep 2025</span></span>
+                        </div>
+                    </div>
+                    <p class="tl-story" data-i18n-html="exp.story2"></p>
+                    <ul class="tl-tasks" id="tasks2"></ul>
+                    <div class="tl-tags">
+                        <span>Python</span><span>Automation</span><span>Dashboards</span><span>BI</span><span>Process Design</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tl-item" data-aos="fade-up" data-aos-delay="200">
+                <div class="tl-marker">
+                    <div class="tl-dot"></div>
+                </div>
+                <div class="tl-card">
+                    <div class="tl-header">
+                        <div>
+                            <h3 class="tl-role" data-i18n="exp.role3">Academic Intern — Software Developer</h3>
+                            <p class="tl-company" data-i18n="exp.company3">FURTHER MARKET sarl</p>
+                        </div>
+                        <div class="tl-right">
+                            <span class="tl-date"><i class="far fa-calendar-alt"></i> <span data-i18n="exp.date3">Jun – Aug 2024</span></span>
+                        </div>
+                    </div>
+                    <p class="tl-story" data-i18n-html="exp.story3"></p>
+                    <ul class="tl-tasks" id="tasks3"></ul>
+                    <div class="tl-tags">
+                        <span>PHP</span><span>MySQL</span><span>JavaScript</span><span>Git</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="education" data-aos="fade-up">
+            <h3 class="sub-title" data-i18n="exp.edu_title">Education</h3>
+            <div class="edu-grid">
+                <div class="edu-card">
+                    <div class="edu-icon"><i class="fas fa-university"></i></div>
+                    <div class="edu-info">
+                        <h4 data-i18n="exp.edu1_title">HND in Computer Science</h4>
+                        <p data-i18n="exp.edu1_school">IME — Institut de Management et de l'Entrepreneuriat</p>
+                        <span class="edu-year">2023 – 2025</span>
+                    </div>
+                </div>
+                <div class="edu-card">
+                    <div class="edu-icon"><i class="fas fa-school"></i></div>
+                    <div class="edu-info">
+                        <h4 data-i18n="exp.edu2_title">GCE Advanced Level</h4>
+                        <p data-i18n="exp.edu2_school">G.B.H.S Bafoussam</p>
+                        <span class="edu-year">2022 – 2023</span>
+                    </div>
+                </div>
+                <div class="edu-card">
+                    <div class="edu-icon"><i class="fas fa-certificate"></i></div>
+                    <div class="edu-info">
+                        <h4 data-i18n="exp.edu3_title">Certifications (In Progress)</h4>
+                        <p data-i18n="exp.edu3_school">Azure Database Administrator Associate · IBM Data Science</p>
+                        <span class="edu-year">Microsoft Learn · Kaggle</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════ PROJECTS ══════════════════════════ -->
+<section class="section projects" id="projects">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-tag" data-i18n="projects.tag">Portfolio</span>
+            <h2 class="section-title" data-i18n="projects.title">Featured Projects</h2>
+        </div>
+
+        <div class="proj-filter" data-aos="fade-up" data-aos-delay="100">
+            <button class="filter-btn active" data-filter="all"   data-i18n="projects.filter_all">All</button>
+            <button class="filter-btn"        data-filter="web"   data-i18n="projects.filter_web">Web Apps</button>
+            <button class="filter-btn"        data-filter="data"  data-i18n="projects.filter_data">Data & Automation</button>
+            <button class="filter-btn"        data-filter="infra" data-i18n="projects.filter_infra">Infrastructure</button>
+        </div>
+
+        <div class="proj-grid" id="projectsGrid"></div>
+    </div>
+</section>
+
+<!-- ══════════════════════════ STARTUP ══════════════════════════ -->
+<section class="section startup" id="startup">
+    <div class="container">
+        <div class="startup-intro" data-aos="fade-up">
+            <span class="section-tag" data-i18n="startup.tag">My Startup</span>
+            <h2 class="section-title">
+                <span class="gradient-text">HellooTech</span>
+            </h2>
+            <p class="startup-tagline" data-i18n="startup.tagline">Solutions Numériques Sur Mesure</p>
+            <p class="startup-desc" data-i18n="startup.desc">
+                From digital transformation to cloud hosting, we design and deploy complete
+                solutions tailored to your needs.
+            </p>
+            <div class="startup-motto">
+                <span data-i18n="startup.motto1">We Build.</span>
+                <span data-i18n="startup.motto2">We Deploy.</span>
+                <span data-i18n="startup.motto3">We Transform.</span>
+            </div>
+            <div class="startup-hero-cta" style="margin-bottom:24px">
+                <a href="https://hellootech.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" data-i18n="startup.btn_visit">
+                    Visit HellooTech Site →
+                </a>
+            </div>
+            <div class="startup-contacts">
+                <a href="tel:+237680929265" class="scontact">
+                    <i class="fab fa-whatsapp"></i> +237 680 92 92 65
+                </a>
+                <a href="mailto:Fongangcabrel2007@gmail.com" class="scontact">
+                    <i class="fas fa-envelope"></i> Fongangcabrel2007@gmail.com
+                </a>
+                <a href="https://www.linkedin.com/in/fongang-cabrel-81b9b83aa" target="_blank" rel="noopener noreferrer" class="scontact">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+            </div>
+        </div>
+
+        <div class="services-grid" data-aos="fade-up" data-aos-delay="100">
+            <div class="scard">
+                <div class="scard-num">01</div>
+                <div class="scard-icon"><i class="fas fa-globe"></i></div>
+                <h3>Web & PWA Dev</h3>
+                <p>Modern web apps and Progressive Web Apps — fast, reliable and installable on all devices.</p>
+                <div class="scard-tags"><span>Frontend</span><span>Backend</span></div>
+            </div>
+            <div class="scard">
+                <div class="scard-num">02</div>
+                <div class="scard-icon"><i class="fas fa-mobile-alt"></i></div>
+                <h3>Mobile Dev</h3>
+                <p>Performant Android & iOS apps with exceptional user experiences.</p>
+                <div class="scard-tags"><span>Android</span><span>iOS</span><span>Flutter</span></div>
+            </div>
+            <div class="scard">
+                <div class="scard-num">03</div>
+                <div class="scard-icon"><i class="fas fa-brain"></i></div>
+                <h3>Data Science & AI</h3>
+                <p>Data analysis, predictive models and AI integration to optimize your processes.</p>
+                <div class="scard-tags"><span>Python</span><span>ML</span><span>Analytics</span></div>
+            </div>
+            <div class="scard">
+                <div class="scard-num">04</div>
+                <div class="scard-icon"><i class="fas fa-rocket"></i></div>
+                <h3>Digital Transformation</h3>
+                <p>Digitalize your business processes and modernize your information system.</p>
+                <div class="scard-tags"><span>Strategy</span><span>SI</span></div>
+            </div>
+            <div class="scard">
+                <div class="scard-num">05</div>
+                <div class="scard-icon"><i class="fas fa-database"></i></div>
+                <h3>SQL Databases</h3>
+                <p>Design, optimization and administration of SQL Server and MySQL databases.</p>
+                <div class="scard-tags"><span>SQL Server</span><span>MySQL</span></div>
+            </div>
+            <div class="scard">
+                <div class="scard-num">06</div>
+                <div class="scard-icon"><i class="fas fa-tasks"></i></div>
+                <h3>Project Management</h3>
+                <p>End-to-end IT project management following best SDLC practices.</p>
+                <div class="scard-tags"><span>Agile</span><span>SDLC</span><span>PMO</span></div>
+            </div>
+            <div class="scard">
+                <div class="scard-num">07</div>
+                <div class="scard-icon"><i class="fas fa-server"></i></div>
+                <h3>Infra Monitoring</h3>
+                <p>Real-time server and application monitoring for availability and performance.</p>
+                <div class="scard-tags"><span>Alerting</span><span>Uptime</span></div>
+            </div>
+            <div class="scard">
+                <div class="scard-num">08</div>
+                <div class="scard-icon"><i class="fas fa-cloud"></i></div>
+                <h3>SaaS Platforms</h3>
+                <p>Scalable multi-tenant SaaS products with APIs and custom dashboards.</p>
+                <div class="scard-tags"><span>SaaS</span><span>API</span><span>Cloud</span></div>
+            </div>
+            <div class="scard">
+                <div class="scard-num">09</div>
+                <div class="scard-icon"><i class="fas fa-tools"></i></div>
+                <h3>IT Maintenance</h3>
+                <p>Technical support and preventive/corrective maintenance of your systems.</p>
+                <div class="scard-tags"><span>Support</span><span>Maintenance</span></div>
+            </div>
+        </div>
+
+        <div class="vps-banner" data-aos="fade-up">
+            <div class="vps-num">10</div>
+            <div class="vps-icon"><i class="fas fa-hdd"></i></div>
+            <div class="vps-text">
+                <h3>VPS Hosting & Configuration</h3>
+                <p>We deploy and configure VPS servers, host your applications and manage your production environments with security and performance.</p>
+            </div>
+            <div class="vps-tags"><span>VPS</span><span>DevOps</span><span>Deployment</span></div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════ CONTACT ══════════════════════════ -->
+<section class="section contact" id="contact">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-tag" data-i18n="contact.tag">Let's talk</span>
+            <h2 class="section-title" data-i18n="contact.title">Get In Touch</h2>
+        </div>
+
+        <div class="contact-grid">
+            <div class="contact-info" data-aos="fade-right">
+                <p class="contact-intro" data-i18n="contact.intro">
+                    Have a project in mind, want to collaborate, or just want to say hi?
+                    My inbox is always open.
+                </p>
+                <div class="cmethod-list">
+                    <a href="mailto:Fongangcabrel2007@gmail.com" class="cmethod">
+                        <div class="cmethod-icon"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <span class="cmethod-lbl" data-i18n="contact.lbl_email">Email</span>
+                            <span class="cmethod-val">Fongangcabrel2007@gmail.com</span>
+                        </div>
+                        <i class="fas fa-arrow-right cmethod-arr"></i>
+                    </a>
+                    <a href="https://wa.me/237680929265" target="_blank" class="cmethod">
+                        <div class="cmethod-icon"><i class="fab fa-whatsapp"></i></div>
+                        <div>
+                            <span class="cmethod-lbl" data-i18n="contact.lbl_whatsapp">WhatsApp</span>
+                            <span class="cmethod-val">+237 680 929 265</span>
+                        </div>
+                        <i class="fas fa-arrow-right cmethod-arr"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/fongang-cabrel-81b9b83aa" target="_blank" class="cmethod">
+                        <div class="cmethod-icon"><i class="fab fa-linkedin"></i></div>
+                        <div>
+                            <span class="cmethod-lbl" data-i18n="contact.lbl_linkedin">LinkedIn</span>
+                            <span class="cmethod-val">fongang-cabrel</span>
+                        </div>
+                        <i class="fas fa-arrow-right cmethod-arr"></i>
+                    </a>
+                </div>
+            </div>
+
+            <form class="contact-form" id="contactForm" data-aos="fade-left">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="fname" data-i18n="contact.form_name">Name</label>
+                        <input type="text" id="fname" name="name" data-i18n-ph="contact.ph_name" placeholder="Your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="femail" data-i18n="contact.form_email">Email</label>
+                        <input type="email" id="femail" name="email" data-i18n-ph="contact.ph_email" placeholder="your@email.com" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="fsubject" data-i18n="contact.form_subject">Subject</label>
+                    <input type="text" id="fsubject" name="subject" data-i18n-ph="contact.ph_subject" placeholder="Project discussion" required>
+                </div>
+                <div class="form-group">
+                    <label for="fmessage" data-i18n="contact.form_message">Message</label>
+                    <textarea id="fmessage" name="message" rows="5" data-i18n-ph="contact.ph_message" placeholder="Tell me about your project..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">
+                    <i class="fas fa-paper-plane"></i> <span data-i18n="contact.btn_send">Send Message</span>
+                </button>
+                <p class="form-note" id="formNote"></p>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════ FOOTER ══════════════════════════ -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <a href="#home" class="nav-logo">
+                    <span class="logo-bracket">&lt;</span>FC<span class="logo-bracket">/&gt;</span>
+                </a>
+                <p data-i18n="footer.tagline">Building the future, one line of code at a time.</p>
+                <p class="footer-startup" data-i18n-html="footer.founder">Founder of <strong class="gradient-text">HellooTech</strong></p>
+            </div>
+            <div class="footer-nav">
+                <div class="footer-col">
+                    <h4 data-i18n="footer.col_nav">Navigate</h4>
+                    <ul>
+                        <li><a href="#about"       data-i18n="nav.about">About</a></li>
+                        <li><a href="#skills"      data-i18n="nav.skills">Skills</a></li>
+                        <li><a href="#experience"  data-i18n="nav.experience">Experience</a></li>
+                        <li><a href="#projects"    data-i18n="nav.projects">Projects</a></li>
+                        <li><a href="#startup"     data-i18n="nav.startup">HellooTech</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 data-i18n="footer.col_connect">Connect</h4>
+                    <ul>
+                        <li><a href="mailto:Fongangcabrel2007@gmail.com" data-i18n="contact.lbl_email">Email</a></li>
+                        <li><a href="https://www.linkedin.com/in/fongang-cabrel-81b9b83aa" target="_blank" data-i18n="contact.lbl_linkedin">LinkedIn</a></li>
+                        <li><a href="https://wa.me/237680929265" target="_blank" data-i18n="contact.lbl_whatsapp">WhatsApp</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p data-i18n="footer.copyright">&copy; 2026 Fongang Cabrel &mdash; All rights reserved.</p>
+            <p>Douala, Cameroon <span class="flag">🇨🇲</span></p>
+        </div>
+    </div>
+</footer>
+
+<a href="#home" class="back-top" id="backTop" aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+</a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="js/translations.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
