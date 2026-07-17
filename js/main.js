@@ -304,10 +304,7 @@ const skills = [
     { name: 'Cisco Packet Tracer', level: 'Basic',         pct: 42, cat: 'infra', icon: 'fas fa-network-wired', color: '#1BA0D7' },
     { name: 'SAP BTP',           level: 'Basic',          pct: 28, cat: 'infra', icon: 'fas fa-cloud',          color: '#0FAAFF' },
     /* ─ Payment Integrations ─ */
-    { name: 'Notchpay',      level: 'Intermediate',  pct: 68, cat: 'payment', icon: 'fas fa-credit-card', color: '#00C896' },
-    { name: 'Flutterwave',   level: 'Intermediate',  pct: 68, cat: 'payment', icon: 'fas fa-bolt',        color: '#F5A623' },
     { name: 'API Payment Integration', level: 'Intermediate', pct: 62, cat: 'payment', icon: 'fas fa-mobile-alt', color: '#22C55E' },
-    { name: 'Monero (XMR)',  level: 'Basic',          pct: 40, cat: 'payment', icon: 'fas fa-coins',       color: '#FF6600' },
     /* ─ Methods ─ */
     { name: 'Scrum / Kanban', level: 'Intermediate',  pct: 72, cat: 'methods', icon: 'fas fa-columns',          color: '#0052CC' },
     { name: 'SDLC',           level: 'Intermediate',  pct: 74, cat: 'methods', icon: 'fas fa-diagram-project',  color: '#8B5CF6' },
