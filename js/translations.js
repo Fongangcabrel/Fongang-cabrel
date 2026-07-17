@@ -31,6 +31,7 @@ window.T = {
         'Software Developer',
         'DevOps Junior',
         'Data Science Enthusiast',
+        'SAP Engineer Enthusiast',
         'PWA Builder',
         'IT Infrastructure Engineer',
         'Digital Transformer'
@@ -287,6 +288,7 @@ window.T = {
         'Développeur Logiciel',
         'DevOps Junior',
         'Passionné de Data Science',
+        'Passionné d\'ingénierie SAP',
         'Créateur de PWA',
         'Ingénieur Infrastructure IT',
         'Transformateur Digital'
