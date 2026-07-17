@@ -55,7 +55,7 @@ window.T = {
       card3_title: 'Infra Monitoring',
       card3_desc:  'Real-time infrastructure monitoring, VPS config and network management.',
       card4_title: 'Data Visualization',
-      card4_desc:  'Dashboards and reports using Power BI and Python-based solutions.'
+      card4_desc:  'Dashboards and reports using Power Platform and Python-based solutions.'
     },
 
     skills: {
@@ -309,7 +309,7 @@ window.T = {
       card3_title: 'Monitoring Infra',
       card3_desc:  'Surveillance d\'infrastructure en temps réel, config VPS et gestion réseau.',
       card4_title: 'Visualisation Data',
-      card4_desc:  'Tableaux de bord et rapports avec Power BI et solutions Python.'
+      card4_desc:  'Tableaux de bord et rapports avec Power Platform et solutions Python.'
     },
 
     skills: {

@@ -287,7 +287,7 @@ const skills = [
     { name: 'Redis',             level: 'Intermediate',   pct: 58, cat: 'data', icon: 'fas fa-memory',     color: '#DC382D' },
     { name: 'T-SQL',             level: 'Intermediate',   pct: 68, cat: 'data', icon: 'fas fa-code',       color: '#CC2927' },
     { name: 'SQL Server Agent',  level: 'Intermediate',   pct: 62, cat: 'data', icon: 'fas fa-robot',      color: '#CC2927' },
-    { name: 'Power BI',          level: 'Intermediate',   pct: 64, cat: 'data', icon: 'fas fa-chart-pie',  color: '#F2C811' },
+    { name: 'Power Platform',    level: 'Intermediate',   pct: 64, cat: 'data', icon: 'fas fa-chart-pie',  color: '#F2C811' },
     { name: 'Pandas / ETL',      level: 'Intermediate',   pct: 68, cat: 'data', icon: 'fas fa-filter',     color: '#150458' },
     /* ─ DevOps & Infrastructure ─ */
     { name: 'GitHub Actions',    level: 'Intermediate',   pct: 60, cat: 'infra', icon: 'fab fa-github',         color: '#F0F6FC' },
@@ -302,12 +302,11 @@ const skills = [
     { name: 'PowerShell',        level: 'Intermediate',   pct: 70, cat: 'infra', icon: 'fas fa-terminal',       color: '#5391FE' },
     { name: 'VMware',            level: 'Basic',           pct: 45, cat: 'infra', icon: 'fas fa-server',         color: '#607078' },
     { name: 'Cisco Packet Tracer', level: 'Basic',         pct: 42, cat: 'infra', icon: 'fas fa-network-wired', color: '#1BA0D7' },
+    { name: 'SAP BTP',           level: 'Basic',          pct: 28, cat: 'infra', icon: 'fas fa-cloud',          color: '#0FAAFF' },
     /* ─ Payment Integrations ─ */
     { name: 'Notchpay',      level: 'Intermediate',  pct: 68, cat: 'payment', icon: 'fas fa-credit-card', color: '#00C896' },
     { name: 'Flutterwave',   level: 'Intermediate',  pct: 68, cat: 'payment', icon: 'fas fa-bolt',        color: '#F5A623' },
-    { name: 'CamPay',        level: 'Intermediate',  pct: 62, cat: 'payment', icon: 'fas fa-mobile-alt',  color: '#FF6B35' },
-    { name: 'MTN MoMo',      level: 'Intermediate',  pct: 62, cat: 'payment', icon: 'fas fa-mobile-alt',  color: '#FFCC02' },
-    { name: 'Orange Money',  level: 'Intermediate',  pct: 62, cat: 'payment', icon: 'fas fa-mobile-alt',  color: '#FF7900' },
+    { name: 'API Payment Integration', level: 'Intermediate', pct: 62, cat: 'payment', icon: 'fas fa-mobile-alt', color: '#22C55E' },
     { name: 'Monero (XMR)',  level: 'Basic',          pct: 40, cat: 'payment', icon: 'fas fa-coins',       color: '#FF6600' },
     /* ─ Methods ─ */
     { name: 'Scrum / Kanban', level: 'Intermediate',  pct: 72, cat: 'methods', icon: 'fas fa-columns',          color: '#0052CC' },

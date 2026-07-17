@@ -521,10 +521,12 @@ button {
 .ftag:nth-child(6)  { top: 43%;   left: 0%;   }   /* PostgreSQL    — 9  o'clock */
 .ftag:nth-child(7)  { bottom: 20%;right: 1%;  }   /* Redis         — 4  o'clock */
 .ftag:nth-child(8)  { bottom: 20%;left: 0%;   }   /* WebSockets    — 8  o'clock */
-.ftag:nth-child(9)  { bottom: 4%; right: 4%;  }   /* Power BI      — 5  o'clock */
-.ftag:nth-child(10) { bottom: 3%; left: 4%;   }   /* Notchpay      — 7  o'clock */
-.ftag:nth-child(11) { top: 11%;   left: 30%;  }   /* Linux CLI     — inner top */
-.ftag:nth-child(12) { bottom: 11%;right: 28%; }   /* GitHub CI/CD  — inner bottom */
+.ftag:nth-child(9)  { bottom: 4%; right: 4%;  }   /* Power Platform — 5  o'clock */
+.ftag:nth-child(10) { bottom: 3%; left: 4%;   }   /* API Payment    — 7  o'clock */
+.ftag:nth-child(11) { top: 11%;   left: 30%;  }   /* Linux CLI      — inner top */
+.ftag:nth-child(12) { bottom: 11%;right: 28%; }   /* GitHub CI/CD   — inner bottom */
+.ftag:nth-child(13) { top: 60%;   right: 15%; }   /* DevOps         — inner right */
+.ftag:nth-child(14) { top: 60%;   left: 15%;  }   /* Docker         — inner left */
 
 @keyframes float-tag {
     0%, 100% { transform: translateY(0) scale(1);    opacity: 0.72; }
