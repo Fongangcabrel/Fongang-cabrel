@@ -291,8 +291,13 @@ const skills = [
     { name: 'Pandas / ETL',      level: 'Intermediate',   pct: 68, cat: 'data', icon: 'fas fa-filter',     color: '#150458' },
     /* ─ DevOps & Infrastructure ─ */
     { name: 'GitHub Actions',    level: 'Intermediate',   pct: 60, cat: 'infra', icon: 'fab fa-github',         color: '#F0F6FC' },
+    { name: 'Debian Server Admin', level: 'Intermediate', pct: 65, cat: 'infra', icon: 'fab fa-debian',         color: '#A81D33' },
     { name: 'SSH · RSA 4096',    level: 'Intermediate',   pct: 62, cat: 'infra', icon: 'fas fa-key',            color: '#F59E0B' },
     { name: 'Linux CLI',         level: 'Intermediate',   pct: 65, cat: 'infra', icon: 'fab fa-linux',          color: '#FCC624' },
+    { name: 'Docker',            level: 'Basic',          pct: 48, cat: 'infra', icon: 'fab fa-docker',         color: '#2496ED' },
+    { name: 'Nginx',             level: 'Intermediate',   pct: 58, cat: 'infra', icon: 'fas fa-server',         color: '#009639' },
+    { name: 'Zabbix',            level: 'Basic',          pct: 45, cat: 'infra', icon: 'fas fa-chart-area',     color: '#D40000' },
+    { name: 'Grafana',           level: 'Basic',          pct: 45, cat: 'infra', icon: 'fas fa-chart-simple',   color: '#F46800' },
     { name: 'VPS · Hostinger',   level: 'Intermediate',   pct: 62, cat: 'infra', icon: 'fas fa-server',         color: '#FF6C2C' },
     { name: 'PowerShell',        level: 'Intermediate',   pct: 70, cat: 'infra', icon: 'fas fa-terminal',       color: '#5391FE' },
     { name: 'VMware',            level: 'Basic',           pct: 45, cat: 'infra', icon: 'fas fa-server',         color: '#607078' },
@@ -351,6 +356,17 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
 
 /* ── Projects data & rendering ── */
 const projects = [
+    {
+        name:     'KPIFlow — Internal KPI SaaS (Production)',
+        cat:      'web',
+        catLabel: 'SaaS · Live at BEETLE',
+        icon:     'fas fa-chart-line',
+        color:    '#00c896',
+        desc:     'End-to-end KPI lifecycle SaaS in production company-wide at BEETLE HERITAGE HOLDING: definition, assignment, submission, automatic score calculation and multi-level validation, replacing a manual Excel process. Sandboxed formula engine (Python ast, strict node whitelist) lets each department write its own scoring formula. Dual-mode IAM (local + CSV/AD import) with guided first-login flow. Personally deployed and administered on the company\'s Debian 13 server, CI/CD via SSH.',
+        stack:    ['FastAPI', 'SQLAlchemy', 'PostgreSQL', 'Jinja2', 'Debian 13', 'Nginx', 'GitHub Actions', 'SSH'],
+        github:   '#',
+        demo:     '#'
+    },
     {
         name:     'VYNTIX — IT Infrastructure Monitor',
         cat:      'infra',

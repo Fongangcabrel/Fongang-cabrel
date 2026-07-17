@@ -29,6 +29,7 @@ window.T = {
       stat3_lbl:    'Years Coding',
       roles: [
         'Software Developer',
+        'DevOps Junior',
         'Data Science Enthusiast',
         'PWA Builder',
         'IT Infrastructure Engineer',
@@ -40,10 +41,10 @@ window.T = {
       tag:   'About me',
       title: 'Who I Am',
       lead:  'I didn\'t just want to write code — I wanted to build systems that solve real problems. That conviction led me to computer science at IME, where I quickly discovered my true passion: the intersection of <strong>data, automation, and system design</strong>.',
-      p1:    'Every project I take on starts with one question: <em>"What decision does this need to enable?"</em> Whether it\'s a stock alert engine that wakes up a manager at 7am with exactly the right information, a ticketing platform that handles real payments for a live event, or a network monitoring script that eliminates manual pinging — the technology is always in service of a concrete outcome.',
-      p2:    'My hybrid profile bridges <strong>back-end development</strong>, data engineering and IT infrastructure — which means I can see a problem end-to-end and build the full solution, not just one layer of it.',
+      p1:    'Every project I take on starts with one question: <em>"What decision does this need to enable?"</em> Whether it\'s <strong>KPIFlow</strong> — an internal SaaS platform I designed, built and deployed to production, replacing a company\'s entire Excel-based KPI cycle — a ticketing platform that handles real payments for a live event, or a network monitoring script that eliminates manual pinging — the technology is always in service of a concrete outcome.',
+      p2:    'My hybrid profile bridges <strong>back-end development</strong>, data engineering and IT infrastructure — which means I can see a problem end-to-end and build the full solution, not just one layer of it. I\'m currently building AWS cloud skills from the ground up to grow into a <strong>Platform Engineer</strong> profile (Full-Stack + DevOps).',
       meta_location: 'Douala-Yassa, Cameroon',
-      meta_edu:      'HND Computer Science — IME',
+      meta_edu:      'Bachelor SWE (Data Science) — IME',
       meta_lang:     'French (Fluent) · English (Technical)',
       meta_email:    'Fongangcabrel2007@gmail.com',
       btn_hire:      'Hire Me',
@@ -79,21 +80,26 @@ window.T = {
       role1:    'IT Intern',
       company1: 'BEETLE HERITAGE HOLDING',
       date1:    'Jan 2026 – Present',
-      story1: `When I arrived, managers were making financial decisions using static Excel files
-               updated manually each morning — slow, error-prone, and blind to real-time shifts.
-               My challenge: give the team <strong>live visibility into stock data without
-               disrupting their existing workflow</strong>. I designed a Python ETL pipeline that
-               automatically extracts, cleans and consolidates market metrics into SQL Server on a
-               schedule. The hardest part was building the alert engine: different assets needed
-               different threshold logic, so instead of hardcoding rules, I created a
-               <strong>configurable rule table in the database</strong> — flexible enough to evolve
-               with the business. The result: automated reports land in inboxes every morning, and
-               critical alerts fire in real-time. Hours of manual work, gone.`,
+      story1: `When I arrived, every department tracked its KPIs on static Excel files — manually
+               updated, error-prone and impossible to consolidate or validate. My challenge: replace
+               the entire cycle with a real system. I designed, built and deployed <strong>KPIFlow</strong>,
+               an internal SaaS platform (FastAPI, SQLAlchemy, PostgreSQL, server-rendered
+               Jinja2/Bootstrap UI) covering KPI definition, assignment, submission, automatic score
+               calculation and multi-level validation. The hardest part was letting each department
+               write its own scoring formula without opening a security hole, so I built a
+               <strong>sandboxed formula engine on Python's <code>ast</code> module with a strict node
+               whitelist</strong>, plus a dual-mode IAM system (local accounts and CSV/AD import with a
+               guided first-login flow). I personally deployed and still administer it on the
+               company's Debian 13 server, maintaining the CI/CD pipeline via SSH. It's now in
+               production, used company-wide. Alongside KPIFlow, I also built a Python/SQL Server
+               stock monitoring and alerting pipeline that replaced hours of manual reporting with
+               automated morning reports and real-time threshold alerts.`,
       tasks1: [
-        'Built a Python ETL pipeline → SQL Server for market data consolidation & KPI tracking',
-        'Designed a configurable business rule engine for threshold-based stock alerts',
-        'Automated daily reporting, eliminating hours of manual Excel work per week',
-        'Managed hardware/software support and assisted with network administration'
+        'Designed, built and deployed KPIFlow — a production SaaS replacing BEETLE\'s manual Excel-based KPI cycle',
+        'Built a sandboxed formula engine (Python ast module, strict node whitelist) for per-department scoring rules',
+        'Implemented a dual-mode IAM system: local account creation + CSV/AD import with guided first-login onboarding',
+        'Personally deployed and administer KPIFlow on the company\'s Debian 13 server, maintaining CI/CD via SSH',
+        'Built a Python + SQL Server stock monitoring & alerting pipeline with automated daily reporting'
       ],
 
       role2:    'Digital Solutions Intern',
@@ -135,12 +141,14 @@ window.T = {
       ],
 
       edu_title: 'Education',
-      edu1_title:  'HND in Computer Science',
+      edu1_title:  'Bachelor in Software Engineering — Data Science',
       edu1_school: 'IME — Institut de Management et de l\'Entrepreneuriat',
-      edu2_title:  'GCE Advanced Level',
-      edu2_school: 'G.B.H.S Bafoussam',
-      edu3_title:  'Certifications (In Progress)',
-      edu3_school: 'Azure Database Administrator Associate · IBM Data Science'
+      edu2_title:  'HND in Computer Science',
+      edu2_school: 'IME — Institut de Management et de l\'Entrepreneuriat',
+      edu3_title:  'GCE Advanced Level',
+      edu3_school: 'G.B.H.S Bafoussam',
+      edu4_title:  'Certifications (In Progress)',
+      edu4_school: 'IBM Data Science · AWS Cloud Practitioner · SAP BTP Associate'
     },
 
     projects: {
@@ -152,6 +160,11 @@ window.T = {
       filter_infra:  'Infrastructure',
       live_label:    'Live site',
       items: [
+        {
+          name:     'KPIFlow — Internal KPI SaaS (Production)',
+          catLabel: 'SaaS · Live at BEETLE',
+          desc:     'End-to-end KPI lifecycle SaaS in production company-wide at BEETLE HERITAGE HOLDING: definition, assignment, submission, automatic score calculation and multi-level validation, replacing a manual Excel process. Sandboxed formula engine (Python ast, strict node whitelist) lets each department write its own scoring formula. Dual-mode IAM (local + CSV/AD import) with guided first-login flow. Personally deployed and administered on the company\'s Debian 13 server, CI/CD via SSH.'
+        },
         {
           name:     'VYNTIX — IT Infrastructure Monitor',
           catLabel: 'Infrastructure',
@@ -270,6 +283,7 @@ window.T = {
       stat3_lbl:    'Ans de code',
       roles: [
         'Développeur Logiciel',
+        'DevOps Junior',
         'Passionné de Data Science',
         'Créateur de PWA',
         'Ingénieur Infrastructure IT',
@@ -281,10 +295,10 @@ window.T = {
       tag:   'À propos',
       title: 'Qui suis-je',
       lead:  'Je ne voulais pas seulement écrire du code — je voulais construire des systèmes qui résolvent de vrais problèmes. Cette conviction m\'a amené à l\'informatique à l\'IME, où j\'ai vite découvert ma vraie passion : l\'intersection entre <strong>données, automatisation et conception de systèmes</strong>.',
-      p1:    'Chaque projet que j\'entreprends commence par une question : <em>« Quelle décision ceci doit-il permettre ? »</em> Qu\'il s\'agisse d\'un moteur d\'alertes boursières qui réveille un manager à 7h avec exactement la bonne information, d\'une plateforme de billetterie traitant de vrais paiements pour un événement en direct, ou d\'un script de monitoring réseau qui élimine les pings manuels — la technologie est toujours au service d\'un résultat concret.',
-      p2:    'Mon profil hybride relie le <strong>développement back-end</strong>, l\'ingénierie des données et l\'infrastructure IT — ce qui me permet de voir un problème de bout en bout et de construire la solution complète, pas seulement une couche.',
+      p1:    'Chaque projet que j\'entreprends commence par une question : <em>« Quelle décision ceci doit-il permettre ? »</em> Qu\'il s\'agisse de <strong>KPIFlow</strong> — une plateforme SaaS interne que j\'ai conçue, développée et déployée en production, remplaçant tout un processus de KPI sous Excel — d\'une plateforme de billetterie traitant de vrais paiements pour un événement en direct, ou d\'un script de monitoring réseau qui élimine les pings manuels — la technologie est toujours au service d\'un résultat concret.',
+      p2:    'Mon profil hybride relie le <strong>développement back-end</strong>, l\'ingénierie des données et l\'infrastructure IT — ce qui me permet de voir un problème de bout en bout et de construire la solution complète, pas seulement une couche. Je développe actuellement mes compétences cloud AWS depuis la base pour évoluer vers un profil <strong>Platform Engineer</strong> (Full-Stack + DevOps).',
       meta_location: 'Douala-Yassa, Cameroun',
-      meta_edu:      'BTS Informatique — IME',
+      meta_edu:      'Licence Génie Logiciel (Data Science) — IME',
       meta_lang:     'Français (Courant) · Anglais (Technique)',
       meta_email:    'Fongangcabrel2007@gmail.com',
       btn_hire:      'Me recruter',
@@ -320,22 +334,29 @@ window.T = {
       role1:    'Stagiaire IT',
       company1: 'BEETLE HERITAGE HOLDING',
       date1:    'Jan 2026 – Présent',
-      story1: `À mon arrivée, les managers prenaient des décisions financières à partir de fichiers
-               Excel statiques mis à jour manuellement chaque matin — lent, sujet aux erreurs et
-               aveugle aux variations en temps réel. Ma mission : donner à l'équipe une
-               <strong>visibilité en direct sur les données boursières sans perturber leur flux de
-               travail</strong>. J'ai conçu un pipeline ETL en Python qui extrait, nettoie et
-               consolide automatiquement les métriques de marché dans SQL Server selon un planning.
-               La partie la plus difficile : le moteur d'alertes. Différents actifs nécessitaient
-               des logiques de seuil différentes, j'ai donc créé une <strong>table de règles
-               configurable en base de données</strong> plutôt que de coder les conditions en dur.
-               Résultat : rapports automatisés chaque matin, alertes critiques en temps réel.
-               Des heures de travail manuel, supprimées.`,
+      story1: `À mon arrivée, chaque département suivait ses KPI sur des fichiers Excel statiques —
+               mis à jour manuellement, sujets aux erreurs et impossibles à consolider ou valider.
+               Ma mission : remplacer tout le cycle par un vrai système. J'ai conçu, développé et
+               déployé <strong>KPIFlow</strong>, une plateforme SaaS interne (FastAPI, SQLAlchemy,
+               PostgreSQL, rendu serveur Jinja2/Bootstrap) couvrant la définition, l'affectation, la
+               soumission, le calcul automatique du score et la validation multi-niveaux des KPI. La
+               partie la plus difficile : permettre à chaque département d'écrire sa propre formule
+               de calcul sans ouvrir de faille de sécurité — j'ai donc construit un
+               <strong>moteur de formules sécurisé basé sur le module <code>ast</code> de Python avec
+               une liste blanche stricte de nœuds</strong>, ainsi qu'un système d'IAM à deux modes
+               (comptes locaux et import CSV/AD avec parcours guidé de première connexion). Je l'ai
+               personnellement déployé et je l'administre toujours sur le serveur Debian 13 de
+               l'entreprise, avec maintenance du pipeline CI/CD via SSH. La plateforme est aujourd'hui
+               en production, utilisée dans toute l'entreprise. En parallèle de KPIFlow, j'ai aussi
+               construit un pipeline Python/SQL Server de surveillance et d'alerte de stock qui a
+               remplacé des heures de reporting manuel par des rapports automatisés le matin et des
+               alertes de seuil en temps réel.`,
       tasks1: [
-        'Pipeline ETL Python → SQL Server pour consolidation des données de marché et KPI',
-        'Moteur de règles métier configurable pour les alertes de seuil boursier',
-        'Automatisation du reporting quotidien, éliminant des heures de travail Excel hebdomadaire',
-        'Support technique matériel/logiciel et assistance à l\'administration réseau'
+        'Conception, développement et déploiement de KPIFlow — SaaS en production remplaçant le suivi KPI manuel sous Excel de BEETLE',
+        'Moteur de formules sécurisé (module ast de Python, liste blanche stricte) pour des règles de scoring propres à chaque département',
+        'Système d\'IAM à deux modes : création locale de comptes + import CSV/AD avec parcours guidé de première connexion',
+        'Déploiement personnel et administration de KPIFlow sur le serveur Debian 13 de l\'entreprise, maintenance du CI/CD via SSH',
+        'Pipeline Python + SQL Server de surveillance et d\'alerte de stock avec reporting quotidien automatisé'
       ],
 
       role2:    'Stagiaire Solutions Digitales',
@@ -379,12 +400,14 @@ window.T = {
       ],
 
       edu_title: 'Formation',
-      edu1_title:  'BTS Informatique',
+      edu1_title:  'Licence Professionnelle en Génie Logiciel — Sciences de Données',
       edu1_school: 'IME — Institut de Management et de l\'Entrepreneuriat',
-      edu2_title:  'Baccalauréat Général (GCE A-Level)',
-      edu2_school: 'G.B.H.S Bafoussam',
-      edu3_title:  'Certifications (En cours)',
-      edu3_school: 'Azure Database Administrator · IBM Data Science'
+      edu2_title:  'BTS Informatique',
+      edu2_school: 'IME — Institut de Management et de l\'Entrepreneuriat',
+      edu3_title:  'Baccalauréat Général (GCE A-Level)',
+      edu3_school: 'G.B.H.S Bafoussam',
+      edu4_title:  'Certifications (En cours)',
+      edu4_school: 'IBM Data Science · AWS Cloud Practitioner · SAP BTP Associate'
     },
 
     projects: {
@@ -396,6 +419,11 @@ window.T = {
       filter_infra: 'Infrastructure',
       live_label:   'Site en ligne',
       items: [
+        {
+          name:     'KPIFlow — SaaS interne de KPI (Production)',
+          catLabel: 'SaaS · En prod chez BEETLE',
+          desc:     'SaaS complet de gestion du cycle de vie des KPI, en production dans toute l\'entreprise chez BEETLE HERITAGE HOLDING : définition, affectation, soumission, calcul automatique du score et validation multi-niveaux, en remplacement d\'un processus manuel sous Excel. Moteur de formules sécurisé (module ast de Python, liste blanche stricte de nœuds) permettant à chaque département de rédiger sa propre formule. IAM à deux modes (local + import CSV/AD) avec parcours guidé de première connexion. Déployé et administré personnellement sur le serveur Debian 13 de l\'entreprise, CI/CD via SSH.'
+        },
         {
           name:     'VYNTIX — Monitoring d\'Infrastructure IT',
           catLabel: 'Infrastructure',
