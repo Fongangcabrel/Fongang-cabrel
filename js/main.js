@@ -401,13 +401,13 @@ const projects = [
         demo:     '#'
     },
     {
-        name:     'FlowI — Business Process Automation',
-        cat:      'data',
-        catLabel: 'Automation · SaaS',
-        icon:     'fas fa-diagram-project',
-        color:    '#8b5cf6',
-        desc:     'Modular business-process automation framework that maps, schedules, and chains custom workflows via a visual React.js UI. FastAPI async orchestration engine with plug-and-play Python modules for enterprise workflows.',
-        stack:    ['Python', 'FastAPI', 'React.js', 'AsyncIO', 'REST API'],
+        name:     'HospiConnect — Hospital Management System',
+        cat:      'web',
+        catLabel: 'Web App · Healthcare',
+        icon:     'fas fa-hospital-user',
+        color:    '#3b82f6',
+        desc:     'Internal web platform for Clinique du Chatelet digitizing patient check-in and queue tracking, replacing paper tickets and voice paging. Smart priority queue (Standard / Priority / Emergency), kiosk-style waiting-room display with voice-synthesis alerts (Web Speech API), automated email notifications carrying zero sensitive medical data, cross-department patient transfers without re-entry, an admin dashboard with wait-time and attendance analytics, and a 12-month audit trail for hospital traceability. Role-based access for Superadmin, Admin, Secretary and Doctor.',
+        stack:    ['PHP 8', 'Laravel', 'MySQL', 'WebSocket/SSE', 'PHPMailer', 'Bootstrap'],
         github:   '#',
         demo:     '#'
     },
