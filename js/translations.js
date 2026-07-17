@@ -181,9 +181,9 @@ window.T = {
           desc:     'Automated stock alerts and data analytics pipeline. Python ETL, SQL Server consolidation, SQL Server Agent nightly jobs, Power BI reporting based on configurable thresholds.'
         },
         {
-          name:     'HospiConnect — Hospital Management System',
-          catLabel: 'Web App · Healthcare',
-          desc:     'Internal web platform for Clinique du Chatelet digitizing patient check-in and queue tracking, replacing paper tickets and voice paging. Smart priority queue (Standard / Priority / Emergency), kiosk-style waiting-room display with voice-synthesis alerts (Web Speech API), automated email notifications carrying zero sensitive medical data, cross-department patient transfers without re-entry, an admin dashboard with wait-time and attendance analytics, and a 12-month audit trail for hospital traceability. Role-based access for Superadmin, Admin, Secretary and Doctor.'
+          name:     'FlowI — Business Process Automation',
+          catLabel: 'Automation · SaaS',
+          desc:     'Modular business-process automation framework that maps, schedules, and chains custom workflows via a visual React.js UI. FastAPI async orchestration engine with plug-and-play Python modules for enterprise workflows.'
         },
         {
           name:     'cocosecret.shop — E-commerce Web App',
@@ -196,9 +196,9 @@ window.T = {
           desc:     'Full event ticketing platform for a summer beach festival in Parma, Italy. Three-tier ticket system (Day €10 / Full €20 / Evening €15), Stripe payment integration, real-time booking with attendee management, and a responsive tropical-themed UI. <strong>Handling real transactions for a live 2026 event.</strong>'
         },
         {
-          name:     'LovIT — Dating Platform',
-          catLabel: 'Web App',
-          desc:     'Full-stack dating app with authentication and profile management. Lightweight Python backend with MySQL persistence and a responsive vanilla-JS front-end.'
+          name:     'HospiConnect — Hospital Management System',
+          catLabel: 'Web App · Healthcare',
+          desc:     'Internal web platform for Clinique du Chatelet digitizing patient check-in and queue tracking, replacing paper tickets and voice paging. Smart priority queue (Standard / Priority / Emergency), kiosk-style waiting-room display with voice-synthesis alerts (Web Speech API), automated email notifications carrying zero sensitive medical data, cross-department patient transfers without re-entry, an admin dashboard with wait-time and attendance analytics, and a 12-month audit trail for hospital traceability. Role-based access for Superadmin, Admin, Secretary and Doctor.'
         },
         {
           name:     'SCRIPX — Network Monitoring Ping',
@@ -440,9 +440,9 @@ window.T = {
           desc:     'Alertes stock automatisées et pipeline data analytique. ETL Python, consolidation SQL Server, jobs nocturnes SQL Server Agent, reporting Power BI basé sur des seuils configurables.'
         },
         {
-          name:     'HospiConnect — Système de Gestion Hospitalière',
-          catLabel: 'Application Web · Santé',
-          desc:     'Application web interne pour la Clinique du Chatelet digitalisant l\'accueil et le suivi des patients, en remplacement des tickets papier et des appels vocaux. File d\'attente intelligente par priorité (Standard / Prioritaire / Urgence), écran d\'affichage salle d\'attente type kiosque avec alertes vocales (Web Speech API), notifications email automatiques sans aucune donnée médicale sensible, transferts interservices sans ressaisie du dossier patient, tableau de bord admin avec statistiques d\'affluence et de temps d\'attente, et journal d\'audit de 12 mois pour la traçabilité hospitalière. Accès différencié par rôle : Superadmin, Admin, Secrétaire, Médecin.'
+          name:     'FlowI — Automatisation de Processus Métier',
+          catLabel: 'Automatisation · SaaS',
+          desc:     'Framework modulaire d\'automatisation de processus qui cartographie, planifie et enchaîne des workflows personnalisés via une interface React.js visuelle. Moteur d\'orchestration FastAPI async pour les workflows d\'entreprise.'
         },
         {
           name:     'cocosecret.shop — Application E-commerce',
@@ -455,9 +455,9 @@ window.T = {
           desc:     'Plateforme complète de billetterie pour un festival de plage à Parme, Italie. Système 3 niveaux de billets (Journée €10 / Complet €20 / Soirée €15), intégration Stripe, réservation en temps réel. <strong>Traitement de vrais paiements pour un événement live 2026.</strong>'
         },
         {
-          name:     'LovIT — Plateforme de Rencontres',
-          catLabel: 'Web App',
-          desc:     'Application de rencontres full-stack avec authentification et gestion de profils. Backend Python léger avec persistance MySQL et front-end vanilla JS responsive.'
+          name:     'HospiConnect — Système de Gestion Hospitalière',
+          catLabel: 'Application Web · Santé',
+          desc:     'Application web interne pour la Clinique du Chatelet digitalisant l\'accueil et le suivi des patients, en remplacement des tickets papier et des appels vocaux. File d\'attente intelligente par priorité (Standard / Prioritaire / Urgence), écran d\'affichage salle d\'attente type kiosque avec alertes vocales (Web Speech API), notifications email automatiques sans aucune donnée médicale sensible, transferts interservices sans ressaisie du dossier patient, tableau de bord admin avec statistiques d\'affluence et de temps d\'attente, et journal d\'audit de 12 mois pour la traçabilité hospitalière. Accès différencié par rôle : Superadmin, Admin, Secrétaire, Médecin.'
         },
         {
           name:     'SCRIPX — Monitoring Réseau Ping',
