@@ -626,6 +626,7 @@ button {
     border-radius: var(--radius);
     transition: var(--transition);
 }
+.acard-full { grid-column: 1 / -1; }
 .acard:hover {
     border-color: var(--border-h);
     background: rgba(0,200,255,0.04);

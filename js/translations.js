@@ -55,7 +55,9 @@ window.T = {
       card3_title: 'Infra Monitoring',
       card3_desc:  'Real-time infrastructure monitoring, VPS config and network management.',
       card4_title: 'Data Visualization',
-      card4_desc:  'Dashboards and reports using Power Platform and Python-based solutions.'
+      card4_desc:  'Dashboards and reports using Power Platform and Python-based solutions.',
+      card5_title: 'DevOps & CI/CD',
+      card5_desc:  'Building and maintaining CI/CD pipelines (GitHub Actions, SSH deployments), Docker-based workflows and production server administration — from commit to production.'
     },
 
     skills: {
@@ -309,7 +311,9 @@ window.T = {
       card3_title: 'Monitoring Infra',
       card3_desc:  'Surveillance d\'infrastructure en temps réel, config VPS et gestion réseau.',
       card4_title: 'Visualisation Data',
-      card4_desc:  'Tableaux de bord et rapports avec Power Platform et solutions Python.'
+      card4_desc:  'Tableaux de bord et rapports avec Power Platform et solutions Python.',
+      card5_title: 'DevOps & CI/CD',
+      card5_desc:  'Mise en place et maintenance de pipelines CI/CD (GitHub Actions, déploiements SSH), workflows Docker et administration de serveurs de production — du commit à la production.'
     },
 
     skills: {
