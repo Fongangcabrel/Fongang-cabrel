@@ -186,7 +186,7 @@ window.T = {
           desc:     'Modular business-process automation framework that maps, schedules, and chains custom workflows via a visual React.js UI. FastAPI async orchestration engine with plug-and-play Python modules for enterprise workflows.'
         },
         {
-          name:     'cocosecret.store — E-commerce Web App',
+          name:     'cocosecret.shop — E-commerce Web App',
           catLabel: 'Web App · Live',
           desc:     'Commercially deployed e-commerce platform with a hybrid sales funnel: direct WhatsApp ordering + multi-gateway checkout. Notchpay and Flutterwave payment integration with real-time webhook confirmation.'
         },
@@ -445,7 +445,7 @@ window.T = {
           desc:     'Framework modulaire d\'automatisation de processus qui cartographie, planifie et enchaîne des workflows personnalisés via une interface React.js visuelle. Moteur d\'orchestration FastAPI async pour les workflows d\'entreprise.'
         },
         {
-          name:     'cocosecret.store — Application E-commerce',
+          name:     'cocosecret.shop — Application E-commerce',
           catLabel: 'Web App · En ligne',
           desc:     'Plateforme e-commerce commercialisée avec tunnel de vente hybride : commande directe WhatsApp + paiement multi-gateway. Intégration Notchpay et Flutterwave avec confirmation webhook en temps réel.'
         },

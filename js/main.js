@@ -412,7 +412,7 @@ const projects = [
         demo:     '#'
     },
     {
-        name:     'cocosecret.store — E-commerce Web App',
+        name:     'cocosecret.shop — E-commerce Web App',
         cat:      'web',
         catLabel: 'Web App · Live',
         icon:     'fas fa-shopping-bag',
@@ -420,7 +420,7 @@ const projects = [
         desc:     'Commercially deployed e-commerce platform with a hybrid sales funnel: direct WhatsApp ordering + multi-gateway checkout. Notchpay and Flutterwave payment integration with real-time webhook confirmation.',
         stack:    ['PHP', 'MySQL', 'Notchpay', 'Flutterwave', 'WhatsApp API'],
         github:   '#',
-        demo:     'https://cocosecret.store/landing.php'
+        demo:     'https://cocosecret.shop/landing.php'
     },
     {
         name:     'Coco Italia Beach — Event Ticketing',
