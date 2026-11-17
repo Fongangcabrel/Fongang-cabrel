@@ -1080,3 +1080,30 @@ ul, ol { list-style: none; }
 /* filters stay readable over the photo */
 .more-wrap .filters button { background: rgba(11, 11, 12, .7); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
 .more-wrap .filters button.is-active { background: var(--text); }
+
+/* Pillar details: the arrow is a button; the pillar unfolds a brief and a
+   "where I fit in" list. Arrow always visible (touch), lively on hover/open. */
+.pillar { cursor: pointer; }
+.pillar-arrow { opacity: .9; transform: none; background: transparent; color: var(--accent); border: 1px solid rgba(47, 107, 255, .45); top: 30px; margin-top: 0; }
+.pillar:hover .pillar-arrow { opacity: 1; background: var(--accent); color: #fff; transform: rotate(-45deg) scale(1.08); }
+.pillar.is-open .pillar-arrow { opacity: 1; background: var(--accent); color: #fff; border-color: var(--accent); transform: rotate(90deg) scale(1.08); }
+.pillar.is-open::after { transform: scaleX(1); }
+.pillar.is-open::before { background: var(--accent); color: #fff; }
+.pillar.is-open h3 { color: var(--accent); }
+.pillar-more { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .55s var(--ease); }
+.pillar.is-open .pillar-more { grid-template-rows: 1fr; }
+.pillar-more > div { overflow: hidden; }
+.pillar .pillar-brief { margin-top: 16px; color: var(--ink); font-size: 15px; line-height: 1.65; transform: none !important; }
+.pillar-where { display: block; margin: 16px 0 10px; font-family: var(--f-mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); }
+.pillar-more ul { display: grid; gap: 8px; padding-bottom: 6px; }
+.pillar-more li { position: relative; padding-left: 26px; font-size: 14.5px; color: var(--ink-muted); }
+.pillar-more li::before {
+    content: '✓'; position: absolute; left: 0; top: 1px; width: 18px; height: 18px; border-radius: 50%;
+    display: grid; place-items: center; font-size: 10px; color: #fff; background: var(--accent);
+}
+.pillar.is-open .pillar-more li { animation: whereIn .5s var(--ease) both; }
+.pillar.is-open .pillar-more li:nth-child(2) { animation-delay: .06s; }
+.pillar.is-open .pillar-more li:nth-child(3) { animation-delay: .12s; }
+.pillar.is-open .pillar-more li:nth-child(4) { animation-delay: .18s; }
+@keyframes whereIn { from { opacity: 0; transform: translateX(-10px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .pillar.is-open .pillar-more li { animation: none; } }

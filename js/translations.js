@@ -71,12 +71,63 @@ en: {
     f_edu: 'Studying', v_edu: 'Bachelor in Software Engineering (Data Science), IME',
     f_lang: 'Languages', v_lang: 'French (fluent) · English (technical)',
     f_mail: 'Email',
+    pillars_label: 'Where I fit in',
     pillars: [
-      { t: 'Full-stack development', d: 'Web apps and PWAs, back to front — Python/FastAPI, PHP, React.' },
-      { t: 'Data & automation', d: 'ETL pipelines, SQL Server consolidation, Power Automate flows and Power BI reports that replace manual work.' },
-      { t: 'Infrastructure & monitoring', d: 'Linux servers, VPS setup, network visibility and alerting.' },
-      { t: 'DevOps & CI/CD', d: 'GitHub Actions, SSH deployments, Docker — from commit to production.' },
-      { t: 'Clean architecture', d: 'MVC, SOLID, code written for the next developer, not just the machine.' }
+      {
+        t: 'Full-stack development',
+        d: 'Web apps and PWAs, back to front — Python/FastAPI, PHP, React.',
+        more: 'I build the whole application: the interface people touch, the API that does the work and the database that keeps it all. A PWA is a web app that installs like a mobile app, copes with a weak connection and updates itself — ideal when you don’t want to maintain two separate apps.',
+        where: [
+          'Internal company platforms: management, tracking, multi-level approval',
+          'Online stores and ticketing sites that take real payments',
+          'Field apps as PWAs, used on phones by agents',
+          'Mobile app back-ends: APIs, real time, live tracking'
+        ]
+      },
+      {
+        t: 'Data & automation',
+        d: 'ETL pipelines, SQL Server consolidation, Power Automate flows and Power BI reports that replace manual work.',
+        more: 'The data usually already exists, scattered across files and databases. My job: bring it together, make it reliable and useful — then automate what someone redoes by hand every day.',
+        where: [
+          'Daily reporting turned into a scheduled job of a few minutes',
+          'Automatic alerts when a critical threshold is reached (stock, KPIs)',
+          'Dashboards for managers and leadership',
+          'Flows between Microsoft 365 tools with Power Automate'
+        ]
+      },
+      {
+        t: 'Infrastructure & monitoring',
+        d: 'Linux servers, VPS setup, network visibility and alerting.',
+        more: 'An app is only useful if it stays online. I set up and administer the servers, and I watch what runs so problems are caught before users notice.',
+        where: [
+          'Administering production Linux servers',
+          'Setting up VPS hosting for client applications',
+          'Real-time network monitoring for technical teams',
+          'Uptime dashboards and alerting'
+        ]
+      },
+      {
+        t: 'DevOps & CI/CD',
+        d: 'GitHub Actions, SSH deployments, Docker — from commit to production.',
+        more: 'Ship often without breaking things: every change is tested and deployed automatically, and apps run in identical containers from my laptop to production.',
+        where: [
+          'Automatic deployment pipelines over SSH',
+          'Dockerised applications in production',
+          'Security built into the pipeline: access, secrets, traceability',
+          'Go-live and follow-up after delivery'
+        ]
+      },
+      {
+        t: 'Clean architecture',
+        d: 'MVC, SOLID, code written for the next developer, not just the machine.',
+        more: 'Good code reads like an explanation. I structure projects (MVC, SOLID principles) so they stay easy to evolve — by me or by the next developer.',
+        where: [
+          'Flexible role and permission systems',
+          'Configurable rule engines that change without touching code',
+          'Audit trails and traceability built in from day one',
+          'Picking up and improving existing codebases'
+        ]
+      }
     ]
   },
 
@@ -309,12 +360,63 @@ fr: {
     f_edu: 'Études', v_edu: 'Licence en Génie Logiciel (Data Science), IME',
     f_lang: 'Langues', v_lang: 'Français (courant) · Anglais (technique)',
     f_mail: 'Email',
+    pillars_label: 'Où je me positionne',
     pillars: [
-      { t: 'Développement full-stack', d: 'Applications web et PWA de bout en bout — Python/FastAPI, PHP, React.' },
-      { t: 'Data & automatisation', d: 'Pipelines ETL, consolidation SQL Server, flux Power Automate et rapports Power BI qui remplacent le travail manuel.' },
-      { t: 'Infrastructure & monitoring', d: 'Serveurs Linux, mise en place de VPS, visibilité réseau et alertes.' },
-      { t: 'DevOps & CI/CD', d: 'GitHub Actions, déploiements SSH, Docker — du commit à la production.' },
-      { t: 'Architecture propre', d: 'MVC, SOLID, du code écrit pour le prochain développeur, pas seulement pour la machine.' }
+      {
+        t: 'Développement full-stack',
+        d: 'Applications web et PWA de bout en bout — Python/FastAPI, PHP, React.',
+        more: 'Je construis l’application en entier : l’interface que l’utilisateur touche, l’API qui fait le travail et la base de données qui garde tout. Une PWA, c’est une application web qui s’installe comme une app mobile, fonctionne même avec une connexion faible et se met à jour toute seule — idéal quand on ne veut pas maintenir deux applications.',
+        where: [
+          'Plateformes internes d’entreprise : gestion, suivi, validation multi-niveaux',
+          'Boutiques et billetteries en ligne qui encaissent de vrais paiements',
+          'Applications de terrain en PWA, utilisées sur téléphone par des agents',
+          'Back-ends d’apps mobiles : API, temps réel, suivi en direct'
+        ]
+      },
+      {
+        t: 'Data & automatisation',
+        d: 'Pipelines ETL, consolidation SQL Server, flux Power Automate et rapports Power BI qui remplacent le travail manuel.',
+        more: 'Les données existent souvent déjà, éparpillées dans des fichiers et des bases. Mon rôle : les rassembler, les fiabiliser et les rendre utiles — puis automatiser ce que quelqu’un refait à la main chaque jour.',
+        where: [
+          'Reporting quotidien transformé en tâche planifiée de quelques minutes',
+          'Alertes automatiques quand un seuil critique est atteint (stocks, indicateurs)',
+          'Tableaux de bord pour les managers et la direction',
+          'Flux entre les outils Microsoft 365 avec Power Automate'
+        ]
+      },
+      {
+        t: 'Infrastructure & monitoring',
+        d: 'Serveurs Linux, mise en place de VPS, visibilité réseau et alertes.',
+        more: 'Une application n’est utile que si elle reste en ligne. Je mets en place et j’administre les serveurs, et je surveille ce qui tourne pour repérer un problème avant les utilisateurs.',
+        where: [
+          'Administration de serveurs Linux de production',
+          'Mise en place de VPS pour héberger des applications clientes',
+          'Surveillance réseau en temps réel pour les équipes techniques',
+          'Tableaux de bord de disponibilité et alertes'
+        ]
+      },
+      {
+        t: 'DevOps & CI/CD',
+        d: 'GitHub Actions, déploiements SSH, Docker — du commit à la production.',
+        more: 'Livrer souvent sans rien casser : chaque modification est testée puis déployée automatiquement, et les applications tournent dans des conteneurs identiques de mon poste jusqu’à la production.',
+        where: [
+          'Pipelines de déploiement automatique via SSH',
+          'Applications conteneurisées avec Docker en production',
+          'Sécurité intégrée au pipeline : accès, secrets, traçabilité',
+          'Mise en production et suivi après livraison'
+        ]
+      },
+      {
+        t: 'Architecture propre',
+        d: 'MVC, SOLID, du code écrit pour le prochain développeur, pas seulement pour la machine.',
+        more: 'Un bon code se lit comme une explication. Je structure les projets (MVC, principes SOLID) pour qu’ils restent faciles à faire évoluer — par moi ou par le prochain développeur.',
+        where: [
+          'Systèmes de rôles et de permissions flexibles',
+          'Moteurs de règles configurables sans toucher au code',
+          'Journaux d’audit et traçabilité intégrés dès la conception',
+          'Reprise et amélioration de bases de code existantes'
+        ]
+      }
     ]
   },
 

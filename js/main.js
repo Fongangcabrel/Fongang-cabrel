@@ -311,7 +311,17 @@ function renderStatement() {
 }
 
 function renderPillars() {
-    $('#pillars').innerHTML = T().about.pillars.map(p => `<li class="pillar"><h3>${p.t}</h3><p>${p.d}</p><span class="pillar-arrow" aria-hidden="true">→</span></li>`).join('');
+    const ta = T().about;
+    $('#pillars').innerHTML = ta.pillars.map((p, i) => `
+        <li class="pillar">
+            <h3>${p.t}</h3><p>${p.d}</p>
+            <button class="pillar-arrow" type="button" aria-expanded="false" aria-controls="pmore${i}" aria-label="${esc(ta.pillars_label)} — ${esc(p.t)}">→</button>
+            <div class="pillar-more" id="pmore${i}"><div>
+                <p class="pillar-brief">${p.more}</p>
+                <span class="pillar-where">${ta.pillars_label}</span>
+                <ul>${p.where.map(w => `<li>${w}</li>`).join('')}</ul>
+            </div></div>
+        </li>`).join('');
 }
 
 function linksHTML(p, tw, cls) {
@@ -685,6 +695,18 @@ marquee.addEventListener('click', e => {
     }
 });
 window.addEventListener('scroll', hideTip, { passive: true });
+
+// About pillars: clicking a pillar (or its arrow) unfolds a short brief and
+// "where I fit in"; one open at a time.
+$('#pillars').addEventListener('click', e => {
+    const pillar = e.target.closest('.pillar');
+    if (!pillar) return;
+    const open = !pillar.classList.contains('is-open');
+    $$('#pillars .pillar.is-open').forEach(p => { p.classList.remove('is-open'); $('.pillar-arrow', p).setAttribute('aria-expanded', 'false'); });
+    pillar.classList.toggle('is-open', open);
+    $('.pillar-arrow', pillar).setAttribute('aria-expanded', open);
+    refreshSoon();
+});
 
 // About pillars: the hover glow follows the cursor
 $('#pillars').addEventListener('mousemove', e => {
