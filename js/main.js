@@ -63,7 +63,8 @@ const JOBS = [
 const SKILLS = {
     backend:  [['Python', 3], ['PHP', 2], ['FastAPI', 2], ['Laravel', 2], ['SQLAlchemy', 2], ['REST APIs', 2], ['WebSockets', 2], ['AsyncIO', 2]],
     frontend: [['HTML5 / CSS3', 3], ['JavaScript', 2], ['TypeScript', 2], ['React.js', 2], ['React Native', 2], ['Chart.js', 2], ['PWA / Ajax', 2]],
-    data:     [['SQL Server', 3], ['T-SQL', 2], ['SQL Server Agent', 2], ['PostgreSQL', 2], ['MySQL', 2], ['SQLite (WAL)', 2], ['Redis', 2], ['Pandas / ETL', 2], ['Power Platform', 2]],
+    data:     [['SQL Server', 3], ['T-SQL', 2], ['SQL Server Agent', 2], ['PostgreSQL', 2], ['MySQL', 2], ['SQLite (WAL)', 2], ['Redis', 2], ['Pandas / ETL', 2]],
+    microsoft: [['Power BI', 2], ['Power Apps', 2], ['Power Automate', 2], ['Microsoft 365', 2], ['SharePoint', 2], ['Teams', 2]],
     infra:    [['Debian admin', 2], ['Linux CLI', 2], ['GitHub Actions', 2], ['SSH', 2], ['Nginx', 2], ['PowerShell', 2], ['Docker', 2], ['Grafana', 2], ['Zabbix', 1], ['VMware', 1], ['Cisco Packet Tracer', 1], ['SAP BTP', 1], ['AWS', 1]],
     methods:  [['Notion', 3], ['Payment APIs', 2], ['MVC · SOLID', 2], ['Scrum / Kanban', 2], ['SDLC', 2], ['UML', 2]]
 };
@@ -71,13 +72,15 @@ const SKILLS = {
 /* Digital transformation is the "mother concept": full-width card first,
    every other service is an illustrated card below it. */
 const SERVICE_HERO  = 'transformation';
-const SERVICES_ART  = ['web', 'devops', 'devsecops', 'payment', 'cloud', 'automation', 'mobile', 'data', 'sql', 'saas', 'monitoring', 'pm', 'maintenance'];
-const SERVICES_WIDE = ['web', 'data'];
+const SERVICES_ART  = ['powerplatform', 'web', 'devops', 'devsecops', 'payment', 'cloud', 'automation', 'mobile', 'data', 'sql', 'saas', 'monitoring', 'pm', 'maintenance'];
+const SERVICES_WIDE = ['powerplatform', 'web', 'data', 'monitoring'];
 
 /* [label, icon in assets/icons — name of a Devicon SVG (MIT), or a file with extension] */
 const MARQUEE_A = [
     ['Python', 'python'], ['PHP', 'php'], ['FastAPI', 'fastapi'], ['Laravel', 'laravel'],
     ['PostgreSQL', 'postgresql'], ['MySQL', 'mysql'], ['SQL Server', 'sqlserver.png'],
+    ['Power BI', 'powerbi'], ['Power Apps', 'powerapps'], ['Power Automate', 'powerautomate'],
+    ['Microsoft 365', 'microsoft365'], ['SharePoint', 'sharepoint'], ['Teams', 'teams'],
     ['React', 'react'], ['TypeScript', 'typescript'], ['Docker', 'docker'], ['Grafana', 'grafana'],
     ['GitHub Actions', 'githubactions'], ['Debian', 'debian'], ['Nginx', 'nginx'], ['Redis', 'redis']
 ];
@@ -186,6 +189,25 @@ const ART = {
             <circle cx="152" cy="104" r="15" style="fill:none;stroke:var(--text);stroke-width:7;stroke-dasharray:4.71 4.71"/>
             <circle cx="152" cy="104" r="11" style="fill:#c9c8c4"/><circle cx="152" cy="104" r="4" style="fill:#131418"/>
         </g>
+    </svg>`,
+
+    powerplatform: `<svg class="ill ill-pp" viewBox="0 0 260 160" aria-hidden="true">
+        <path class="pp-wire" style="--i:0" d="M130 80 L56 42"/>
+        <path class="pp-wire" style="--i:1" d="M130 80 L56 118"/>
+        <path class="pp-wire" style="--i:2" d="M130 80 L204 80"/>
+        <g class="tile" style="--i:0"><rect x="34" y="20" width="44" height="44" rx="10" style="fill:#F2C811"/>
+            ${[[43, 46, 10], [53, 38, 18], [63, 30, 26]].map(([x, y, h], i) => `<rect class="bibar" style="--i:${i}" x="${x}" y="${y}" width="7" height="${h}" rx="1.5" fill="#3a3a3a"/>`).join('')}</g>
+        <g class="tile" style="--i:1"><rect x="34" y="96" width="44" height="44" rx="10" style="fill:#742774"/>
+            <rect x="48" y="104" width="16" height="28" rx="3.5" style="fill:none;stroke:#fff;stroke-width:2"/><circle cx="56" cy="127" r="1.6" fill="#fff"/></g>
+        <g class="tile" style="--i:2"><rect x="182" y="58" width="44" height="44" rx="10" style="fill:#0066FF"/>
+            <path class="chev" d="M193 72 l9 8 l-9 8 M204 72 l9 8 l-9 8" style="fill:none;stroke:#fff;stroke-width:3;stroke-linecap:round;stroke-linejoin:round"/></g>
+        <g class="hub"><circle cx="130" cy="80" r="26" style="fill:#f4f3ef"/>
+            <rect x="119" y="69" width="10" height="10" fill="#F25022"/><rect x="130" y="69" width="10" height="10" fill="#7FBA00"/>
+            <rect x="119" y="80" width="10" height="10" fill="#00A4EF"/><rect x="130" y="80" width="10" height="10" fill="#FFB900"/></g>
+        <text x="56" y="76" text-anchor="middle">POWER BI</text>
+        <text x="56" y="152" text-anchor="middle">POWER APPS</text>
+        <text x="204" y="114" text-anchor="middle">AUTOMATE</text>
+        <text x="130" y="122" text-anchor="middle">M365</text>
     </svg>`,
 
     mobile: `<svg class="ill ill-mobile" viewBox="0 0 260 160" aria-hidden="true">
@@ -447,6 +469,25 @@ function splitStartupTitle() {
 }
 
 /* ─────────────────────────── i18n ────────────────────────────── */
+/* Hero: one word of the intro keeps changing (digital platforms → business
+   apps → automations…). Restarted on every language switch. */
+let rotTimer = null;
+function startRotator() {
+    clearInterval(rotTimer);
+    const el = $('.hero-desc .rot');
+    const words = T().hero.rotate;
+    if (!el || !words || prefersReduced) return;
+    let i = 0;
+    rotTimer = setInterval(() => {
+        i = (i + 1) % words.length;
+        if (!MOTION) { el.textContent = words[i]; return; }
+        gsap.to(el, { yPercent: -70, opacity: 0, filter: 'blur(4px)', duration: .35, ease: 'power2.in', onComplete: () => {
+            el.textContent = words[i];
+            gsap.fromTo(el, { yPercent: 70, opacity: 0, filter: 'blur(4px)' }, { yPercent: 0, opacity: 1, filter: 'blur(0px)', duration: .5, ease: 'power3.out' });
+        } });
+    }, 2600);
+}
+
 function setLang(code, first) {
     if (!window.T[code]) code = 'en';
     LANG = code;
@@ -476,6 +517,7 @@ function setLang(code, first) {
     renderStack();
     renderServices();
     observeVisible();
+    startRotator();
 
     if (!first && MOTION) {
         buildStatementScrub();
@@ -894,8 +936,9 @@ function initScroll() {
 
     // background images drift slower than the page
     gsap.fromTo('.more-bg', { yPercent: -8 }, { yPercent: 8, ease: 'none', scrollTrigger: { trigger: '.more-wrap', start: 'top bottom', end: 'bottom top', scrub: true } });
-    gsap.fromTo('.startup-bg', { yPercent: -6 }, { yPercent: 10, ease: 'none', scrollTrigger: { trigger: '#hellootech', start: 'top bottom', end: 'bottom top', scrub: true } });
     gsap.fromTo('.contact-think', { opacity: 0 }, { opacity: .3, duration: 1.6, ease: 'power3.out', scrollTrigger: { trigger: '#contact', start: 'top 70%' } });
+
+    gsap.fromTo('.edu-bg', { yPercent: -8 }, { yPercent: 8, ease: 'none', scrollTrigger: { trigger: '.edu', start: 'top bottom', end: 'bottom top', scrub: true } });
 
     // experience timeline draws itself
     gsap.to('#tlProgress', { scaleY: 1, ease: 'none', scrollTrigger: { trigger: '#timeline', start: 'top 70%', end: 'bottom 60%', scrub: true } });

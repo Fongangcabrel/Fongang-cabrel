@@ -23,7 +23,8 @@ en: {
   hero: {
     eyebrow: 'Software engineer · Full-stack & DevSecOps',
     title: { text: 'I build software that', accent: 'businesses run on.' },
-    desc: 'I’m FONGANG Cabrel, a developer based in Douala, Cameroon. I design, ship and run digital platforms end to end — from the FastAPI back-end to the Debian server it lives on. My KPI platform, <strong>KPIFlow</strong>, is used company-wide at BEETLE HERITAGE HOLDING.',
+    desc: 'I’m FONGANG Cabrel, a developer in Douala, Cameroon. I turn ideas into <span class="rot">digital platforms</span> that actually run — from the FastAPI back-end to the Debian server that hosts them. My latest pride: <strong>KPIFlow</strong>, now used company-wide at BEETLE HERITAGE HOLDING.',
+    rotate: ['digital platforms', 'business apps', 'automations', 'live dashboards', 'Power Platform solutions'],
     btn_work: 'See my work',
     btn_contact: 'Get in touch',
     stat1: 'projects shipped',
@@ -38,14 +39,14 @@ en: {
     label: 'About',
     statement: 'I didn’t get into this to write code for its own sake. What I enjoy is taking a messy, manual process — an Excel file passed around by email, someone pinging servers by hand — and replacing it with a system people actually trust.',
     p1: 'Every project starts with the same question: <em>what decision does this need to enable?</em> At BEETLE that meant replacing a company-wide Excel KPI cycle with <strong>KPIFlow</strong>. For a beach festival in Italy it meant a ticketing site that takes real payments. For a network team it meant a script that ends manual pinging.',
-    p2: 'My profile sits between <strong>back-end development</strong>, data and infrastructure, so I can follow a problem from the database schema to the deployment pipeline. Right now I’m building my AWS skills from the ground up, with one goal: becoming a <strong>Platform Engineer</strong> (full-stack + DevOps).',
+    p2: 'My profile sits between <strong>back-end development</strong>, data and infrastructure, so I can follow a problem from the database schema to the deployment pipeline. I also work across the <strong>Microsoft 365</strong> ecosystem, with a strong focus on <strong>Power Platform</strong> (Power Apps, Power Automate, Power BI) to digitise business processes fast. Right now I’m building my AWS skills from the ground up, with one goal: becoming a <strong>Platform Engineer</strong> (full-stack + DevOps).',
     f_location: 'Based in', v_location: 'Douala-Yassa, Cameroon · open to remote',
     f_edu: 'Studying', v_edu: 'Bachelor in Software Engineering (Data Science), IME',
     f_lang: 'Languages', v_lang: 'French (fluent) · English (technical)',
     f_mail: 'Email',
     pillars: [
       { t: 'Full-stack development', d: 'Web apps and PWAs, back to front — Python/FastAPI, PHP, React.' },
-      { t: 'Data & automation', d: 'ETL pipelines, SQL Server consolidation, scheduled jobs that replace manual reporting.' },
+      { t: 'Data & automation', d: 'ETL pipelines, SQL Server consolidation, Power Automate flows and Power BI reports that replace manual work.' },
       { t: 'Infrastructure & monitoring', d: 'Linux servers, VPS setup, network visibility and alerting.' },
       { t: 'DevOps & CI/CD', d: 'GitHub Actions, SSH deployments, Docker — from commit to production.' },
       { t: 'Clean architecture', d: 'MVC, SOLID, code written for the next developer, not just the machine.' }
@@ -55,7 +56,7 @@ en: {
   work: {
     label: 'Selected work',
     title: 'Things I’ve built',
-    intro: 'The projects I’m proudest of, then the rest. Most of them are internal tools, so the code isn’t public — happy to walk you through any of them in a call.',
+    intro: 'Every project here matters to me — each one solved a real problem for real people. Three take the spotlight, but I could talk about any of them for hours. Most are internal tools, so the code isn’t public: I’m happy to demo any of them on a call.',
     more_title: 'More projects',
     f_all: 'All', f_web: 'Web apps', f_data: 'Data & automation', f_infra: 'Infrastructure',
     live: 'Visit live site',
@@ -173,7 +174,7 @@ en: {
     title: 'Tools I reach for',
     intro: 'No percentages — just an honest idea of what I use every day, what I’m comfortable with, and what I’m still learning.',
     legend: { 3: 'Daily driver', 2: 'Comfortable', 1: 'Learning' },
-    groups: { backend: 'Back-end', frontend: 'Front-end & mobile', data: 'Data & databases', infra: 'Infra & DevOps', methods: 'Payments & methods' }
+    groups: { backend: 'Back-end', frontend: 'Front-end & mobile', data: 'Data & databases', microsoft: 'Microsoft 365 & Power Platform', infra: 'Infra & DevOps', methods: 'Payments & methods' }
   },
 
   startup: {
@@ -182,6 +183,7 @@ en: {
     desc: 'HellooTech is the startup I founded to help businesses go digital — from the first web app to the server it runs on. Small team, direct contact, and we stay around after launch.',
     btn_visit: 'Visit hellootech',
     svcs: {
+      powerplatform:  { t: 'Microsoft 365 & Power Platform', d: 'Business apps with Power Apps, automated flows with Power Automate and Power BI reports — built on the Microsoft 365 tools your team already uses: SharePoint, Teams, Excel.' },
       web:            { t: 'Full-stack web & PWA', d: 'Fast, installable web apps — designed, built and maintained end to end.' },
       devops:         { t: 'DevOps & CI/CD', d: 'Automated pipelines: build, test and deploy on every push.' },
       devsecops:      { t: 'DevSecOps', d: 'Security baked into the pipeline: access control, audit trails, hardened servers.' },
@@ -232,7 +234,8 @@ fr: {
   hero: {
     eyebrow: 'Ingénieur logiciel · Full-stack & DevSecOps',
     title: { text: 'Je conçois des logiciels qui font', accent: 'tourner les entreprises.' },
-    desc: 'Moi c’est FONGANG Cabrel, développeur basé à Douala, au Cameroun. Je conçois, livre et fais tourner des plateformes digitales de bout en bout — du back-end FastAPI jusqu’au serveur Debian qui l’héberge. Ma plateforme de KPI, <strong>KPIFlow</strong>, est utilisée dans toute l’entreprise chez BEETLE HERITAGE HOLDING.',
+    desc: 'Moi c’est FONGANG Cabrel, développeur à Douala, au Cameroun. Je transforme des idées en <span class="rot">plateformes digitales</span> qui tournent pour de vrai — du back-end FastAPI jusqu’au serveur Debian qui les héberge. Ma dernière fierté : <strong>KPIFlow</strong>, utilisée aujourd’hui dans toute l’entreprise chez BEETLE HERITAGE HOLDING.',
+    rotate: ['plateformes digitales', 'applications métier', 'automatisations', 'tableaux de bord vivants', 'solutions Power Platform'],
     btn_work: 'Voir mes projets',
     btn_contact: 'Me contacter',
     stat1: 'projets réalisés',
@@ -247,14 +250,14 @@ fr: {
     label: 'À propos',
     statement: 'Je ne suis pas venu à l’informatique pour écrire du code pour le code. Ce que j’aime, c’est prendre un processus manuel et bancal — un fichier Excel qui circule par mail, quelqu’un qui ping ses serveurs à la main — et le remplacer par un système auquel les gens font confiance.',
     p1: 'Chaque projet commence par la même question : <em>quelle décision doit-il rendre possible ?</em> Chez BEETLE, ça voulait dire remplacer le suivi des KPI sous Excel de toute l’entreprise par <strong>KPIFlow</strong>. Pour un festival de plage en Italie, une billetterie qui encaisse de vrais paiements. Pour une équipe réseau, un script qui met fin aux pings manuels.',
-    p2: 'Mon profil se situe entre le <strong>développement back-end</strong>, la data et l’infrastructure : je peux suivre un problème du schéma de base de données jusqu’au pipeline de déploiement. En ce moment, je monte en compétences sur AWS en partant de zéro, avec un objectif : devenir <strong>Platform Engineer</strong> (full-stack + DevOps).',
+    p2: 'Mon profil se situe entre le <strong>développement back-end</strong>, la data et l’infrastructure : je peux suivre un problème du schéma de base de données jusqu’au pipeline de déploiement. Je travaille aussi dans l’écosystème <strong>Microsoft 365</strong>, avec un fort accent sur la <strong>Power Platform</strong> (Power Apps, Power Automate, Power BI) pour digitaliser rapidement les processus métier. En ce moment, je monte en compétences sur AWS en partant de zéro, avec un objectif : devenir <strong>Platform Engineer</strong> (full-stack + DevOps).',
     f_location: 'Basé à', v_location: 'Douala-Yassa, Cameroun · ouvert au remote',
     f_edu: 'Études', v_edu: 'Licence en Génie Logiciel (Data Science), IME',
     f_lang: 'Langues', v_lang: 'Français (courant) · Anglais (technique)',
     f_mail: 'Email',
     pillars: [
       { t: 'Développement full-stack', d: 'Applications web et PWA de bout en bout — Python/FastAPI, PHP, React.' },
-      { t: 'Data & automatisation', d: 'Pipelines ETL, consolidation SQL Server, jobs planifiés qui remplacent le reporting manuel.' },
+      { t: 'Data & automatisation', d: 'Pipelines ETL, consolidation SQL Server, flux Power Automate et rapports Power BI qui remplacent le travail manuel.' },
       { t: 'Infrastructure & monitoring', d: 'Serveurs Linux, mise en place de VPS, visibilité réseau et alertes.' },
       { t: 'DevOps & CI/CD', d: 'GitHub Actions, déploiements SSH, Docker — du commit à la production.' },
       { t: 'Architecture propre', d: 'MVC, SOLID, du code écrit pour le prochain développeur, pas seulement pour la machine.' }
@@ -264,7 +267,7 @@ fr: {
   work: {
     label: 'Projets choisis',
     title: 'Ce que j’ai construit',
-    intro: 'Les projets dont je suis le plus fier, puis le reste. La plupart sont des outils internes, donc le code n’est pas public — je peux vous en faire la démo lors d’un appel.',
+    intro: 'Chaque projet ici compte pour moi — chacun a résolu un vrai problème pour de vraies personnes. Trois sont mis en avant, mais je pourrais vous parler de tous pendant des heures. La plupart sont des outils internes, donc le code n’est pas public : je vous en fais volontiers la démo lors d’un appel.',
     more_title: 'Autres projets',
     f_all: 'Tous', f_web: 'Applications web', f_data: 'Data & automatisation', f_infra: 'Infrastructure',
     live: 'Voir le site',
@@ -382,7 +385,7 @@ fr: {
     title: 'Mes outils',
     intro: 'Pas de pourcentages — juste une idée honnête de ce que j’utilise tous les jours, de ce que je maîtrise et de ce que j’apprends encore.',
     legend: { 3: 'Au quotidien', 2: 'À l’aise', 1: 'En apprentissage' },
-    groups: { backend: 'Back-end', frontend: 'Front-end & mobile', data: 'Data & bases de données', infra: 'Infra & DevOps', methods: 'Paiement & méthodes' }
+    groups: { backend: 'Back-end', frontend: 'Front-end & mobile', data: 'Data & bases de données', microsoft: 'Microsoft 365 & Power Platform', infra: 'Infra & DevOps', methods: 'Paiement & méthodes' }
   },
 
   startup: {
@@ -391,6 +394,7 @@ fr: {
     desc: 'HellooTech, c’est la startup que j’ai fondée pour accompagner les entreprises dans leur passage au numérique — de la première application web jusqu’au serveur qui la fait tourner. Petite équipe, contact direct, et on reste là après la mise en ligne.',
     btn_visit: 'Visiter hellootech',
     svcs: {
+      powerplatform:  { t: 'Microsoft 365 & Power Platform', d: 'Applications métier avec Power Apps, flux automatisés avec Power Automate et rapports Power BI — sur les outils Microsoft 365 que votre équipe utilise déjà : SharePoint, Teams, Excel.' },
       web:            { t: 'Web full-stack & PWA', d: 'Des applications web rapides et installables — conçues, développées et maintenues de bout en bout.' },
       devops:         { t: 'DevOps & CI/CD', d: 'Des pipelines automatisés : build, tests et déploiement à chaque push.' },
       devsecops:      { t: 'DevSecOps', d: 'La sécurité intégrée au pipeline : contrôle d’accès, traçabilité, serveurs durcis.' },
