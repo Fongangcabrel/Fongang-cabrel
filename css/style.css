@@ -822,8 +822,8 @@ ul, ol { list-style: none; }
 .more-bg img:nth-child(2) { animation-delay: -6s; }
 @keyframes moreSwap {
     0%   { opacity: 0;   transform: scale(1.08); }
-    8%   { opacity: .8; }
-    45%  { opacity: .8; }
+    8%   { opacity: .55; }
+    45%  { opacity: .55; }
     55%  { opacity: 0;   transform: scale(1); }
     100% { opacity: 0;   transform: scale(1); }
 }
@@ -1014,16 +1014,41 @@ ul, ol { list-style: none; }
 .tip-title { font-family: var(--f-display); font-size: 16px; font-weight: 600; letter-spacing: -.01em; color: var(--text); }
 .tip-desc { font-size: 13px; line-height: 1.45; color: var(--muted); }
 
-/* Stack: "Full stack development" artwork at its own size, top-right, faded */
+/* Stack: "Full stack development" artwork as a full-section background,
+   softened and dimmed so the tool lists stay readable. */
 .stack { overflow: hidden; }
-.stack > .container { position: relative; z-index: 1; }
+.stack > .container { position: relative; z-index: 2; }
 .stack-bg {
-    position: absolute; z-index: 0; pointer-events: none;
-    /* sits in the free space between the title and the intro text */
-    top: clamp(70px, 7vw, 110px); left: calc(50% - 240px);
-    width: clamp(240px, 23vw, 330px); height: auto; border-radius: 50%;
-    opacity: .5; animation: floaty 8s ease-in-out infinite;
-    -webkit-mask-image: radial-gradient(circle at 50% 50%, #000 40%, transparent 70%);
-            mask-image: radial-gradient(circle at 50% 50%, #000 40%, transparent 70%);
+    position: absolute; inset: 0; z-index: 0; pointer-events: none;
+    width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%;
+    filter: blur(3px) saturate(1.25) brightness(.8); opacity: .6;
+    animation: stackDrift 24s ease-in-out infinite alternate;
 }
-@media (max-width: 960px) { .stack-bg { width: 200px; top: 24px; left: auto; right: -40px; opacity: .16; } }
+.stack::before {
+    content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none;   /* above the image, below the content */
+    background:
+        linear-gradient(180deg, rgba(17, 17, 19, .55) 0%, rgba(17, 17, 19, .78) 35%, rgba(17, 17, 19, .9) 100%),
+        linear-gradient(90deg, rgba(17, 17, 19, .5), transparent 50%, rgba(17, 17, 19, .5));
+}
+@keyframes stackDrift { from { transform: scale(1.06); } to { transform: scale(1.14) translateY(-1.5%); } }
+@media (prefers-reduced-motion: reduce) { .stack-bg { animation: none; transform: scale(1.06); } }
+
+/* Project rows: the hovered row pops out (grows, lifts, card background),
+   the others fade back so the eye lands on it. */
+.prow { transition: transform .5s var(--ease), opacity .4s, box-shadow .5s; border-radius: 14px; }
+.prow::before { border-radius: 14px; border: 1px solid transparent; transition: transform .5s var(--ease), border-color .4s; }
+.prow-name { transform-origin: left center; }
+@media (hover: hover) {
+    .proj-list:hover .prow:not(:hover):not(.is-open) { opacity: .45; }
+    .prow:hover {
+        transform: scale(1.03); z-index: 2;
+        box-shadow: 0 24px 50px -24px rgba(0, 0, 0, .9);
+    }
+    .prow:hover::before { background: rgba(24, 24, 28, .94); border-color: rgba(93, 141, 255, .35); }
+    .prow:hover .prow-name { transform: translateX(10px) scale(1.06); }
+    .prow:hover .prow-cat { color: var(--accent-hi); }
+    .prow:hover .prow-icon { background: var(--accent); border-color: var(--accent); }
+}
+/* filters stay readable over the photo */
+.more-wrap .filters button { background: rgba(11, 11, 12, .7); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+.more-wrap .filters button.is-active { background: var(--text); }

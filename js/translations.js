@@ -64,7 +64,7 @@ en: {
 
   about: {
     label: 'About',
-    statement: 'I didn’t get into this to write code for its own sake. What I enjoy is taking a messy, manual process — an Excel file passed around by email, someone pinging servers by hand — and replacing it with a system people actually trust.',
+    statement: 'I didn’t get into this to write code for its own sake. What I love is starting from a real need — a team slowed down by its tools, data that sits unused, an idea still waiting for its platform — and turning it into a system people actually trust.',
     p1: 'Every project starts with the same question: <em>what decision does this need to enable?</em> At BEETLE that meant replacing a company-wide Excel KPI cycle with <strong>KPIFlow</strong>. For a beach festival in Italy it meant a ticketing site that takes real payments. For a network team it meant a script that ends manual pinging.',
     p2: 'My profile sits between <strong>back-end development</strong>, data and infrastructure, so I can follow a problem from the database schema to the deployment pipeline. I also work across the <strong>Microsoft 365</strong> ecosystem, with a strong focus on <strong>Power Platform</strong> (Power Apps, Power Automate, Power BI) to digitise business processes fast. Right now I’m building my AWS skills from the ground up, with one goal: becoming a <strong>Platform Engineer</strong> (full-stack + DevOps).',
     f_location: 'Based in', v_location: 'Douala-Yassa, Cameroon · open to remote',
@@ -302,7 +302,7 @@ fr: {
 
   about: {
     label: 'À propos',
-    statement: 'Je ne suis pas venu à l’informatique pour écrire du code pour le code. Ce que j’aime, c’est prendre un processus manuel et bancal — un fichier Excel qui circule par mail, quelqu’un qui ping ses serveurs à la main — et le remplacer par un système auquel les gens font confiance.',
+    statement: 'Je ne suis pas venu à l’informatique pour écrire du code pour le code. Ce que j’aime, c’est partir d’un vrai besoin — une équipe freinée par ses outils, des données qui dorment, une idée qui attend encore sa plateforme — et le transformer en un système auquel les gens font confiance.',
     p1: 'Chaque projet commence par la même question : <em>quelle décision doit-il rendre possible ?</em> Chez BEETLE, ça voulait dire remplacer le suivi des KPI sous Excel de toute l’entreprise par <strong>KPIFlow</strong>. Pour un festival de plage en Italie, une billetterie qui encaisse de vrais paiements. Pour une équipe réseau, un script qui met fin aux pings manuels.',
     p2: 'Mon profil se situe entre le <strong>développement back-end</strong>, la data et l’infrastructure : je peux suivre un problème du schéma de base de données jusqu’au pipeline de déploiement. Je travaille aussi dans l’écosystème <strong>Microsoft 365</strong>, avec un fort accent sur la <strong>Power Platform</strong> (Power Apps, Power Automate, Power BI) pour digitaliser rapidement les processus métier. En ce moment, je monte en compétences sur AWS en partant de zéro, avec un objectif : devenir <strong>Platform Engineer</strong> (full-stack + DevOps).',
     f_location: 'Basé à', v_location: 'Douala-Yassa, Cameroun · ouvert au remote',
