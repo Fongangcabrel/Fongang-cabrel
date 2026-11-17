@@ -23,7 +23,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css?v=20261117c">
+    <link rel="stylesheet" href="css/style.css?v=20261117d">
 </head>
 <body>
 
@@ -170,6 +170,8 @@
 
         <div class="featured" id="featured"></div>
 
+        <div class="more-wrap">
+        <div class="more-bg" aria-hidden="true"></div>
         <div class="more-head">
             <h3 data-i18n="work.more_title">More projects</h3>
             <div class="filters" id="filters" role="group">
@@ -180,6 +182,7 @@
             </div>
         </div>
         <ul class="proj-list" id="projList"></ul>
+        </div>
     </div>
 </section>
 
@@ -219,8 +222,12 @@
 
 <!-- ═══════════════ HELLOOTECH ═══════════════ -->
 <section class="section startup" id="hellootech">
+    <div class="startup-bg" aria-hidden="true">
+        <img src="assets/img/bg-dt2.jpg" alt="" loading="lazy">
+        <img src="assets/img/bg-dt1.jpg" alt="" loading="lazy">
+    </div>
     <div class="container">
-        <div class="sec-head"><span class="sec-num">05</span><span data-i18n="startup.label">My studio</span></div>
+        <div class="sec-head"><span class="sec-num">05</span><span data-i18n="startup.label">My startup</span></div>
 
         <div class="startup-top">
             <h2 class="startup-title">HellooTech<span class="serif" data-i18n="startup.tagline">Custom digital solutions</span></h2>
@@ -238,12 +245,12 @@
         </div>
 
         <div class="bento" id="bento"></div>
-        <ul class="svc-more" id="svcMore"></ul>
     </div>
 </section>
 
 <!-- ═══════════════ CONTACT ═══════════════ -->
 <section class="section contact" id="contact">
+    <img class="contact-think" src="assets/img/thinking.png" width="196" height="133" alt="" aria-hidden="true" loading="lazy">
     <div class="container">
         <div class="sec-head"><span class="sec-num">06</span><span data-i18n="contact.label">Contact</span></div>
         <h2 class="contact-title" data-i18n-html="contact.title"></h2>
@@ -306,7 +313,7 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="js/translations.js?v=20261117c"></script>
-<script src="js/main.js?v=20261117c"></script>
+<script src="js/translations.js?v=20261117d"></script>
+<script src="js/main.js?v=20261117d"></script>
 </body>
 </html>

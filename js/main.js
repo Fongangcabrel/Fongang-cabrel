@@ -68,9 +68,11 @@ const SKILLS = {
     methods:  [['Notion', 3], ['Payment APIs', 2], ['MVC · SOLID', 2], ['Scrum / Kanban', 2], ['SDLC', 2], ['UML', 2]]
 };
 
-const SERVICES_ART  = ['web', 'devops', 'devsecops', 'payment', 'cloud', 'automation', 'transformation'];
-const SERVICES_WIDE = ['web', 'transformation'];
-const SERVICES_MORE = ['mobile', 'data', 'sql', 'saas', 'monitoring', 'pm', 'maintenance'];
+/* Digital transformation is the "mother concept": full-width card first,
+   every other service is an illustrated card below it. */
+const SERVICE_HERO  = 'transformation';
+const SERVICES_ART  = ['web', 'devops', 'devsecops', 'payment', 'cloud', 'automation', 'mobile', 'data', 'sql', 'saas', 'monitoring', 'pm', 'maintenance'];
+const SERVICES_WIDE = ['web', 'data'];
 
 /* [label, icon in assets/icons — name of a Devicon SVG (MIT), or a file with extension] */
 const MARQUEE_A = [
@@ -184,6 +186,69 @@ const ART = {
             <circle cx="152" cy="104" r="15" style="fill:none;stroke:var(--text);stroke-width:7;stroke-dasharray:4.71 4.71"/>
             <circle cx="152" cy="104" r="11" style="fill:#c9c8c4"/><circle cx="152" cy="104" r="4" style="fill:#131418"/>
         </g>
+    </svg>`,
+
+    mobile: `<svg class="ill ill-mobile" viewBox="0 0 260 160" aria-hidden="true">
+        <rect x="66" y="30" width="54" height="110" rx="10" transform="rotate(-10 93 85)" style="fill:#18181c;stroke:var(--line-2);stroke-width:1.5"/>
+        <rect x="74" y="44" width="38" height="8" rx="4" transform="rotate(-10 93 85)" class="fl"/>
+        <rect x="74" y="58" width="28" height="8" rx="4" transform="rotate(-10 93 85)" class="fl"/>
+        <rect x="112" y="16" width="64" height="130" rx="12" style="fill:#1c1c20;stroke:var(--line-2);stroke-width:1.5"/>
+        <rect x="118" y="28" width="52" height="106" rx="6" style="fill:#121318"/>
+        ${[0, 1, 2, 3].map(i => `<g class="item" style="--i:${i}"><rect x="123" y="${36 + i * 23}" width="42" height="17" rx="4" style="fill:rgba(93,141,255,.18)"/><circle cx="131" cy="${44.5 + i * 23}" r="4" class="fl-a2"/><rect x="139" y="${42 + i * 23}" width="20" height="5" rx="2.5" class="fl"/></g>`).join('')}
+        <g class="notif"><rect x="150" y="8" width="78" height="24" rx="8" style="fill:var(--text)"/><circle cx="162" cy="20" r="5" class="fl-ok"/><rect x="172" y="15" width="44" height="4" rx="2" style="fill:#9a9aa0"/><rect x="172" y="22" width="30" height="4" rx="2" style="fill:#c9c8c4"/></g>
+    </svg>`,
+
+    data: `<svg class="ill ill-data" viewBox="0 0 260 160" aria-hidden="true">
+        <path class="st" d="M40 132 H226 M40 132 V22"/>
+        ${[[56, 118], [74, 110], [88, 114], [102, 96], [118, 100], [134, 84], [148, 88], [164, 70], [178, 74], [194, 56], [208, 60]].map(([x, y], i) =>
+            `<circle class="dot" style="--i:${i}" cx="${x}" cy="${y}" r="4"/>`).join('')}
+        <path class="trend st-a" pathLength="100" d="M48 124 C100 108 150 82 214 50"/>
+        <path class="forecast" d="M214 50 L236 38" style="fill:none;stroke:var(--accent-hi);stroke-width:2;stroke-dasharray:4 4"/>
+        <g class="ai"><rect x="188" y="92" width="44" height="26" rx="7" style="fill:rgba(93,141,255,.16);stroke:var(--accent-hi);stroke-width:1.2"/><text x="210" y="109" text-anchor="middle" style="fill:var(--text);font-size:10px">AI</text></g>
+    </svg>`,
+
+    sql: `<svg class="ill ill-sql" viewBox="0 0 260 160" aria-hidden="true">
+        <path d="M80 44 V118 A44 13 0 0 0 168 118 V44" style="fill:rgba(47,107,255,.14);stroke:var(--accent-hi);stroke-width:1.5"/>
+        <path class="seg" style="--i:0" d="M80 69 A44 13 0 0 0 168 69"/>
+        <path class="seg" style="--i:1" d="M80 94 A44 13 0 0 0 168 94"/>
+        <ellipse cx="124" cy="44" rx="44" ry="13" style="fill:rgba(93,141,255,.35);stroke:var(--accent-hi);stroke-width:1.5"/>
+        ${[0, 1, 2].map(i => `<rect class="row" style="--i:${i}" x="176" y="54" width="26" height="5" rx="2.5"/>`).join('')}
+        <g><rect x="172" y="18" width="68" height="24" rx="6" style="fill:#1c1c20;stroke:var(--line-2)"/><text x="182" y="34" style="fill:var(--accent-hi);font-size:10px">SELECT *</text><rect class="caret fl-w" x="232" y="25" width="2" height="11"/></g>
+    </svg>`,
+
+    saas: `<svg class="ill ill-saas" viewBox="0 0 260 160" aria-hidden="true">
+        ${[[44, 34], [44, 126], [216, 34], [216, 126]].map(([x, y], i) =>
+            `<path class="wire st-a" style="--i:${i}" d="M130 80 L${x} ${y}"/>`).join('')}
+        ${[[44, 34], [44, 126], [216, 34], [216, 126]].map(([x, y], i) =>
+            `<g class="tenant" style="--i:${i}"><rect x="${x - 22}" y="${y - 15}" width="44" height="30" rx="7" style="fill:#1c1c20;stroke:var(--line-2)"/><circle cx="${x - 9}" cy="${y}" r="6" class="${i % 2 ? 'fl-a2' : 'fl-ok'}"/><rect x="${x}" y="${y - 4}" width="14" height="3.5" rx="1.75" class="fl"/><rect x="${x}" y="${y + 2}" width="10" height="3.5" rx="1.75" class="fl"/></g>`).join('')}
+        <rect class="core" x="100" y="58" width="60" height="44" rx="10" style="fill:var(--accent)"/>
+        <text x="130" y="84" text-anchor="middle" style="fill:#fff;font-size:11px;font-weight:600">API</text>
+    </svg>`,
+
+    monitoring: `<svg class="ill ill-mon" viewBox="0 0 260 160" aria-hidden="true">
+        <rect x="24" y="18" width="212" height="124" rx="12" class="st" style="fill:rgba(255,255,255,.02)"/>
+        <text x="38" y="40">UPTIME</text><text x="38" y="58" style="fill:var(--text);font-size:15px;font-family:var(--f-display);font-weight:600">99.9%</text>
+        <circle cx="186" cy="36" r="4" class="fl-ok"/><circle cx="200" cy="36" r="4" class="fl-ok"/><circle class="warn" cx="214" cy="36" r="4" style="fill:var(--warn)"/>
+        <path class="st" d="M36 98 H224" style="stroke-dasharray:2 4"/>
+        <path class="pulse" pathLength="100" d="M36 98 H86 L96 80 L106 120 L118 62 L130 112 L138 98 H224" style="fill:none;stroke:var(--ok);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round"/>
+    </svg>`,
+
+    pm: `<svg class="ill ill-pm" viewBox="0 0 260 160" aria-hidden="true">
+        ${[['TODO', 30], ['DOING', 102], ['DONE', 174]].map(([h, x]) =>
+            `<rect x="${x}" y="22" width="60" height="118" rx="8" style="fill:rgba(255,255,255,.03);stroke:var(--line)"/><text x="${x + 8}" y="38">${h}</text>`).join('')}
+        <rect x="38" y="70" width="44" height="18" rx="4" class="fl"/><rect x="38" y="94" width="44" height="18" rx="4" class="fl"/>
+        <rect x="110" y="70" width="44" height="18" rx="4" class="fl"/>
+        <rect x="182" y="70" width="44" height="18" rx="4" style="fill:rgba(61,220,151,.25)"/>
+        <g class="mover"><rect x="38" y="46" width="44" height="18" rx="4" class="fl-a"/><rect x="44" y="53" width="24" height="4" rx="2" style="fill:#fff;opacity:.8"/></g>
+    </svg>`,
+
+    maintenance: `<svg class="ill ill-maint" viewBox="0 0 260 160" aria-hidden="true">
+        <rect x="58" y="20" width="132" height="90" rx="10" style="fill:#18181c;stroke:var(--line-2);stroke-width:1.5"/>
+        <path d="M108 110 L102 132 H146 L140 110" style="fill:#1c1c20;stroke:var(--line-2)"/>
+        <g class="gear"><circle cx="124" cy="56" r="16" style="fill:none;stroke:var(--accent-hi);stroke-width:7;stroke-dasharray:4.2 4.2"/><circle cx="124" cy="56" r="9" style="fill:var(--accent)"/><circle cx="124" cy="56" r="3.5" style="fill:#18181c"/></g>
+        <rect x="76" y="88" width="96" height="6" rx="3" class="fl"/>
+        <rect class="bar" x="76" y="88" width="96" height="6" rx="3" style="fill:var(--ok)"/>
+        <g class="wrench"><rect x="196" y="62" width="10" height="54" rx="5" style="fill:#c9c8c4"/><circle cx="201" cy="58" r="12" style="fill:#c9c8c4"/><rect x="196" y="44" width="10" height="14" style="fill:#131418"/></g>
     </svg>`,
 
     transformation: (() => {
@@ -350,13 +415,17 @@ function renderStack() {
 }
 
 function renderServices() {
-    const sv = T().startup.svcs;
-    $('#bento').innerHTML = SERVICES_ART.map((id, i) => `
+    const sv = T().startup.svcs, h = sv[SERVICE_HERO];
+    const hero = `
+        <article class="svc hero-svc">
+            <div class="svc-art" data-observe>${ART[SERVICE_HERO]}</div>
+            <div class="svc-body"><span class="svc-badge">${h.badge}</span><span class="svc-num">01</span><h3>${h.t}</h3><p>${h.d}</p></div>
+        </article>`;
+    $('#bento').innerHTML = hero + SERVICES_ART.map((id, i) => `
         <article class="svc${SERVICES_WIDE.includes(id) ? ' wide' : ''}">
             <div class="svc-art" data-observe>${ART[id]}</div>
-            <div class="svc-body"><span class="svc-num">${String(i + 1).padStart(2, '0')}</span><h3>${sv[id].t}</h3><p>${sv[id].d}</p></div>
+            <div class="svc-body"><span class="svc-num">${String(i + 2).padStart(2, '0')}</span><h3>${sv[id].t}</h3><p>${sv[id].d}</p></div>
         </article>`).join('');
-    $('#svcMore').innerHTML = SERVICES_MORE.map(id => `<li><b>${sv[id].t}</b><span>${sv[id].d}</span></li>`).join('');
 }
 
 function renderMarquee() {
@@ -788,7 +857,7 @@ function initScroll() {
     $$('[data-reveal]').forEach(el => gsap.from(el, { y: 50, opacity: 0, duration: 1.1, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 86%' } }));
 
     // staggered groups
-    ['.pillar', '.prow', '.job', '.edu-card', '.stack-group', '.svc', '.svc-more li', '.cmethods a'].forEach(sel => {
+    ['.pillar', '.prow', '.job', '.edu-card', '.stack-group', '.cmethods a'].forEach(sel => {
         const els = $$(sel);
         if (!els.length) return;
         gsap.set(els, { y: 50, opacity: 0 });
@@ -814,6 +883,19 @@ function initScroll() {
     $$('.feat-visual .shot, .feat-visual .qr-mock').forEach(el => gsap.fromTo(el, { scale: .8 }, {
         scale: 1, ease: 'none', scrollTrigger: { trigger: el, start: 'top bottom', end: 'top 35%', scrub: .6 }
     }));
+
+    // service cards appear one by one: rise, unblur and settle
+    const svcs = $$('.svc');
+    gsap.set(svcs, { y: 80, opacity: 0, scale: .92, filter: 'blur(6px)' });
+    ScrollTrigger.batch(svcs, {
+        start: 'top 90%', once: true,
+        onEnter: batch => gsap.to(batch, { y: 0, opacity: 1, scale: 1, filter: 'blur(0px)', duration: 1.1, stagger: .14, ease: 'power4.out', clearProps: 'transform,opacity,filter' })
+    });
+
+    // background images drift slower than the page
+    gsap.fromTo('.more-bg', { yPercent: -8 }, { yPercent: 8, ease: 'none', scrollTrigger: { trigger: '.more-wrap', start: 'top bottom', end: 'bottom top', scrub: true } });
+    gsap.fromTo('.startup-bg', { yPercent: -6 }, { yPercent: 10, ease: 'none', scrollTrigger: { trigger: '#hellootech', start: 'top bottom', end: 'bottom top', scrub: true } });
+    gsap.fromTo('.contact-think', { y: 60, opacity: 0 }, { y: 0, opacity: 1, duration: 1.4, ease: 'power3.out', scrollTrigger: { trigger: '#contact', start: 'top 70%' } });
 
     // experience timeline draws itself
     gsap.to('#tlProgress', { scaleY: 1, ease: 'none', scrollTrigger: { trigger: '#timeline', start: 'top 70%', end: 'bottom 60%', scrub: true } });

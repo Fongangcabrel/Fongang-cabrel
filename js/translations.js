@@ -23,7 +23,7 @@ en: {
   hero: {
     eyebrow: 'Software engineer · Full-stack & DevSecOps',
     title: { text: 'I build software that', accent: 'businesses run on.' },
-    desc: 'I’m FONGANG Cabrel, a developer based in Douala, Cameroon. I design, ship and run web platforms end to end — from the FastAPI back-end to the Debian server it lives on. My KPI platform, <strong>KPIFlow</strong>, is used company-wide at BEETLE HERITAGE HOLDING.',
+    desc: 'I’m FONGANG Cabrel, a developer based in Douala, Cameroon. I design, ship and run digital platforms end to end — from the FastAPI back-end to the Debian server it lives on. My KPI platform, <strong>KPIFlow</strong>, is used company-wide at BEETLE HERITAGE HOLDING.',
     btn_work: 'See my work',
     btn_contact: 'Get in touch',
     stat1: 'projects shipped',
@@ -164,7 +164,6 @@ en: {
     edu: [
       { year: '2026 – 2027', title: 'Bachelor in Software Engineering — Data Science', school: 'IME — Institut de Management et de l’Entrepreneuriat' },
       { year: '2023 – 2025', title: 'HND in Computer Science', school: 'IME — Institut de Management et de l’Entrepreneuriat' },
-      { year: '2022 – 2023', title: 'GCE Advanced Level', school: 'G.B.H.S Bafoussam' },
       { year: 'In progress', title: 'Certifications', school: 'IBM Data Science · AWS Cloud Practitioner (CLF-C02) · SAP Certified Associate – SAP BTP' }
     ]
   },
@@ -178,9 +177,9 @@ en: {
   },
 
   startup: {
-    label: 'My studio',
+    label: 'My startup',
     tagline: 'Custom digital solutions',
-    desc: 'HellooTech is the studio I founded to help businesses go digital — from the first web app to the server it runs on. Small team, direct contact, and we stay around after launch.',
+    desc: 'HellooTech is the startup I founded to help businesses go digital — from the first web app to the server it runs on. Small team, direct contact, and we stay around after launch.',
     btn_visit: 'Visit hellootech',
     svcs: {
       web:            { t: 'Full-stack web & PWA', d: 'Fast, installable web apps — designed, built and maintained end to end.' },
@@ -189,14 +188,14 @@ en: {
       payment:        { t: 'Payment integration', d: 'Mobile money and card payments — Notchpay, Flutterwave, Stripe — with webhook confirmation.' },
       cloud:          { t: 'Cloud & VPS hosting', d: 'We set up, secure and run your servers so your apps stay online.' },
       automation:     { t: 'Process automation', d: 'Scheduled jobs and workflows that replace repetitive manual work.' },
-      transformation: { t: 'Digital transformation', d: 'We map your processes first, then modernise your information system around them.' },
-      mobile:      { t: 'Mobile apps', d: 'Android & iOS' },
-      data:        { t: 'Data science & AI', d: 'Analysis, predictive models' },
-      sql:         { t: 'SQL databases', d: 'SQL Server, MySQL, PostgreSQL' },
-      saas:        { t: 'SaaS platforms', d: 'Multi-tenant products & APIs' },
-      monitoring:  { t: 'Infra monitoring', d: 'Uptime, alerting, dashboards' },
-      pm:          { t: 'Project management', d: 'Agile, SDLC' },
-      maintenance: { t: 'IT maintenance', d: 'Preventive & corrective support' }
+      transformation: { t: 'Digital transformation', badge: 'The mother concept', d: 'The idea that ties everything else together. We map your processes first, then rebuild your information system around them — web, data, automation and infrastructure working as one.' },
+      mobile:      { t: 'Mobile apps', d: 'Android & iOS apps with React Native — one codebase, native feel.' },
+      data:        { t: 'Data science & AI', d: 'Analysis, dashboards and predictive models that help you decide.' },
+      sql:         { t: 'SQL databases', d: 'Design, tuning and administration of SQL Server, MySQL and PostgreSQL.' },
+      saas:        { t: 'SaaS platforms', d: 'Multi-tenant products with APIs and custom dashboards.' },
+      monitoring:  { t: 'Infra monitoring', d: 'Uptime checks, alerting and Grafana dashboards — problems spotted before users do.' },
+      pm:          { t: 'Project management', d: 'Agile delivery, SDLC best practices and clear milestones.' },
+      maintenance: { t: 'IT maintenance', d: 'Preventive and corrective support to keep your systems running.' }
     }
   },
 
@@ -233,7 +232,7 @@ fr: {
   hero: {
     eyebrow: 'Ingénieur logiciel · Full-stack & DevSecOps',
     title: { text: 'Je conçois des logiciels qui font', accent: 'tourner les entreprises.' },
-    desc: 'Moi c’est FONGANG Cabrel, développeur basé à Douala, au Cameroun. Je conçois, livre et fais tourner des plateformes web de bout en bout — du back-end FastAPI jusqu’au serveur Debian qui l’héberge. Ma plateforme de KPI, <strong>KPIFlow</strong>, est utilisée dans toute l’entreprise chez BEETLE HERITAGE HOLDING.',
+    desc: 'Moi c’est FONGANG Cabrel, développeur basé à Douala, au Cameroun. Je conçois, livre et fais tourner des plateformes digitales de bout en bout — du back-end FastAPI jusqu’au serveur Debian qui l’héberge. Ma plateforme de KPI, <strong>KPIFlow</strong>, est utilisée dans toute l’entreprise chez BEETLE HERITAGE HOLDING.',
     btn_work: 'Voir mes projets',
     btn_contact: 'Me contacter',
     stat1: 'projets réalisés',
@@ -374,7 +373,6 @@ fr: {
     edu: [
       { year: '2026 – 2027', title: 'Licence en Génie Logiciel — Science des données', school: 'IME — Institut de Management et de l’Entrepreneuriat' },
       { year: '2023 – 2025', title: 'BTS / HND en Informatique', school: 'IME — Institut de Management et de l’Entrepreneuriat' },
-      { year: '2022 – 2023', title: 'GCE Advanced Level', school: 'G.B.H.S Bafoussam' },
       { year: 'En cours', title: 'Certifications', school: 'IBM Data Science · AWS Cloud Practitioner (CLF-C02) · SAP Certified Associate – SAP BTP' }
     ]
   },
@@ -388,9 +386,9 @@ fr: {
   },
 
   startup: {
-    label: 'Mon studio',
+    label: 'Ma startup',
     tagline: 'Solutions numériques sur mesure',
-    desc: 'HellooTech, c’est le studio que j’ai fondé pour accompagner les entreprises dans leur passage au numérique — de la première application web jusqu’au serveur qui la fait tourner. Petite équipe, contact direct, et on reste là après la mise en ligne.',
+    desc: 'HellooTech, c’est la startup que j’ai fondée pour accompagner les entreprises dans leur passage au numérique — de la première application web jusqu’au serveur qui la fait tourner. Petite équipe, contact direct, et on reste là après la mise en ligne.',
     btn_visit: 'Visiter hellootech',
     svcs: {
       web:            { t: 'Web full-stack & PWA', d: 'Des applications web rapides et installables — conçues, développées et maintenues de bout en bout.' },
@@ -399,14 +397,14 @@ fr: {
       payment:        { t: 'Intégration de paiement', d: 'Mobile money et carte bancaire — Notchpay, Flutterwave, Stripe — avec confirmation par webhook.' },
       cloud:          { t: 'Cloud & hébergement VPS', d: 'On installe, sécurise et administre vos serveurs pour que vos applications restent en ligne.' },
       automation:     { t: 'Automatisation des processus', d: 'Des tâches planifiées et des workflows qui remplacent le travail manuel répétitif.' },
-      transformation: { t: 'Transformation digitale', d: 'On cartographie d’abord vos processus, puis on modernise votre système d’information autour.' },
-      mobile:      { t: 'Applications mobiles', d: 'Android & iOS' },
-      data:        { t: 'Data science & IA', d: 'Analyse, modèles prédictifs' },
-      sql:         { t: 'Bases de données SQL', d: 'SQL Server, MySQL, PostgreSQL' },
-      saas:        { t: 'Plateformes SaaS', d: 'Produits multi-tenant & APIs' },
-      monitoring:  { t: 'Monitoring d’infrastructure', d: 'Disponibilité, alertes, tableaux de bord' },
-      pm:          { t: 'Gestion de projet', d: 'Agile, SDLC' },
-      maintenance: { t: 'Maintenance informatique', d: 'Support préventif & correctif' }
+      transformation: { t: 'Transformation digitale', badge: 'Le concept mère', d: 'L’idée qui relie tout le reste. On cartographie d’abord vos processus, puis on reconstruit votre système d’information autour — web, data, automatisation et infrastructure qui travaillent ensemble.' },
+      mobile:      { t: 'Applications mobiles', d: 'Apps Android & iOS en React Native — un seul code, une expérience native.' },
+      data:        { t: 'Data science & IA', d: 'Analyse, tableaux de bord et modèles prédictifs pour mieux décider.' },
+      sql:         { t: 'Bases de données SQL', d: 'Conception, optimisation et administration de SQL Server, MySQL et PostgreSQL.' },
+      saas:        { t: 'Plateformes SaaS', d: 'Produits multi-tenant avec APIs et tableaux de bord sur mesure.' },
+      monitoring:  { t: 'Monitoring d’infrastructure', d: 'Disponibilité, alertes et tableaux de bord Grafana — les pannes repérées avant vos utilisateurs.' },
+      pm:          { t: 'Gestion de projet', d: 'Livraison agile, bonnes pratiques SDLC et jalons clairs.' },
+      maintenance: { t: 'Maintenance informatique', d: 'Support préventif et correctif pour que vos systèmes tournent sans accroc.' }
     }
   },
 
