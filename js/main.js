@@ -72,10 +72,10 @@ const SERVICES_ART  = ['web', 'devops', 'devsecops', 'payment', 'cloud', 'automa
 const SERVICES_WIDE = ['web', 'transformation'];
 const SERVICES_MORE = ['mobile', 'data', 'sql', 'saas', 'monitoring', 'pm', 'maintenance'];
 
-/* [label, icon file in assets/icons (Devicon, MIT)] */
+/* [label, icon in assets/icons — name of a Devicon SVG (MIT), or a file with extension] */
 const MARQUEE_A = [
     ['Python', 'python'], ['PHP', 'php'], ['FastAPI', 'fastapi'], ['Laravel', 'laravel'],
-    ['PostgreSQL', 'postgresql'], ['MySQL', 'mysql'], ['SQL Server', 'microsoftsqlserver'],
+    ['PostgreSQL', 'postgresql'], ['MySQL', 'mysql'], ['SQL Server', 'sqlserver.png'],
     ['React', 'react'], ['TypeScript', 'typescript'], ['Docker', 'docker'], ['Grafana', 'grafana'],
     ['GitHub Actions', 'githubactions'], ['Debian', 'debian'], ['Nginx', 'nginx'], ['Redis', 'redis']
 ];
@@ -362,7 +362,7 @@ function renderServices() {
 function renderMarquee() {
     const row = list => { const one = list.map(x => `<span class="marquee-item">${x}</span>`).join(''); return one + one; };
     $('#marqueeA').innerHTML = row(MARQUEE_A.map(([label, icon]) =>
-        `<img src="assets/icons/${icon}.svg" width="28" height="28" alt="" loading="lazy">${label}`));
+        `<img src="assets/icons/${icon.includes('.') ? icon : icon + '.svg'}" width="28" height="28" alt="" loading="lazy">${label}`));
     $('#marqueeB').innerHTML = row(MARQUEE_B);
 }
 
