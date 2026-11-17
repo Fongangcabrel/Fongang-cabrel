@@ -35,7 +35,7 @@ const EMAIL = 'fongangcabrel2007@gmail.com';
 const PROJECTS = [
     { id: 'kpiflow',   featured: true, cat: 'web', status: 'production',
       shot: { src: 'assets/img/kpiflow.jpg', w: 1400, h: 672, bar: 'kpiflow / performance' },
-      stack: ['FastAPI', 'SQLAlchemy', 'PostgreSQL', 'Jinja2', 'Debian 13', 'Nginx', 'GitHub Actions', 'SSH'], links: {} },
+      stack: ['FastAPI', 'SQLAlchemy', 'PostgreSQL', 'Jinja2', 'Docker', 'Debian 13', 'Nginx', 'GitHub Actions', 'Grafana', 'SSH'], links: {} },
     { id: 'bhhaccess', featured: true, cat: 'web', status: 'mvp',
       stack: ['MVC', 'SOLID', 'QR badges', 'RBAC', 'Audit log', 'Excel import'], links: {} },
     { id: 'vyntix',       cat: 'infra', stack: ['FastAPI', 'SQL Server', 'SQLite', 'WebSockets', 'Redis', 'Chart.js'], links: {} },
@@ -52,17 +52,17 @@ const PROJECTS = [
 
 /* Per-job structure; text comes from translations (same order). */
 const JOBS = [
-    { current: true, side: 5, tags: ['FastAPI', 'PostgreSQL', 'SQLAlchemy', 'Debian 13', 'CI/CD', 'Python'] },
+    { current: true, side: 6, tags: ['FastAPI', 'PostgreSQL', 'Docker', 'Debian 13', 'Grafana', 'CI/CD', 'PowerShell', 'Python'] },
     { tags: ['Python', 'Automation', 'Dashboards', 'BI', 'Process design'] },
     { tags: ['PHP', 'MySQL', 'JavaScript', 'Git'] }
 ];
 
 /* 3 = daily driver · 2 = comfortable · 1 = learning */
 const SKILLS = {
-    backend:  [['Python', 3], ['FastAPI', 2], ['SQLAlchemy', 2], ['REST APIs', 2], ['PHP', 2], ['WebSockets', 2], ['AsyncIO', 2]],
+    backend:  [['Python', 3], ['PHP', 2], ['FastAPI', 2], ['Laravel', 2], ['SQLAlchemy', 2], ['REST APIs', 2], ['WebSockets', 2], ['AsyncIO', 2]],
     frontend: [['HTML5 / CSS3', 3], ['JavaScript', 2], ['TypeScript', 2], ['React.js', 2], ['React Native', 2], ['Chart.js', 2], ['PWA / Ajax', 2]],
     data:     [['SQL Server', 3], ['T-SQL', 2], ['SQL Server Agent', 2], ['PostgreSQL', 2], ['MySQL', 2], ['SQLite (WAL)', 2], ['Redis', 2], ['Pandas / ETL', 2], ['Power Platform', 2]],
-    infra:    [['Debian admin', 2], ['Linux CLI', 2], ['GitHub Actions', 2], ['SSH', 2], ['Nginx', 2], ['PowerShell', 2], ['Docker', 1], ['Zabbix', 1], ['Grafana', 1], ['VMware', 1], ['Cisco Packet Tracer', 1], ['SAP BTP', 1], ['AWS', 1]],
+    infra:    [['Debian admin', 2], ['Linux CLI', 2], ['GitHub Actions', 2], ['SSH', 2], ['Nginx', 2], ['PowerShell', 2], ['Docker', 2], ['Grafana', 2], ['Zabbix', 1], ['VMware', 1], ['Cisco Packet Tracer', 1], ['SAP BTP', 1], ['AWS', 1]],
     methods:  [['Notion', 3], ['Payment APIs', 2], ['MVC · SOLID', 2], ['Scrum / Kanban', 2], ['SDLC', 2], ['UML', 2]]
 };
 
@@ -70,7 +70,7 @@ const SERVICES_ART  = ['web', 'devops', 'devsecops', 'payment', 'cloud', 'automa
 const SERVICES_WIDE = ['web', 'transformation'];
 const SERVICES_MORE = ['mobile', 'data', 'sql', 'saas', 'monitoring', 'pm', 'maintenance'];
 
-const MARQUEE_A = ['Python', 'FastAPI', 'PostgreSQL', 'SQL Server', 'React', 'TypeScript', 'Docker', 'GitHub Actions', 'Debian', 'Nginx', 'Redis', 'WebSockets'];
+const MARQUEE_A = ['Python', 'PHP', 'FastAPI', 'Laravel', 'PostgreSQL', 'MySQL', 'SQL Server', 'React', 'TypeScript', 'Docker', 'Grafana', 'GitHub Actions', 'Debian', 'Nginx', 'Redis'];
 const MARQUEE_B = ['KPIFlow', 'BHHaccess', 'VYNTIX', 'SMARTY', 'cocosecret.shop', 'Coco Italia Beach', 'HospiConnect', 'FlowI', 'SSAS', 'SCRIPX'];
 
 /* Labels used inside the illustrative mock-ups */
@@ -271,16 +271,20 @@ function renderFeatured() {
     const tw = T().work, m = MOCK[LANG];
     $('#featured').innerHTML = PROJECTS.filter(p => p.featured).map(p => {
         const it = tw.items[p.id];
-        return `<article class="feat">
-            <div class="feat-visual${p.shot ? ' has-shot' : ''}" data-observe>${p.shot ? shotHTML(p, it) : mockQR(m) + `<span class="mock-caption">${m.illus}</span>`}</div>
+        return `<article class="feat${p.shot ? ' is-shot' : ''}">
+            <div class="feat-visual" data-observe>${p.shot ? shotHTML(p, it) : mockQR(m) + `<span class="mock-caption">${m.illus}</span>`}</div>
             <div class="feat-body">
-                <div class="feat-meta"><span class="status status-${p.status}">${tw.status[p.status]}</span><span>${it.kicker}</span></div>
-                <h3>${it.name}</h3>
-                <p class="feat-sub">${it.sub}</p>
-                <p class="feat-desc">${it.desc}</p>
-                <ul class="feat-points">${it.points.map(x => `<li>${x}</li>`).join('')}</ul>
-                <ul class="chips">${p.stack.map(s => `<li>${s}</li>`).join('')}</ul>
-                ${linksHTML(p, tw, 'feat-links')}
+                <div class="feat-col">
+                    <div class="feat-meta"><span class="status status-${p.status}">${tw.status[p.status]}</span><span>${it.kicker}</span></div>
+                    <h3>${it.name}</h3>
+                    <p class="feat-sub">${it.sub}</p>
+                    <p class="feat-desc">${it.desc}</p>
+                </div>
+                <div class="feat-col">
+                    <ul class="feat-points">${it.points.map(x => `<li>${x}</li>`).join('')}</ul>
+                    <ul class="chips">${p.stack.map(s => `<li>${s}</li>`).join('')}</ul>
+                    ${linksHTML(p, tw, 'feat-links')}
+                </div>
             </div>
         </article>`;
     }).join('');
@@ -717,7 +721,7 @@ function initScroll() {
     $$('[data-reveal]').forEach(el => gsap.from(el, { y: 50, opacity: 0, duration: 1.1, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 86%' } }));
 
     // staggered groups
-    ['.pillar', '.feat', '.prow', '.job', '.edu-card', '.stack-group', '.svc', '.svc-more li', '.cmethods a'].forEach(sel => {
+    ['.pillar', '.prow', '.job', '.edu-card', '.stack-group', '.svc', '.svc-more li', '.cmethods a'].forEach(sel => {
         const els = $$(sel);
         if (!els.length) return;
         gsap.set(els, { y: 50, opacity: 0 });
@@ -727,9 +731,15 @@ function initScroll() {
         });
     });
 
+    // featured cards slide in alternately from the left and the right
+    $$('.feat').forEach((el, i) => gsap.from(el, {
+        x: i % 2 ? 160 : -160, opacity: 0, duration: 1.4, ease: 'power4.out', clearProps: 'transform,opacity',
+        scrollTrigger: { trigger: el, start: 'top 82%' }
+    }));
+
     // featured mock-ups rise in with a slight rotation
     $$('.feat-visual .feat-tilt').forEach(el => gsap.from(el, {
-        y: 80, rotate: -3, opacity: 0, duration: 1.3, ease: 'power3.out', clearProps: 'transform,opacity',
+        y: 60, rotate: -2, opacity: 0, duration: 1.3, delay: .25, ease: 'power3.out', clearProps: 'transform,opacity',
         scrollTrigger: { trigger: el, start: 'top 85%' }
     }));
 

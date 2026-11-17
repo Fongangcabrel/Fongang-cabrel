@@ -138,11 +138,9 @@ ul, ol { list-style: none; }
 .nav.is-hidden { transform: translateY(-100%); }
 .nav-inner { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
 .brand { display: inline-flex; align-items: center; gap: 10px; font-family: var(--f-display); font-weight: 600; font-size: 18px; letter-spacing: -.02em; }
-.brand-mark {
-    width: 30px; height: 30px; border-radius: 8px;
-    display: grid; place-items: center;
-    background: var(--accent); color: #fff; font-size: 13px; font-weight: 700; letter-spacing: 0;
-}
+.brand-logo { height: 30px; width: auto; transition: transform .5s var(--ease); }
+.brand:hover .brand-logo { transform: rotate(-8deg) scale(1.06); }
+.loader-logo { height: .95em; width: auto; display: inline-block; vertical-align: -.1em; margin-right: .4em; }
 .nav-links { display: flex; gap: 30px; font-size: 14px; color: var(--muted); }
 .nav-links a { transition: color .25s; }
 .nav-links a:hover, .nav-links a.is-active { color: var(--text); }
@@ -263,17 +261,25 @@ ul, ol { list-style: none; }
 .scroll-line::after { content: ''; position: absolute; left: 0; top: -40%; width: 100%; height: 40%; background: var(--text); animation: drip 2s var(--ease) infinite; }
 
 /* ── Marquee ───────────────────────────────────────────── */
-.marquee { border-block: 1px solid var(--line); padding: 22px 0; overflow: hidden; background: var(--bg-2); }
-.marquee-row { display: flex; width: max-content; animation: marquee 40s linear infinite; }
-.marquee-row.reverse { animation-direction: reverse; animation-duration: 46s; margin-top: 12px; }
+.marquee { border-block: 1px solid var(--line); padding: 26px 0 24px; overflow: hidden; background: var(--bg-2); }
+.marquee-mask {
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+            mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+}
+.marquee-row { display: flex; width: max-content; animation: marquee 48s linear infinite; }
+.marquee-row.reverse { animation-direction: reverse; animation-duration: 56s; margin-top: 16px; }
 .marquee:hover .marquee-row { animation-play-state: paused; }
 .marquee-item {
-    display: inline-flex; align-items: center; gap: 22px; padding-right: 22px;
-    font-family: var(--f-display); font-size: clamp(22px, 2.6vw, 34px); font-weight: 500; letter-spacing: -.02em;
-    color: var(--muted); white-space: nowrap;
+    display: inline-flex; align-items: center; gap: 30px; padding-right: 30px;
+    font-family: var(--f-display); font-size: clamp(18px, 1.7vw, 24px); font-weight: 500; letter-spacing: -.01em;
+    color: var(--text); opacity: .72; white-space: nowrap;
 }
-.marquee-row.reverse .marquee-item { color: var(--dim); }
-.marquee-item::after { content: ''; width: 8px; height: 8px; border-radius: 2px; background: var(--accent); transform: rotate(45deg); }
+.marquee-item::after { content: ''; width: 4px; height: 4px; border-radius: 50%; background: var(--accent-hi); }
+.marquee-row.reverse .marquee-item {
+    font-family: var(--f-mono); font-size: 12.5px; font-weight: 400; letter-spacing: .12em; text-transform: uppercase;
+    color: var(--muted); opacity: 1;
+}
+.marquee-row.reverse .marquee-item::after { width: 10px; height: 1px; border-radius: 0; background: var(--line-2); }
 
 /* ── Sections ──────────────────────────────────────────── */
 .section { position: relative; padding: clamp(80px, 12vw, 150px) 0; }
@@ -358,6 +364,13 @@ ul, ol { list-style: none; }
 }
 .feat-tilt { position: relative; width: 100%; max-width: 440px; transition: transform .6s var(--ease); transform: perspective(1000px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)); }
 .feat-body { padding: clamp(28px, 4vw, 52px); display: flex; flex-direction: column; }
+.feat-col:last-child { flex: 1; display: flex; flex-direction: column; }
+/* Cards with a real screenshot: image on top at full width, text in two columns below */
+.feat.is-shot { grid-template-columns: 1fr; }
+.feat.is-shot .feat-visual { min-height: 0; padding: clamp(20px, 4vw, 48px) clamp(16px, 5vw, 64px); }
+.feat.is-shot .feat-tilt.wide { max-width: 980px; }
+.feat.is-shot .feat-body { display: grid; grid-template-columns: 1fr 1fr; gap: 0 clamp(32px, 5vw, 72px); }
+.feat.is-shot .feat-col:last-child { padding-top: 6px; }
 .feat-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; margin-bottom: 18px; font-family: var(--f-mono); font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; }
 .status { display: inline-flex; align-items: center; gap: 7px; padding: 5px 10px; border-radius: 999px; border: 1px solid var(--line-2); color: var(--text); }
 .status::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--ok); }
@@ -388,7 +401,6 @@ ul, ol { list-style: none; }
 
 /* Real screenshots (KPIFlow, cocosecret) in a browser frame */
 .feat-tilt.wide { max-width: none; }
-.feat-visual.has-shot { padding: clamp(20px, 3vw, 32px); }
 .shot { background: #101014; border: 1px solid var(--line-2); border-radius: 14px; overflow: hidden; box-shadow: 0 30px 60px -20px rgba(0, 0, 0, .8); }
 .shot img { width: 100%; height: auto; transform-origin: 50% 0; transition: transform 1.2s var(--ease); }
 .feat:hover .shot img { transform: scale(1.04); }
@@ -689,6 +701,8 @@ ul, ol { list-style: none; }
     .feat { grid-template-columns: 1fr; }
     .feat:nth-child(even) .feat-visual { order: 0; }
     .feat-visual { min-height: 320px; }
+    .feat.is-shot .feat-body { grid-template-columns: 1fr; }
+    .feat.is-shot .feat-col:last-child { padding-top: 0; }
     .job { grid-template-columns: 1fr; gap: 12px; }
     .job-side { flex-direction: row; align-items: center; }
     .bento { grid-template-columns: repeat(2, 1fr); }
@@ -737,9 +751,8 @@ ul, ol { list-style: none; }
     .marquee-row { animation: none; }
 }
 
-/* Brand-coloured contact icons (WhatsApp green, LinkedIn blue, GitHub) */
-.bico { display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 8px; color: #fff; font-size: 16px; flex: none; }
-.bico.wa { background: #25d366; }
-.bico.li { background: #0a66c2; }
-.bico.gh { background: #f2f1ed; color: #0b0b0c; }
-.bico.sm { width: 22px; height: 22px; border-radius: 6px; font-size: 12px; }
+/* Contact icons in their real brand colours */
+.ic-wa { color: #25d366; }
+.ic-li { color: #0a66c2; }
+.ic-gh { color: #f2f1ed; }
+.cmethods span i { font-size: 18px; width: 20px; text-align: center; }

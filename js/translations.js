@@ -14,9 +14,9 @@ en: {
   nav: { about: 'About', work: 'Work', experience: 'Experience', stack: 'Stack', startup: 'HellooTech', contact: 'Contact', cta: 'Let’s talk' },
 
   hero: {
-    eyebrow: 'Software engineer · Full-stack & DevOps',
+    eyebrow: 'Software engineer · Full-stack & DevSecOps',
     title: { text: 'I build software that', accent: 'businesses run on.' },
-    desc: 'I’m Cabrel, a developer from Douala, Cameroon. I design, ship and run web platforms end to end — from the FastAPI back-end to the Debian server it lives on. My KPI platform, <strong>KPIFlow</strong>, is used company-wide at BEETLE HERITAGE HOLDING.',
+    desc: 'I’m FONGANG Cabrel, a developer based in Douala, Cameroon. I design, ship and run web platforms end to end — from the FastAPI back-end to the Debian server it lives on. My KPI platform, <strong>KPIFlow</strong>, is used company-wide at BEETLE HERITAGE HOLDING.',
     btn_work: 'See my work',
     btn_contact: 'Get in touch',
     stat1: 'projects shipped',
@@ -65,7 +65,7 @@ en: {
           'Full KPI lifecycle: definition → assignment → submission → automatic scoring → multi-level validation',
           'Sandboxed formula engine (Python <code>ast</code>, strict node whitelist): each department writes its own scoring rule, safely',
           'Dual-mode IAM: local accounts or CSV/AD import, with a guided first-login flow',
-          'Deployed on the company’s Debian 13 server, CI/CD over SSH'
+          'Dockerised and deployed on the company’s Debian 13 server — CI/CD over SSH, monitored with Grafana'
         ]
       },
       bhhaccess: {
@@ -105,8 +105,8 @@ en: {
         desc: 'Ticketing for a summer beach festival in Parma, Italy: three ticket tiers (day €10 / evening €15 / full €20), Stripe checkout and attendee management. <strong>It handled real ticket sales for the 2026 edition.</strong>' },
       hospiconnect: { name: 'HospiConnect', sub: 'Hospital queue management', cat: 'Web · Healthcare',
         desc: 'Built for Clinique du Chatelet to replace paper tickets and voice paging: priority queue (standard / priority / emergency), waiting-room kiosk with voice announcements, email notifications with zero medical data, transfers between departments, wait-time analytics and a 12-month audit trail. Four roles: superadmin, admin, secretary, doctor.' },
-      scripx: { name: 'SCRIPX', sub: 'Network ping monitor', cat: 'Infrastructure',
-        desc: 'A PowerShell tool that pings every device on the BEETLE production network at once and shows live latency — no more checking machines one by one.' }
+      scripx: { name: 'SCRIPX', sub: 'Network monitoring · my first project at BEETLE', cat: 'Infrastructure',
+        desc: 'My very first project at BEETLE HERITAGE HOLDING, built for the network team. A PowerShell tool that pings every device on the production network at once and shows live latency, so the team spots a failing machine immediately instead of checking them one by one — <strong>faster interventions and real monitoring</strong>.' }
     }
   },
 
@@ -123,13 +123,14 @@ en: {
         role: 'Digital Solutions & Automation Integrator', company: 'BEETLE HERITAGE HOLDING', date: 'Jan 2026 – present',
         tasks: [
           'Designed, built and deployed <strong>KPIFlow</strong>, a production platform replacing the company’s Excel-based KPI cycle',
+          'My very first project there: <strong>ScripX</strong>, a PowerShell tool that pings the whole production network at once — it helped the network team monitor the infrastructure and cut their intervention time',
           'Wrote a sandboxed formula engine (Python <code>ast</code>, strict node whitelist) for per-department scoring rules',
           'Implemented dual-mode IAM: local accounts + CSV/AD import with guided first login',
-          'Deploy and administer KPIFlow on the company’s Debian 13 server; maintain CI/CD over SSH',
+          'Deploy and administer the Dockerised KPIFlow stack on the company’s Debian 13 server; maintain CI/CD over SSH and monitor it with Grafana',
           'Built a Python + SQL Server stock monitoring pipeline with automated daily reports',
           '<span>On my own initiative, building <strong>BHHaccess</strong> — a QR-badge access-control MVP (zones, roles, permissions, audit log, Excel import, agent web app), MVC + SOLID</span>'
         ],
-        story: 'When I arrived, every department tracked its KPIs on static Excel files — updated by hand, error-prone and impossible to consolidate. My job was to replace the whole cycle with a real system. I designed and built <strong>KPIFlow</strong> (FastAPI, SQLAlchemy, PostgreSQL, server-rendered Jinja2/Bootstrap). The hardest part was letting each department write its own scoring formula without opening a security hole, so I built a <strong>sandboxed formula engine on Python’s <code>ast</code> module with a strict node whitelist</strong>. I deployed it myself on the company’s Debian 13 server and still run it. It’s now used across the company. On the side, I started <strong>BHHaccess</strong>, a QR-badge access-control MVP, because I saw how badge access was being handled and thought it could be done better.'
+        story: 'When I arrived, every department tracked its KPIs on static Excel files — updated by hand, error-prone and impossible to consolidate. My job was to replace the whole cycle with a real system. I designed and built <strong>KPIFlow</strong> (FastAPI, SQLAlchemy, PostgreSQL, server-rendered Jinja2/Bootstrap). The hardest part was letting each department write its own scoring formula without opening a security hole, so I built a <strong>sandboxed formula engine on Python’s <code>ast</code> module with a strict node whitelist</strong>. I containerised it with Docker, deployed it myself on the company’s Debian 13 server, and I still run it and monitor it with Grafana. It’s now used across the company. It wasn’t my first project there, though: that was <strong>ScripX</strong>, a PowerShell tool that helped the network team monitor the production network and intervene faster. On the side, I started <strong>BHHaccess</strong>, a QR-badge access-control MVP, because I saw how badge access was being handled and thought it could be done better.'
       },
       {
         role: 'Digital Solutions Intern', company: 'HELLOSem', date: 'Jul – Sep 2025',
@@ -216,9 +217,9 @@ fr: {
   nav: { about: 'À propos', work: 'Projets', experience: 'Parcours', stack: 'Stack', startup: 'HellooTech', contact: 'Contact', cta: 'Discutons' },
 
   hero: {
-    eyebrow: 'Ingénieur logiciel · Full-stack & DevOps',
+    eyebrow: 'Ingénieur logiciel · Full-stack & DevSecOps',
     title: { text: 'Je conçois des logiciels qui font', accent: 'tourner les entreprises.' },
-    desc: 'Moi c’est Cabrel, développeur basé à Douala, au Cameroun. Je conçois, livre et fais tourner des plateformes web de bout en bout — du back-end FastAPI jusqu’au serveur Debian qui l’héberge. Ma plateforme de KPI, <strong>KPIFlow</strong>, est utilisée dans toute l’entreprise chez BEETLE HERITAGE HOLDING.',
+    desc: 'Moi c’est FONGANG Cabrel, développeur basé à Douala, au Cameroun. Je conçois, livre et fais tourner des plateformes web de bout en bout — du back-end FastAPI jusqu’au serveur Debian qui l’héberge. Ma plateforme de KPI, <strong>KPIFlow</strong>, est utilisée dans toute l’entreprise chez BEETLE HERITAGE HOLDING.',
     btn_work: 'Voir mes projets',
     btn_contact: 'Me contacter',
     stat1: 'projets réalisés',
@@ -267,7 +268,7 @@ fr: {
           'Cycle complet des KPI : définition → affectation → soumission → calcul automatique du score → validation multi-niveaux',
           'Moteur de formules isolé (module <code>ast</code> de Python, liste blanche stricte) : chaque département écrit sa propre règle de calcul, en toute sécurité',
           'IAM à deux modes : comptes locaux ou import CSV/AD, avec parcours guidé de première connexion',
-          'Déployée sur le serveur Debian 13 de l’entreprise, CI/CD via SSH'
+          'Dockerisée et déployée sur le serveur Debian 13 de l’entreprise — CI/CD via SSH, monitoring avec Grafana'
         ]
       },
       bhhaccess: {
@@ -307,8 +308,8 @@ fr: {
         desc: 'Billetterie d’un festival de plage estival à Parme, en Italie : trois formules (journée 10 € / soirée 15 € / complet 20 €), paiement Stripe et gestion des participants. <strong>Elle a encaissé de vraies ventes de billets pour l’édition 2026.</strong>' },
       hospiconnect: { name: 'HospiConnect', sub: 'Gestion des files d’attente hospitalières', cat: 'Web · Santé',
         desc: 'Conçu pour la Clinique du Chatelet pour remplacer les tickets papier et les appels à voix haute : file par priorité (standard / prioritaire / urgence), écran de salle d’attente avec annonces vocales, notifications email sans aucune donnée médicale, transferts entre services, statistiques de temps d’attente et journal d’audit sur 12 mois. Quatre rôles : superadmin, admin, secrétaire, médecin.' },
-      scripx: { name: 'SCRIPX', sub: 'Monitoring réseau par ping', cat: 'Infrastructure',
-        desc: 'Un outil PowerShell qui pingue en même temps tous les équipements du réseau de production de BEETLE et affiche la latence en direct — fini les vérifications machine par machine.' }
+      scripx: { name: 'SCRIPX', sub: 'Monitoring réseau · mon premier projet chez BEETLE', cat: 'Infrastructure',
+        desc: 'Mon tout premier projet chez BEETLE HERITAGE HOLDING, conçu pour l’équipe réseau. Un outil PowerShell qui pingue en même temps tous les équipements du réseau de production et affiche la latence en direct : l’équipe repère tout de suite une machine en panne au lieu de vérifier un par un — <strong>des interventions plus rapides et un vrai monitoring</strong>.' }
     }
   },
 
@@ -325,13 +326,14 @@ fr: {
         role: 'Intégrateur des Solutions Digitales et Automatisation', company: 'BEETLE HERITAGE HOLDING', date: 'Janv. 2026 – aujourd’hui',
         tasks: [
           'Conception, développement et déploiement de <strong>KPIFlow</strong>, plateforme en production qui remplace le suivi des KPI sous Excel',
+          'Mon tout premier projet : <strong>ScripX</strong>, un outil PowerShell qui pingue tout le réseau de production en simultané — il a aidé l’équipe réseau à surveiller l’infrastructure et à réduire son temps d’intervention',
           'Moteur de formules isolé (module <code>ast</code> de Python, liste blanche stricte) pour des règles de scoring propres à chaque département',
           'IAM à deux modes : comptes locaux + import CSV/AD avec parcours guidé de première connexion',
-          'Déploiement et administration de KPIFlow sur le serveur Debian 13 de l’entreprise ; maintenance du CI/CD via SSH',
+          'Déploiement et administration de KPIFlow dockerisé sur le serveur Debian 13 de l’entreprise ; maintenance du CI/CD via SSH et monitoring avec Grafana',
           'Pipeline Python + SQL Server de surveillance des stocks avec rapports quotidiens automatisés',
           '<span>De ma propre initiative, développement de <strong>BHHaccess</strong> — MVP de contrôle d’accès par badge QR (zones, rôles, permissions, journal d’audit, import Excel, application web pour les agents), en MVC + SOLID</span>'
         ],
-        story: 'À mon arrivée, chaque département suivait ses KPI dans des fichiers Excel statiques — mis à jour à la main, sources d’erreurs et impossibles à consolider. Ma mission : remplacer tout le cycle par un vrai système. J’ai conçu et développé <strong>KPIFlow</strong> (FastAPI, SQLAlchemy, PostgreSQL, rendu serveur Jinja2/Bootstrap). Le plus difficile : laisser chaque département écrire sa propre formule de calcul sans ouvrir de faille de sécurité. J’ai donc construit un <strong>moteur de formules isolé basé sur le module <code>ast</code> de Python avec une liste blanche stricte de nœuds</strong>. Je l’ai déployé moi-même sur le serveur Debian 13 de l’entreprise et je l’administre toujours. Il est aujourd’hui utilisé dans toute l’entreprise. En parallèle, j’ai lancé <strong>BHHaccess</strong>, un MVP de contrôle d’accès par badge QR, parce que j’ai vu comment les accès étaient gérés et que je pensais qu’on pouvait faire mieux.'
+        story: 'À mon arrivée, chaque département suivait ses KPI dans des fichiers Excel statiques — mis à jour à la main, sources d’erreurs et impossibles à consolider. Ma mission : remplacer tout le cycle par un vrai système. J’ai conçu et développé <strong>KPIFlow</strong> (FastAPI, SQLAlchemy, PostgreSQL, rendu serveur Jinja2/Bootstrap). Le plus difficile : laisser chaque département écrire sa propre formule de calcul sans ouvrir de faille de sécurité. J’ai donc construit un <strong>moteur de formules isolé basé sur le module <code>ast</code> de Python avec une liste blanche stricte de nœuds</strong>. Je l’ai dockerisé, déployé moi-même sur le serveur Debian 13 de l’entreprise, et je l’administre et le surveille toujours avec Grafana. Il est aujourd’hui utilisé dans toute l’entreprise. Ce n’était d’ailleurs pas mon premier projet ici : le tout premier, c’était <strong>ScripX</strong>, un outil PowerShell qui a aidé l’équipe réseau à surveiller le réseau de production et à intervenir plus vite. En parallèle, j’ai lancé <strong>BHHaccess</strong>, un MVP de contrôle d’accès par badge QR, parce que j’ai vu comment les accès étaient gérés et que je pensais qu’on pouvait faire mieux.'
       },
       {
         role: 'Stagiaire Solutions Digitales', company: 'HELLOSem', date: 'Juil. – sept. 2025',
