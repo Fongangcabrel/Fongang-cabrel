@@ -84,7 +84,7 @@ const MARQUEE_A = [
     ['React', 'react'], ['TypeScript', 'typescript'], ['Docker', 'docker'], ['Grafana', 'grafana'],
     ['GitHub Actions', 'githubactions'], ['Debian', 'debian'], ['Nginx', 'nginx'], ['Redis', 'redis']
 ];
-const MARQUEE_B = ['KPIFlow', 'BHHaccess', 'VYNTIX', 'SMARTY', 'cocosecret.shop', 'Coco Italia Beach', 'HospiConnect', 'FlowI', 'SSAS', 'SCRIPX'];
+const MARQUEE_B = ['kpiflow', 'bhhaccess', 'vyntix', 'smarty', 'cocosecret', 'cocoitalia', 'hospiconnect', 'flowi', 'ssas', 'scripx'];
 
 /* Labels used inside the illustrative mock-ups */
 const MOCK = {
@@ -450,11 +450,15 @@ function renderServices() {
         </article>`).join('');
 }
 
+/* Each marquee item carries data-tip="tool:<key>" or "project:<id>"; the
+   tooltip text is looked up in translations at hover time. */
+const iconKey = icon => icon.replace(/\.\w+$/, '');
 function renderMarquee() {
-    const row = list => { const one = list.map(x => `<span class="marquee-item">${x}</span>`).join(''); return one + one; };
+    const row = items => items + items;
     $('#marqueeA').innerHTML = row(MARQUEE_A.map(([label, icon]) =>
-        `<img src="assets/icons/${icon.includes('.') ? icon : icon + '.svg'}" width="28" height="28" alt="" loading="lazy">${label}`));
-    $('#marqueeB').innerHTML = row(MARQUEE_B);
+        `<span class="marquee-item" data-tip="tool:${iconKey(icon)}" data-name="${esc(label)}"><img src="assets/icons/${icon.includes('.') ? icon : icon + '.svg'}" width="28" height="28" alt="" loading="lazy">${label}</span>`).join(''));
+    $('#marqueeB').innerHTML = row(MARQUEE_B.map(id =>
+        `<span class="marquee-item" data-tip="project:${id}">${esc(window.T.en.work.items[id].name)}</span>`).join(''));
 }
 
 function splitStartupTitle() {
@@ -622,6 +626,65 @@ setInterval(() => {
         $('.shot-url', shot).textContent = imgs[next].dataset.bar;
     });
 }, 3000);
+
+// Marquee tooltips: name + short description of the tool or project under
+// the cursor (tap on touch screens). Clicking a project goes to the Work section.
+const tip = document.createElement('div');
+tip.className = 'tip';
+tip.setAttribute('role', 'tooltip');
+tip.innerHTML = '<span class="tip-kind"></span><b class="tip-title"></b><span class="tip-desc"></span>';
+document.body.appendChild(tip);
+let tipTimer = null;
+
+function tipContent(item) {
+    const [kind, key] = item.dataset.tip.split(':');
+    const t = T();
+    if (kind === 'project') {
+        const it = t.work.items[key];
+        return { kind: t.tips.project, title: it.name, desc: `${it.sub}. ${t.tips.see}` };
+    }
+    return { kind: t.tips.tool, title: item.dataset.name, desc: t.tips.tools[key] || '' };
+}
+function moveTip(x, y) {
+    const half = tip.offsetWidth / 2 + 10;
+    tip.style.setProperty('--x', Math.min(Math.max(x, half), window.innerWidth - half) + 'px');
+    tip.style.setProperty('--y', y + 'px');
+    tip.classList.toggle('below', y < 160);
+}
+function showTip(item, x, y) {
+    const c = tipContent(item);
+    $('.tip-kind', tip).textContent = c.kind;
+    $('.tip-title', tip).textContent = c.title;
+    $('.tip-desc', tip).textContent = c.desc;
+    tip.classList.add('is-on');
+    moveTip(x, y);
+}
+const hideTip = () => tip.classList.remove('is-on');
+
+const marquee = $('.marquee');
+marquee.addEventListener('mouseover', e => {
+    const item = e.target.closest('.marquee-item');
+    if (item && !isTouch) showTip(item, e.clientX, e.clientY);
+});
+marquee.addEventListener('mousemove', e => { if (tip.classList.contains('is-on') && !isTouch) moveTip(e.clientX, e.clientY); });
+marquee.addEventListener('mouseout', e => {
+    const item = e.target.closest('.marquee-item');
+    if (item && !item.contains(e.relatedTarget)) hideTip();
+});
+marquee.addEventListener('click', e => {
+    const item = e.target.closest('.marquee-item');
+    if (!item) return;
+    if (isTouch) {
+        const r = item.getBoundingClientRect();
+        showTip(item, r.left + r.width / 2, r.top);
+        clearTimeout(tipTimer);
+        tipTimer = setTimeout(hideTip, 2800);
+    } else if (item.dataset.tip.startsWith('project:')) {
+        hideTip();
+        $('#work').scrollIntoView({ behavior: prefersReduced ? 'auto' : 'smooth' });
+    }
+});
+window.addEventListener('scroll', hideTip, { passive: true });
 
 // Live access log in the BHHaccess mock
 let logTick = 5;

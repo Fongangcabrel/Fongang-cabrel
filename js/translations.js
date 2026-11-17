@@ -18,13 +18,40 @@ en: {
     enter: 'Click to enter'
   },
 
+  tips: {
+    tool: 'Tool', project: 'Project', see: 'Click to see it',
+    tools: {
+      python: 'My main language — APIs, automation and data pipelines.',
+      php: 'Web apps and e-commerce, like cocosecret and Coco Italia Beach.',
+      fastapi: 'Fast async Python APIs — the core of KPIFlow.',
+      laravel: 'PHP framework I used to build HospiConnect.',
+      postgresql: 'The production database behind KPIFlow.',
+      mysql: 'Database behind my PHP web apps.',
+      sqlserver: 'KPI consolidation, T-SQL and scheduled Agent jobs.',
+      powerbi: 'Interactive reports and dashboards for decision makers.',
+      powerapps: 'Low-code business apps on top of Microsoft 365.',
+      powerautomate: 'Automated flows between Microsoft 365 tools.',
+      microsoft365: 'The workplace suite: Outlook, Excel, OneDrive and more.',
+      sharepoint: 'Document sites and lists that feed apps and flows.',
+      teams: 'Where apps, flows and people meet every day.',
+      react: 'Interactive front-ends, like FlowI’s visual editor.',
+      typescript: 'Typed JavaScript for safer front-ends and SMARTY’s mobile apps.',
+      docker: 'Containers — KPIFlow runs Dockerised in production.',
+      grafana: 'Monitoring dashboards for production servers.',
+      githubactions: 'CI/CD pipelines: test and deploy on every push.',
+      debian: 'The production Linux server I administer.',
+      nginx: 'Reverse proxy in front of my applications.',
+      redis: 'Real-time cache and queues for VYNTIX and SMARTY.'
+    }
+  },
+
   nav: { about: 'About', work: 'Work', experience: 'Experience', stack: 'Stack', startup: 'HellooTech', contact: 'Contact', cta: 'Let’s talk' },
 
   hero: {
     eyebrow: 'Software engineer · Full-stack & DevSecOps',
     title: { text: 'I build software that', accent: 'businesses run on.' },
-    desc: 'I’m FONGANG Cabrel, a developer in Douala, Cameroon. I turn ideas into <span class="rot">digital platforms</span> that actually run — from the FastAPI back-end to the Debian server that hosts them. My latest pride: <strong>KPIFlow</strong>, now used company-wide at BEETLE HERITAGE HOLDING.',
-    rotate: ['digital platforms', 'business apps', 'automations', 'live dashboards', 'Power Platform solutions'],
+    desc: 'I’m FONGANG Cabrel, a developer in Douala, Cameroon. I turn ideas into <span class="rot">digital platforms</span> that actually run — front-end to back-end, database to server, all the way to Microsoft 365 and Power Platform solutions. My latest pride: <strong>KPIFlow</strong>, now used company-wide at BEETLE HERITAGE HOLDING.',
+    rotate: ['digital platforms', 'business apps', 'web interfaces', 'automations', 'live dashboards'],
     btn_work: 'See my work',
     btn_contact: 'Get in touch',
     stat1: 'projects shipped',
@@ -229,13 +256,40 @@ fr: {
     enter: 'Cliquez pour entrer'
   },
 
+  tips: {
+    tool: 'Outil', project: 'Projet', see: 'Cliquez pour le voir',
+    tools: {
+      python: 'Mon langage principal — APIs, automatisation et pipelines de données.',
+      php: 'Applications web et e-commerce, comme cocosecret et Coco Italia Beach.',
+      fastapi: 'APIs Python asynchrones et rapides — le cœur de KPIFlow.',
+      laravel: 'Framework PHP utilisé pour construire HospiConnect.',
+      postgresql: 'La base de données de production derrière KPIFlow.',
+      mysql: 'Base de données de mes applications web PHP.',
+      sqlserver: 'Consolidation KPI, T-SQL et jobs planifiés SQL Server Agent.',
+      powerbi: 'Rapports et tableaux de bord interactifs pour les décideurs.',
+      powerapps: 'Applications métier low-code sur Microsoft 365.',
+      powerautomate: 'Flux automatisés entre les outils Microsoft 365.',
+      microsoft365: 'La suite bureautique : Outlook, Excel, OneDrive et plus.',
+      sharepoint: 'Sites documentaires et listes qui alimentent apps et flux.',
+      teams: 'Là où apps, flux et équipes se retrouvent chaque jour.',
+      react: 'Interfaces interactives, comme l’éditeur visuel de FlowI.',
+      typescript: 'JavaScript typé pour des front-ends plus sûrs et les apps mobiles de SMARTY.',
+      docker: 'Conteneurs — KPIFlow tourne dockerisé en production.',
+      grafana: 'Tableaux de bord de monitoring des serveurs de production.',
+      githubactions: 'Pipelines CI/CD : tests et déploiement à chaque push.',
+      debian: 'Le serveur Linux de production que j’administre.',
+      nginx: 'Reverse proxy devant mes applications.',
+      redis: 'Cache et files temps réel pour VYNTIX et SMARTY.'
+    }
+  },
+
   nav: { about: 'À propos', work: 'Projets', experience: 'Parcours', stack: 'Stack', startup: 'HellooTech', contact: 'Contact', cta: 'Discutons' },
 
   hero: {
     eyebrow: 'Ingénieur logiciel · Full-stack & DevSecOps',
     title: { text: 'Je conçois des logiciels qui font', accent: 'tourner les entreprises.' },
-    desc: 'Moi c’est FONGANG Cabrel, développeur à Douala, au Cameroun. Je transforme des idées en <span class="rot">plateformes digitales</span> qui tournent pour de vrai — du back-end FastAPI jusqu’au serveur Debian qui les héberge. Ma dernière fierté : <strong>KPIFlow</strong>, utilisée aujourd’hui dans toute l’entreprise chez BEETLE HERITAGE HOLDING.',
-    rotate: ['plateformes digitales', 'applications métier', 'automatisations', 'tableaux de bord vivants', 'solutions Power Platform'],
+    desc: 'Moi c’est FONGANG Cabrel, développeur à Douala, au Cameroun. Je transforme des idées en <span class="rot">plateformes digitales</span> qui tournent pour de vrai — du front-end au back-end, de la base de données au serveur, jusqu’aux solutions Microsoft 365 et Power Platform. Ma dernière fierté : <strong>KPIFlow</strong>, utilisée aujourd’hui dans toute l’entreprise chez BEETLE HERITAGE HOLDING.',
+    rotate: ['plateformes digitales', 'applications métier', 'interfaces web', 'automatisations', 'tableaux de bord vivants'],
     btn_work: 'Voir mes projets',
     btn_contact: 'Me contacter',
     stat1: 'projets réalisés',
