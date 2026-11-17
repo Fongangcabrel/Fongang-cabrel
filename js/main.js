@@ -34,7 +34,9 @@ const EMAIL = 'fongangcabrel2007@gmail.com';
 /* ─────────────────────────── data ────────────────────────────── */
 const PROJECTS = [
     { id: 'kpiflow',   featured: true, cat: 'web', status: 'production',
-      shot: { src: 'assets/img/kpiflow.jpg', w: 1400, h: 672, bar: 'kpiflow / performance' },
+      shot: { w: 1400, h: 672, slides: [
+          { src: 'assets/img/kpiflow-login.jpg', bar: 'kpiflow / login' },
+          { src: 'assets/img/kpiflow.jpg', bar: 'kpiflow / performance' } ] },
       stack: ['FastAPI', 'SQLAlchemy', 'PostgreSQL', 'Jinja2', 'Docker', 'Debian 13', 'Nginx', 'GitHub Actions', 'Grafana', 'SSH'], links: {} },
     { id: 'bhhaccess', featured: true, cat: 'web', status: 'mvp',
       stack: ['MVC', 'SOLID', 'QR badges', 'RBAC', 'Audit log', 'Excel import'], links: {} },
@@ -43,7 +45,7 @@ const PROJECTS = [
     { id: 'ssas',         cat: 'data',  stack: ['Python', 'SQL Server', 'SQL Server Agent', 'T-SQL', 'ETL', 'Power BI'], links: {} },
     { id: 'flowi',        cat: 'data',  stack: ['Python', 'FastAPI', 'React.js', 'AsyncIO', 'REST API'], links: {} },
     { id: 'cocosecret', featured: true, cat: 'web', status: 'live',
-      shot: { src: 'assets/img/cocosecret.jpg', w: 1400, h: 689, bar: 'cocosecret.shop' },
+      shot: { w: 1400, h: 689, slides: [{ src: 'assets/img/cocosecret.jpg', bar: 'cocosecret.shop' }] },
       stack: ['PHP', 'MySQL', 'Notchpay', 'Flutterwave', 'WhatsApp'], links: { live: 'https://cocosecret.shop/landing.php' } },
     { id: 'cocoitalia',   cat: 'web',   stack: ['PHP', 'Stripe', 'JavaScript', 'MySQL'], links: { live: 'https://www.cocoitaliabeach.com' } },
     { id: 'hospiconnect', cat: 'web',   stack: ['PHP 8', 'Laravel', 'MySQL', 'WebSocket / SSE', 'PHPMailer', 'Bootstrap'], links: {} },
@@ -191,18 +193,6 @@ const ART = {
     })()
 };
 
-function qrSVG(seed) {
-    let s = seed;
-    const rnd = () => (s = (s * 9301 + 49297) % 233280) / 233280;
-    const inFinder = (x, y) => (x < 8 && y < 8) || (x > 12 && y < 8) || (x < 8 && y > 12);
-    const finder = (x, y) => `<rect x="${x}" y="${y}" width="7" height="7" fill="#111"/><rect x="${x + 1}" y="${y + 1}" width="5" height="5" fill="#f6f5f1"/><rect x="${x + 2}" y="${y + 2}" width="3" height="3" fill="#111"/>`;
-    let cells = '';
-    for (let y = 0; y < 21; y++) for (let x = 0; x < 21; x++) {
-        if (!inFinder(x, y) && rnd() > .5) cells += `<rect x="${x}" y="${y}" width="1" height="1"/>`;
-    }
-    return `<svg viewBox="-1 -1 23 23" shape-rendering="crispEdges" aria-hidden="true"><rect x="-1" y="-1" width="23" height="23" fill="#f6f5f1"/><g fill="#111">${cells}</g>${finder(0, 0)}${finder(14, 0)}${finder(0, 14)}</svg>`;
-}
-const QR = qrSVG(42);
 
 /* ─────────────────────────── state ───────────────────────────── */
 let LANG = store.get('fc_lang') || ((navigator.language || 'en').toLowerCase().startsWith('fr') ? 'fr' : 'en');
@@ -239,10 +229,15 @@ function linksHTML(p, tw, cls) {
 }
 
 function shotHTML(p, it) {
-    const sh = p.shot;
-    return `<div class="feat-tilt wide"><div class="shot">
-        <div class="mock-bar"><i></i><i></i><i></i><span>${sh.bar}</span></div>
-        <img src="${sh.src}" width="${sh.w}" height="${sh.h}" loading="lazy" alt="${esc(it.name + ' — ' + it.sub)}">
+    const sh = p.shot, many = sh.slides.length > 1;
+    const alt = esc(it.name + ' — ' + it.sub);
+    const dots = many ? `<span class="shot-dots">${sh.slides.map((_, k) => `<b${k ? '' : ' class="is-active"'}></b>`).join('')}</span>` : '';
+    const imgs = sh.slides.map((s, k) =>
+        `<img src="${s.src}" data-bar="${s.bar}" width="${sh.w}" height="${sh.h}" loading="lazy" alt="${alt}"${k ? '' : ' class="is-active"'}>`).join('');
+    return `<div class="feat-tilt wide"><div class="shot"${many ? ' data-slides' : ''} role="button" tabindex="0" aria-label="${esc(T().work.zoom)}">
+        <div class="mock-bar"><i></i><i></i><i></i><span class="shot-url">${sh.slides[0].bar}</span>${dots}</div>
+        <div class="shot-stage" style="aspect-ratio:${sh.w} / ${sh.h}">${imgs}</div>
+        <span class="shot-zoom" aria-hidden="true"><i class="fas fa-expand"></i></span>
     </div></div>`;
 }
 
@@ -256,8 +251,8 @@ function logEntry(m, i) {
 function mockQR(m) {
     return `<div class="feat-tilt"><div class="qr-mock">
         <div class="badge-card">
-            <div class="badge-qr">${QR}<span class="scan"></span></div>
-            <div class="badge-name">${m.badge} · BHH-0142</div>
+            <div class="badge-qr"><img src="assets/img/bhh-badge.png" width="420" height="420" loading="lazy" alt="BHHaccess QR badge EMPL001"><span class="scan"></span></div>
+            <div class="badge-name">${m.badge} · EMPL001</div>
             <div class="badge-role">${m.role}</div>
         </div>
         <div class="access-log">
@@ -493,6 +488,70 @@ if (!isTouch && !prefersReduced) {
     });
 }
 
+// Screenshot slideshow (KPIFlow): next image every 3 s while visible,
+// paused while the visitor hovers it
+setInterval(() => {
+    if (prefersReduced) return;
+    $$('.shot[data-slides]').forEach(shot => {
+        if (!shot.closest('.is-visible') || shot.matches(':hover')) return;
+        const imgs = $$('.shot-stage img', shot);
+        const cur = imgs.findIndex(i => i.classList.contains('is-active'));
+        const next = (cur + 1) % imgs.length;
+        imgs[cur].classList.remove('is-active');
+        imgs[next].classList.add('is-active');
+        $$('.shot-dots b', shot).forEach((d, k) => d.classList.toggle('is-active', k === next));
+        $('.shot-url', shot).textContent = imgs[next].dataset.bar;
+    });
+}, 3000);
+
+// Lightbox: a click on a screenshot grows it from its card to full screen
+const lb = document.createElement('div');
+lb.className = 'lightbox';
+lb.setAttribute('role', 'dialog');
+lb.setAttribute('aria-modal', 'true');
+lb.innerHTML = '<button class="lb-close" type="button" aria-label="Close">×</button><img alt="">';
+document.body.appendChild(lb);
+const lbImg = $('img', lb);
+let lbSource = null;
+
+function flipFrom(a, b) {
+    return { x: a.left + a.width / 2 - (b.left + b.width / 2), y: a.top + a.height / 2 - (b.top + b.height / 2), scale: a.width / b.width };
+}
+function openLightbox(img) {
+    lbSource = img;
+    lbImg.src = img.currentSrc || img.src;
+    lbImg.alt = img.alt;
+    lbImg.setAttribute('width', img.getAttribute('width'));
+    lbImg.setAttribute('height', img.getAttribute('height'));
+    lb.classList.remove('is-closing');
+    lb.classList.add('is-open');
+    document.body.classList.add('lb-open');
+    if (MOTION) gsap.fromTo(lbImg, flipFrom(img.getBoundingClientRect(), lbImg.getBoundingClientRect()),
+        { x: 0, y: 0, scale: 1, duration: .85, ease: 'expo.out' });
+    $('.lb-close', lb).focus({ preventScroll: true });
+}
+function closeLightbox() {
+    if (!lb.classList.contains('is-open') || lb.classList.contains('is-closing')) return;
+    const done = () => {
+        lb.classList.remove('is-open', 'is-closing');
+        document.body.classList.remove('lb-open');
+        if (MOTION) gsap.set(lbImg, { clearProps: 'transform' });
+    };
+    if (!MOTION || !lbSource) { done(); return; }
+    lb.classList.add('is-closing');
+    gsap.to(lbImg, { ...flipFrom(lbSource.getBoundingClientRect(), lbImg.getBoundingClientRect()), duration: .6, ease: 'expo.inOut', onComplete: done });
+}
+lb.addEventListener('click', closeLightbox);
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+$('#featured').addEventListener('click', e => {
+    const shot = e.target.closest('.shot');
+    if (shot) openLightbox($('.shot-stage img.is-active', shot));
+});
+$('#featured').addEventListener('keydown', e => {
+    const shot = e.target.closest('.shot');
+    if (shot && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); openLightbox($('.shot-stage img.is-active', shot)); }
+});
+
 // Live access log in the BHHaccess mock
 let logTick = 5;
 setInterval(() => {
@@ -613,10 +672,30 @@ function startTerminal() {
 }
 
 /* ─────────────────────────── motion ──────────────────────────── */
-function heroTimeline(delay) {
-    const counters = $$('[data-count]');
-    counters.forEach(el => { el.textContent = '0'; });
+/* Odometer counters: every digit is a strip 0-9 twice over; it spins one
+   full turn and lands on its value, digits settling one after another. */
+const CELLS = 20;
+const odoTarget = d => -(10 + d) * (100 / CELLS);
 
+function buildOdometers() {
+    $$('[data-count]').forEach(el => {
+        const value = el.dataset.count;
+        el.setAttribute('aria-label', value);
+        const cells = Array.from({ length: CELLS }, (_, n) => `<span>${n % 10}</span>`).join('');
+        el.innerHTML = value.split('').map(d =>
+            `<span class="odo" aria-hidden="true"><span class="odo-strip" data-d="${d}" style="transform:translateY(${odoTarget(+d)}%)">${cells}</span></span>`
+        ).join('');
+    });
+}
+
+function rollOdometers() {
+    const strips = $$('.odo-strip');
+    gsap.fromTo(strips, { yPercent: 0, y: 0 }, {
+        yPercent: i => odoTarget(+strips[i].dataset.d), duration: 2, stagger: .14, ease: 'power4.out', overwrite: true
+    });
+}
+
+function heroTimeline(delay) {
     const tl = gsap.timeline({ delay, defaults: { ease: 'power4.out' }, onComplete: heroParallax });
     tl.from('#nav', { yPercent: -100, duration: 1, clearProps: 'transform' }, 0)
       .from('.hero-title .word > span', { yPercent: 115, duration: 1.1, stagger: .045 }, 0)
@@ -628,10 +707,9 @@ function heroTimeline(delay) {
       .from('#heroRing', { scale: 0, rotate: -120, duration: 1, ease: 'back.out(1.6)' }, 1.05)
       .from('.scroll-hint', { opacity: 0, duration: .8 }, 1.3);
 
-    counters.forEach(el => {
-        const o = { v: 0 };
-        tl.to(o, { v: +el.dataset.count, duration: 1.6, ease: 'power2.out', onUpdate: () => { el.textContent = Math.round(o.v); } }, .7);
-    });
+    // counters start at 0 behind the loader, then roll in
+    gsap.set('.odo-strip', { yPercent: 0, y: 0 });
+    tl.add(rollOdometers, .6);
     return tl;
 }
 
@@ -695,6 +773,9 @@ function buildStatementScrub() {
 }
 
 function initScroll() {
+    // counters roll again whenever you scroll back up to them
+    ScrollTrigger.create({ trigger: '.hero-stats', start: 'top bottom', end: 'bottom top', onEnterBack: rollOdometers });
+
     // progress bar
     gsap.to('#progress', { scaleX: 1, ease: 'none', scrollTrigger: { trigger: document.body, start: 'top top', end: 'bottom bottom', scrub: .3 } });
 
@@ -743,6 +824,11 @@ function initScroll() {
         scrollTrigger: { trigger: el, start: 'top 85%' }
     }));
 
+    // project visuals grow from 80% to full size as they scroll into view
+    $$('.feat-visual .shot, .feat-visual .qr-mock').forEach(el => gsap.fromTo(el, { scale: .8 }, {
+        scale: 1, ease: 'none', scrollTrigger: { trigger: el, start: 'top bottom', end: 'top 35%', scrub: .6 }
+    }));
+
     // experience timeline draws itself
     gsap.to('#tlProgress', { scaleY: 1, ease: 'none', scrollTrigger: { trigger: '#timeline', start: 'top 70%', end: 'bottom 60%', scrub: true } });
 
@@ -755,6 +841,7 @@ function initScroll() {
 /* ─────────────────────────── boot ────────────────────────────── */
 renderMarquee();
 splitStartupTitle();
+buildOdometers();
 setLang(LANG, true);
 startTerminal();
 
