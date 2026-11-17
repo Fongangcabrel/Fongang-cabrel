@@ -33,15 +33,18 @@ const EMAIL = 'fongangcabrel2007@gmail.com';
 
 /* ─────────────────────────── data ────────────────────────────── */
 const PROJECTS = [
-    { id: 'kpiflow',   featured: true, cat: 'web', status: 'production', mock: 'kpi',
+    { id: 'kpiflow',   featured: true, cat: 'web', status: 'production',
+      shot: { src: 'assets/img/kpiflow.jpg', w: 1400, h: 672, bar: 'kpiflow / performance' },
       stack: ['FastAPI', 'SQLAlchemy', 'PostgreSQL', 'Jinja2', 'Debian 13', 'Nginx', 'GitHub Actions', 'SSH'], links: {} },
-    { id: 'bhhaccess', featured: true, cat: 'web', status: 'mvp', mock: 'qr',
+    { id: 'bhhaccess', featured: true, cat: 'web', status: 'mvp',
       stack: ['MVC', 'SOLID', 'QR badges', 'RBAC', 'Audit log', 'Excel import'], links: {} },
     { id: 'vyntix',       cat: 'infra', stack: ['FastAPI', 'SQL Server', 'SQLite', 'WebSockets', 'Redis', 'Chart.js'], links: {} },
     { id: 'smarty',       cat: 'web',   stack: ['React Native', 'TypeScript', 'FastAPI', 'SQLAlchemy', 'PostgreSQL', 'Redis'], links: {} },
     { id: 'ssas',         cat: 'data',  stack: ['Python', 'SQL Server', 'SQL Server Agent', 'T-SQL', 'ETL', 'Power BI'], links: {} },
     { id: 'flowi',        cat: 'data',  stack: ['Python', 'FastAPI', 'React.js', 'AsyncIO', 'REST API'], links: {} },
-    { id: 'cocosecret',   cat: 'web',   stack: ['PHP', 'MySQL', 'Notchpay', 'Flutterwave', 'WhatsApp'], links: { live: 'https://cocosecret.shop/landing.php' } },
+    { id: 'cocosecret', featured: true, cat: 'web', status: 'live',
+      shot: { src: 'assets/img/cocosecret.jpg', w: 1400, h: 689, bar: 'cocosecret.shop' },
+      stack: ['PHP', 'MySQL', 'Notchpay', 'Flutterwave', 'WhatsApp'], links: { live: 'https://cocosecret.shop/landing.php' } },
     { id: 'cocoitalia',   cat: 'web',   stack: ['PHP', 'Stripe', 'JavaScript', 'MySQL'], links: { live: 'https://www.cocoitaliabeach.com' } },
     { id: 'hospiconnect', cat: 'web',   stack: ['PHP 8', 'Laravel', 'MySQL', 'WebSocket / SSE', 'PHPMailer', 'Bootstrap'], links: {} },
     { id: 'scripx',       cat: 'infra', stack: ['PowerShell', 'Networking', 'Automation'], links: {} }
@@ -72,13 +75,11 @@ const MARQUEE_B = ['KPIFlow', 'BHHaccess', 'VYNTIX', 'SMARTY', 'cocosecret.shop'
 
 /* Labels used inside the illustrative mock-ups */
 const MOCK = {
-    en: { illus: 'Illustrative mock-up', validated: 'validated', log: 'access log', live: 'live',
+    en: { illus: 'Illustrative mock-up', log: 'access log', live: 'live',
           granted: 'granted', denied: 'denied', badge: 'Staff badge', role: 'Zones A · C · Server room',
-          tiles: [['Sales', '92%', '▲4'], ['Operations', '87%', ''], ['IT', '95%', '▲2']],
           zones: ['Main gate', 'Server room', 'Warehouse', 'Admin office', 'Lab', 'Car park'] },
-    fr: { illus: 'Maquette illustrative', validated: 'validé', log: 'journal d’accès', live: 'en direct',
+    fr: { illus: 'Maquette illustrative', log: 'journal d’accès', live: 'en direct',
           granted: 'autorisé', denied: 'refusé', badge: 'Badge personnel', role: 'Zones A · C · Salle serveur',
-          tiles: [['Ventes', '92%', '▲4'], ['Opérations', '87%', ''], ['IT', '95%', '▲2']],
           zones: ['Entrée principale', 'Salle serveur', 'Entrepôt', 'Direction', 'Labo', 'Parking'] }
 };
 
@@ -237,15 +238,11 @@ function linksHTML(p, tw, cls) {
     return out.length ? `<div class="${cls}">${out.join('')}</div>` : `<p class="feat-note">${tw.private}</p>`;
 }
 
-function mockKPI(m) {
-    const bars = [38, 62, 48, 80, 56, 92, 70, 84, 66, 90].map((h, i) => `<span style="--h:${h}%;--i:${i}"></span>`).join('');
-    return `<div class="feat-tilt"><div class="mock">
-        <div class="mock-bar"><i></i><i></i><i></i><span>kpiflow / dashboard</span></div>
-        <div class="mock-body">
-            <div class="kpi-tiles">${m.tiles.map(([l, v, d]) => `<div class="kpi-tile"><small>${l}</small><b>${v}${d ? `<em>${d}</em>` : ''}</b></div>`).join('')}</div>
-            <div class="kpi-chart">${bars}</div>
-            <div class="kpi-row"><code>score = min(real / target, 1.2) × weight</code><span class="kpi-badge">✓ ${m.validated}</span></div>
-        </div>
+function shotHTML(p, it) {
+    const sh = p.shot;
+    return `<div class="feat-tilt wide"><div class="shot">
+        <div class="mock-bar"><i></i><i></i><i></i><span>${sh.bar}</span></div>
+        <img src="${sh.src}" width="${sh.w}" height="${sh.h}" loading="lazy" alt="${esc(it.name + ' — ' + it.sub)}">
     </div></div>`;
 }
 
@@ -275,7 +272,7 @@ function renderFeatured() {
     $('#featured').innerHTML = PROJECTS.filter(p => p.featured).map(p => {
         const it = tw.items[p.id];
         return `<article class="feat">
-            <div class="feat-visual" data-observe>${p.mock === 'kpi' ? mockKPI(m) : mockQR(m)}<span class="mock-caption">${m.illus}</span></div>
+            <div class="feat-visual${p.shot ? ' has-shot' : ''}" data-observe>${p.shot ? shotHTML(p, it) : mockQR(m) + `<span class="mock-caption">${m.illus}</span>`}</div>
             <div class="feat-body">
                 <div class="feat-meta"><span class="status status-${p.status}">${tw.status[p.status]}</span><span>${it.kicker}</span></div>
                 <h3>${it.name}</h3>

@@ -381,25 +381,17 @@ ul, ol { list-style: none; }
 .feat-links a i, .prow-links a i { color: var(--accent-hi); }
 .feat-note { margin-top: auto; padding-top: 22px; font-size: 13px; color: var(--dim); }
 
-/* Mock: KPIFlow dashboard */
-.mock { width: 100%; background: #101014; border: 1px solid var(--line-2); border-radius: 14px; box-shadow: 0 30px 60px -20px rgba(0, 0, 0, .8); overflow: hidden; font-size: 11px; }
-.mock-bar { display: flex; align-items: center; gap: 6px; padding: 10px 12px; border-bottom: 1px solid var(--line); color: var(--dim); font-family: var(--f-mono); }
+/* Shared mock window chrome */
+.mock-bar { display: flex; align-items: center; gap: 6px; padding: 10px 12px; border-bottom: 1px solid var(--line); color: var(--dim); font-family: var(--f-mono); font-size: 11px; }
 .mock-bar i { width: 8px; height: 8px; border-radius: 50%; background: #2c2c31; }
 .mock-bar span { margin-left: 8px; }
-.mock-body { padding: 16px; display: grid; gap: 14px; }
-.kpi-tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
-.kpi-tile { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; }
-.kpi-tile small { display: block; color: var(--dim); font-size: 10px; margin-bottom: 4px; }
-.kpi-tile b { font-family: var(--f-display); font-size: 20px; font-weight: 600; letter-spacing: -.02em; }
-.kpi-tile b em { font-style: normal; color: var(--ok); font-size: 11px; margin-left: 4px; }
-.kpi-chart { display: flex; align-items: flex-end; gap: 8px; height: 110px; padding: 12px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; }
-.kpi-chart span { flex: 1; height: var(--h); border-radius: 4px 4px 2px 2px; background: linear-gradient(180deg, var(--accent-hi), var(--accent)); transform-origin: bottom; transform: scaleY(.08); }
-.kpi-chart span:nth-child(3n) { background: #2c3550; }
-.is-visible .kpi-chart span { animation: barGrow 1.2s var(--ease) forwards, barBreathe 4s ease-in-out 1.4s infinite; animation-delay: calc(var(--i) * 80ms), calc(1.4s + var(--i) * 150ms); }
-.kpi-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 9px 12px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; color: var(--muted); }
-.kpi-row code { font-family: var(--f-mono); color: var(--text); font-size: 10.5px; }
-.kpi-badge { padding: 3px 8px; border-radius: 999px; background: rgba(61, 220, 151, .12); color: var(--ok); font-weight: 500; white-space: nowrap; }
-.is-visible .kpi-badge { animation: popIn .5s var(--ease) 1.2s both; }
+
+/* Real screenshots (KPIFlow, cocosecret) in a browser frame */
+.feat-tilt.wide { max-width: none; }
+.feat-visual.has-shot { padding: clamp(20px, 3vw, 32px); }
+.shot { background: #101014; border: 1px solid var(--line-2); border-radius: 14px; overflow: hidden; box-shadow: 0 30px 60px -20px rgba(0, 0, 0, .8); }
+.shot img { width: 100%; height: auto; transform-origin: 50% 0; transition: transform 1.2s var(--ease); }
+.feat:hover .shot img { transform: scale(1.04); }
 
 /* Mock: BHHaccess QR badge + live log */
 .qr-mock { display: grid; grid-template-columns: 170px 1fr; gap: 14px; width: 100%; align-items: center; }
@@ -726,7 +718,6 @@ ul, ol { list-style: none; }
     .prow-inner { padding: 0 4px 26px; }
     .qr-mock { grid-template-columns: 1fr; max-width: 260px; margin: 0 auto; }
     .access-log { display: none; }
-    .kpi-tile b { font-size: 16px; }
     .facts div { grid-template-columns: 1fr; gap: 2px; }
     .timeline { padding-left: 28px; }
     .job::before { left: -28px; }
@@ -744,5 +735,11 @@ ul, ol { list-style: none; }
     html { scroll-behavior: auto; }
     *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
     .marquee-row { animation: none; }
-    .kpi-chart span { transform: none; }
 }
+
+/* Brand-coloured contact icons (WhatsApp green, LinkedIn blue, GitHub) */
+.bico { display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 8px; color: #fff; font-size: 16px; flex: none; }
+.bico.wa { background: #25d366; }
+.bico.li { background: #0a66c2; }
+.bico.gh { background: #f2f1ed; color: #0b0b0c; }
+.bico.sm { width: 22px; height: 22px; border-radius: 6px; font-size: 12px; }

@@ -9,7 +9,7 @@ window.T = {
 
 /* ─────────────────────────── ENGLISH ─────────────────────────── */
 en: {
-  meta: { title: 'Fongang Cabrel — Software Engineer, Full-Stack & DevOps' },
+  meta: { title: 'Fongang Cabrel Kamara — Software Engineer, Full-Stack & DevOps' },
 
   nav: { about: 'About', work: 'Work', experience: 'Experience', stack: 'Stack', startup: 'HellooTech', contact: 'Contact', cta: 'Let’s talk' },
 
@@ -21,7 +21,7 @@ en: {
     btn_contact: 'Get in touch',
     stat1: 'projects shipped',
     stat2: 'running in production',
-    stat3: 'internships',
+    stat3: 'professional roles',
     available: 'Open to opportunities',
     ring: 'Open to work · Douala · Remote · ',
     scroll: 'Scroll'
@@ -48,7 +48,7 @@ en: {
   work: {
     label: 'Selected work',
     title: 'Things I’ve built',
-    intro: 'Two projects I’m proudest of, then the rest. Most of them are internal tools, so the code isn’t public — happy to walk you through any of them in a call.',
+    intro: 'The projects I’m proudest of, then the rest. Most of them are internal tools, so the code isn’t public — happy to walk you through any of them in a call.',
     more_title: 'More projects',
     f_all: 'All', f_web: 'Web apps', f_data: 'Data & automation', f_infra: 'Infrastructure',
     live: 'Visit live site',
@@ -89,8 +89,18 @@ en: {
         desc: 'A Python ETL pipeline consolidating stock data into SQL Server. Critical items are detected against configurable thresholds, SQL Server Agent runs the nightly jobs, and managers get their report every morning.' },
       flowi: { name: 'FlowI', sub: 'Business process automation', cat: 'Automation',
         desc: 'A modular framework to map, schedule and chain business workflows from a visual React.js interface, powered by an async FastAPI orchestration engine and plug-in Python modules.' },
-      cocosecret: { name: 'cocosecret.shop', sub: 'E-commerce, live', cat: 'Web · Live',
-        desc: 'A live e-commerce store with a hybrid sales funnel: order directly on WhatsApp or pay online. Notchpay and Flutterwave integration with real-time webhook confirmation.' },
+      cocosecret: {
+        name: 'cocosecret.shop',
+        sub: 'Wellness e-commerce, live',
+        kicker: 'Client project · E-commerce',
+        desc: 'An online store for teas, sweets and wellness care, built for a real brand and selling every day. Customers choose how they buy: straight on WhatsApp, or through a full online checkout.',
+        points: [
+          'Hybrid sales funnel: order on WhatsApp or check out online',
+          'Notchpay and Flutterwave payments (mobile money and card) with real-time webhook confirmation',
+          'Catalogue, cart, customer accounts and testimonials',
+          'Deployed and running in production at cocosecret.shop'
+        ]
+      },
       cocoitalia: { name: 'Coco Italia Beach', sub: 'Event ticketing', cat: 'Web · Live',
         desc: 'Ticketing for a summer beach festival in Parma, Italy: three ticket tiers (day €10 / evening €15 / full €20), Stripe checkout and attendee management. <strong>It handled real ticket sales for the 2026 edition.</strong>' },
       hospiconnect: { name: 'HospiConnect', sub: 'Hospital queue management', cat: 'Web · Healthcare',
@@ -103,14 +113,14 @@ en: {
   exp: {
     label: 'Experience',
     title: 'Where I’ve worked',
-    intro: 'Three internships, each one closer to production. The short version is below — open the story if you want the context.',
+    intro: 'Three roles, each one closer to production. The short version is below — open the story if you want the context.',
     current: 'Current',
     read: 'Read the story',
     hide: 'Hide the story',
     new_tag: 'side project',
     jobs: [
       {
-        role: 'IT Intern', company: 'BEETLE HERITAGE HOLDING', date: 'Jan 2026 – present',
+        role: 'Digital Solutions & Automation Integrator', company: 'BEETLE HERITAGE HOLDING', date: 'Jan 2026 – present',
         tasks: [
           'Designed, built and deployed <strong>KPIFlow</strong>, a production platform replacing the company’s Excel-based KPI cycle',
           'Wrote a sandboxed formula engine (Python <code>ast</code>, strict node whitelist) for per-department scoring rules',
@@ -201,7 +211,7 @@ en: {
 
 /* ─────────────────────────── FRANÇAIS ─────────────────────────── */
 fr: {
-  meta: { title: 'Fongang Cabrel — Ingénieur logiciel, Full-Stack & DevOps' },
+  meta: { title: 'Fongang Cabrel Kamara — Ingénieur logiciel, Full-Stack & DevOps' },
 
   nav: { about: 'À propos', work: 'Projets', experience: 'Parcours', stack: 'Stack', startup: 'HellooTech', contact: 'Contact', cta: 'Discutons' },
 
@@ -213,7 +223,7 @@ fr: {
     btn_contact: 'Me contacter',
     stat1: 'projets réalisés',
     stat2: 'en production',
-    stat3: 'stages',
+    stat3: 'expériences pro',
     available: 'Ouvert aux opportunités',
     ring: 'Disponible · Douala · Remote · ',
     scroll: 'Défiler'
@@ -240,7 +250,7 @@ fr: {
   work: {
     label: 'Projets choisis',
     title: 'Ce que j’ai construit',
-    intro: 'Les deux projets dont je suis le plus fier, puis le reste. La plupart sont des outils internes, donc le code n’est pas public — je peux vous en faire la démo lors d’un appel.',
+    intro: 'Les projets dont je suis le plus fier, puis le reste. La plupart sont des outils internes, donc le code n’est pas public — je peux vous en faire la démo lors d’un appel.',
     more_title: 'Autres projets',
     f_all: 'Tous', f_web: 'Applications web', f_data: 'Data & automatisation', f_infra: 'Infrastructure',
     live: 'Voir le site',
@@ -281,8 +291,18 @@ fr: {
         desc: 'Un pipeline ETL Python qui consolide les données de stock dans SQL Server. Les articles critiques sont détectés selon des seuils configurables, SQL Server Agent exécute les traitements de nuit, et les responsables reçoivent leur rapport chaque matin.' },
       flowi: { name: 'FlowI', sub: 'Automatisation des processus métier', cat: 'Automatisation',
         desc: 'Un framework modulaire pour cartographier, planifier et enchaîner des workflows métier depuis une interface React.js visuelle, propulsé par un moteur d’orchestration FastAPI asynchrone et des modules Python enfichables.' },
-      cocosecret: { name: 'cocosecret.shop', sub: 'E-commerce, en ligne', cat: 'Web · En ligne',
-        desc: 'Une boutique en ligne avec un tunnel de vente hybride : commande directe sur WhatsApp ou paiement en ligne. Intégration Notchpay et Flutterwave avec confirmation par webhook en temps réel.' },
+      cocosecret: {
+        name: 'cocosecret.shop',
+        sub: 'E-commerce bien-être, en ligne',
+        kicker: 'Projet client · E-commerce',
+        desc: 'Une boutique en ligne de thés, bonbons et soins bien-être, conçue pour une vraie marque et qui vend tous les jours. Le client choisit comment acheter : directement sur WhatsApp, ou via un paiement en ligne complet.',
+        points: [
+          'Tunnel de vente hybride : commande sur WhatsApp ou paiement en ligne',
+          'Paiements Notchpay et Flutterwave (mobile money et carte) avec confirmation par webhook en temps réel',
+          'Catalogue, panier, comptes clients et témoignages',
+          'Déployée et en production sur cocosecret.shop'
+        ]
+      },
       cocoitalia: { name: 'Coco Italia Beach', sub: 'Billetterie événementielle', cat: 'Web · En ligne',
         desc: 'Billetterie d’un festival de plage estival à Parme, en Italie : trois formules (journée 10 € / soirée 15 € / complet 20 €), paiement Stripe et gestion des participants. <strong>Elle a encaissé de vraies ventes de billets pour l’édition 2026.</strong>' },
       hospiconnect: { name: 'HospiConnect', sub: 'Gestion des files d’attente hospitalières', cat: 'Web · Santé',
@@ -295,14 +315,14 @@ fr: {
   exp: {
     label: 'Parcours',
     title: 'Où j’ai travaillé',
-    intro: 'Trois stages, chacun un peu plus proche de la production. La version courte ci-dessous — ouvrez l’histoire pour le contexte.',
+    intro: 'Trois expériences, chacune un peu plus proche de la production. La version courte ci-dessous — ouvrez l’histoire pour le contexte.',
     current: 'En cours',
     read: 'Lire l’histoire',
     hide: 'Masquer l’histoire',
     new_tag: 'projet perso',
     jobs: [
       {
-        role: 'Stagiaire IT', company: 'BEETLE HERITAGE HOLDING', date: 'Janv. 2026 – aujourd’hui',
+        role: 'Intégrateur des Solutions Digitales et Automatisation', company: 'BEETLE HERITAGE HOLDING', date: 'Janv. 2026 – aujourd’hui',
         tasks: [
           'Conception, développement et déploiement de <strong>KPIFlow</strong>, plateforme en production qui remplace le suivi des KPI sous Excel',
           'Moteur de formules isolé (module <code>ast</code> de Python, liste blanche stricte) pour des règles de scoring propres à chaque département',
