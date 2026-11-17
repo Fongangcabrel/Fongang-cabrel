@@ -151,7 +151,7 @@ en: {
           'Full KPI lifecycle: definition → assignment → submission → automatic scoring → multi-level validation',
           'Sandboxed formula engine (Python <code>ast</code>, strict node whitelist): each department writes its own scoring rule, safely',
           'Dual-mode IAM: local accounts or CSV/AD import, with a guided first-login flow',
-          'Dockerised and deployed on the company’s Debian 13 server — CI/CD over SSH, monitored with Grafana'
+          'Containerised with Docker Compose on the company’s Debian 13 server behind Nginx/HTTPS — CI/CD over SSH, monitored with Grafana'
         ]
       },
       bhhaccess: {
@@ -160,11 +160,12 @@ en: {
         kicker: 'Personal initiative · 2026',
         desc: 'A side project I started on my own initiative: an access-control MVP built around QR-code badges. Admins decide who can go where; agents at the door scan a badge and get an answer in a second.',
         points: [
-          'Zones, roles and flexible permission rules — no hard-coded access logic',
-          'Full audit log: every scan and every admin change is traced',
-          'Bulk import of staff and badges from Excel',
-          'Web app for security agents to scan and verify badges on the spot',
-          'MVC architecture following SOLID principles, written to stay readable and maintainable'
+          'Zones, roles and flexible permissions — rights are checked server-side on every scan, so a revocation takes effect instantly',
+          'QR badges signed with Ed25519: the private key never leaves the server',
+          'Agent app as a React + TypeScript PWA: scans with the phone camera, nothing to install, instant updates',
+          'Printable PDF badges generated server-side, with the BHH logo in the centre of the QR',
+          'Full audit trail (PostgreSQL JSONB), staff import from Excel, Excel and PDF exports',
+          'MVC architecture following SOLID principles'
         ]
       },
       vyntix: { name: 'VYNTIX', sub: 'IT infrastructure monitor', cat: 'Infrastructure',
@@ -440,7 +441,7 @@ fr: {
           'Cycle complet des KPI : définition → affectation → soumission → calcul automatique du score → validation multi-niveaux',
           'Moteur de formules isolé (module <code>ast</code> de Python, liste blanche stricte) : chaque département écrit sa propre règle de calcul, en toute sécurité',
           'IAM à deux modes : comptes locaux ou import CSV/AD, avec parcours guidé de première connexion',
-          'Dockerisée et déployée sur le serveur Debian 13 de l’entreprise — CI/CD via SSH, monitoring avec Grafana'
+          'Conteneurisée avec Docker Compose sur le serveur Debian 13 de l’entreprise, derrière Nginx/HTTPS — CI/CD via SSH, supervision avec Grafana'
         ]
       },
       bhhaccess: {
@@ -449,11 +450,12 @@ fr: {
         kicker: 'Initiative personnelle · 2026',
         desc: 'Un projet lancé de ma propre initiative : un MVP de contrôle d’accès basé sur des badges QR. Les administrateurs définissent qui peut aller où ; à l’entrée, l’agent scanne le badge et obtient la réponse en une seconde.',
         points: [
-          'Zones, rôles et permissions flexibles — aucune règle d’accès codée en dur',
-          'Journal d’audit complet : chaque scan et chaque action d’administration est tracé',
-          'Import en masse du personnel et des badges depuis Excel',
-          'Application web pour les agents de sécurité : scan et vérification sur place',
-          'Architecture MVC respectant les principes SOLID, code pensé pour rester lisible et maintenable'
+          'Zones, rôles et permissions flexibles — les droits sont vérifiés côté serveur à chaque scan : un retrait est immédiat',
+          'Badges QR signés en Ed25519 : la clé privée ne quitte jamais le serveur',
+          'Application agent en PWA React + TypeScript : scan avec la caméra du téléphone, rien à installer, mises à jour instantanées',
+          'Badges PDF imprimables générés côté serveur, avec le logo BHH au centre du QR',
+          'Journal d’audit complet (PostgreSQL JSONB), import du personnel depuis Excel, exports Excel et PDF',
+          'Architecture MVC respectant les principes SOLID'
         ]
       },
       vyntix: { name: 'VYNTIX', sub: 'Monitoring d’infrastructure IT', cat: 'Infrastructure',

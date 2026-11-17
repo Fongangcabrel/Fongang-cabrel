@@ -37,9 +37,9 @@ const PROJECTS = [
       shot: { w: 1400, h: 672, slides: [
           { src: 'assets/img/kpiflow-login.jpg', bar: 'kpiflow / login' },
           { src: 'assets/img/kpiflow.jpg', bar: 'kpiflow / performance' } ] },
-      stack: ['FastAPI', 'SQLAlchemy', 'PostgreSQL', 'Jinja2', 'Docker', 'Debian 13', 'Nginx', 'GitHub Actions', 'Grafana', 'SSH'], links: {} },
+      stack: ['FastAPI', 'SQLAlchemy', 'Alembic', 'PostgreSQL', 'Jinja2', 'Docker Compose', 'Debian 13', 'Nginx · HTTPS', 'GitHub Actions', 'Grafana'], links: {} },
     { id: 'bhhaccess', featured: true, cat: 'web', status: 'mvp',
-      stack: ['MVC', 'SOLID', 'QR badges', 'RBAC', 'Audit log', 'Excel import'], links: {} },
+      stack: ['Python', 'FastAPI', 'PostgreSQL', 'React', 'TypeScript', 'PWA', 'Ed25519'], links: {} },
     { id: 'vyntix',       cat: 'infra', stack: ['FastAPI', 'SQL Server', 'SQLite', 'WebSockets', 'Redis', 'Chart.js'], links: {} },
     { id: 'smarty',       cat: 'web',   stack: ['React Native', 'TypeScript', 'FastAPI', 'SQLAlchemy', 'PostgreSQL', 'Redis'], links: {} },
     { id: 'ssas',         cat: 'data',  stack: ['Python', 'SQL Server', 'SQL Server Agent', 'T-SQL', 'ETL', 'Power BI'], links: {} },
