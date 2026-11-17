@@ -54,7 +54,6 @@ en: {
     live: 'Visit live site',
     code: 'Source code',
     private: 'Internal tool — demo available on request.',
-    zoom: 'Enlarge screenshot',
     status: { production: 'In production', mvp: 'MVP · in progress', live: 'Live' },
     items: {
       kpiflow: {
@@ -258,7 +257,6 @@ fr: {
     live: 'Voir le site',
     code: 'Code source',
     private: 'Outil interne — démo disponible sur demande.',
-    zoom: 'Agrandir la capture',
     status: { production: 'En production', mvp: 'MVP · en cours', live: 'En ligne' },
     items: {
       kpiflow: {

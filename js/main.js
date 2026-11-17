@@ -234,10 +234,9 @@ function shotHTML(p, it) {
     const dots = many ? `<span class="shot-dots">${sh.slides.map((_, k) => `<b${k ? '' : ' class="is-active"'}></b>`).join('')}</span>` : '';
     const imgs = sh.slides.map((s, k) =>
         `<img src="${s.src}" data-bar="${s.bar}" width="${sh.w}" height="${sh.h}" loading="lazy" alt="${alt}"${k ? '' : ' class="is-active"'}>`).join('');
-    return `<div class="feat-tilt wide"><div class="shot"${many ? ' data-slides' : ''} role="button" tabindex="0" aria-label="${esc(T().work.zoom)}">
+    return `<div class="feat-tilt wide"><div class="shot"${many ? ' data-slides' : ''}>
         <div class="mock-bar"><i></i><i></i><i></i><span class="shot-url">${sh.slides[0].bar}</span>${dots}</div>
         <div class="shot-stage" style="aspect-ratio:${sh.w} / ${sh.h}">${imgs}</div>
-        <span class="shot-zoom" aria-hidden="true"><i class="fas fa-expand"></i></span>
     </div></div>`;
 }
 
@@ -488,8 +487,8 @@ if (!isTouch && !prefersReduced) {
     });
 }
 
-// Screenshot slideshow (KPIFlow): next image every 3 s while visible,
-// paused while the visitor hovers it
+// Screenshot slideshow (KPIFlow): every 3 s the current image zooms out of
+// the frame while the next one settles in. Pauses while hovered.
 setInterval(() => {
     if (prefersReduced) return;
     $$('.shot[data-slides]').forEach(shot => {
@@ -497,60 +496,14 @@ setInterval(() => {
         const imgs = $$('.shot-stage img', shot);
         const cur = imgs.findIndex(i => i.classList.contains('is-active'));
         const next = (cur + 1) % imgs.length;
-        imgs[cur].classList.remove('is-active');
+        const leaving = imgs[cur];
+        leaving.classList.replace('is-active', 'is-leaving');
+        setTimeout(() => leaving.classList.remove('is-leaving'), 1100);
         imgs[next].classList.add('is-active');
         $$('.shot-dots b', shot).forEach((d, k) => d.classList.toggle('is-active', k === next));
         $('.shot-url', shot).textContent = imgs[next].dataset.bar;
     });
 }, 3000);
-
-// Lightbox: a click on a screenshot grows it from its card to full screen
-const lb = document.createElement('div');
-lb.className = 'lightbox';
-lb.setAttribute('role', 'dialog');
-lb.setAttribute('aria-modal', 'true');
-lb.innerHTML = '<button class="lb-close" type="button" aria-label="Close">×</button><img alt="">';
-document.body.appendChild(lb);
-const lbImg = $('img', lb);
-let lbSource = null;
-
-function flipFrom(a, b) {
-    return { x: a.left + a.width / 2 - (b.left + b.width / 2), y: a.top + a.height / 2 - (b.top + b.height / 2), scale: a.width / b.width };
-}
-function openLightbox(img) {
-    lbSource = img;
-    lbImg.src = img.currentSrc || img.src;
-    lbImg.alt = img.alt;
-    lbImg.setAttribute('width', img.getAttribute('width'));
-    lbImg.setAttribute('height', img.getAttribute('height'));
-    lb.classList.remove('is-closing');
-    lb.classList.add('is-open');
-    document.body.classList.add('lb-open');
-    if (MOTION) gsap.fromTo(lbImg, flipFrom(img.getBoundingClientRect(), lbImg.getBoundingClientRect()),
-        { x: 0, y: 0, scale: 1, duration: .85, ease: 'expo.out' });
-    $('.lb-close', lb).focus({ preventScroll: true });
-}
-function closeLightbox() {
-    if (!lb.classList.contains('is-open') || lb.classList.contains('is-closing')) return;
-    const done = () => {
-        lb.classList.remove('is-open', 'is-closing');
-        document.body.classList.remove('lb-open');
-        if (MOTION) gsap.set(lbImg, { clearProps: 'transform' });
-    };
-    if (!MOTION || !lbSource) { done(); return; }
-    lb.classList.add('is-closing');
-    gsap.to(lbImg, { ...flipFrom(lbSource.getBoundingClientRect(), lbImg.getBoundingClientRect()), duration: .6, ease: 'expo.inOut', onComplete: done });
-}
-lb.addEventListener('click', closeLightbox);
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
-$('#featured').addEventListener('click', e => {
-    const shot = e.target.closest('.shot');
-    if (shot) openLightbox($('.shot-stage img.is-active', shot));
-});
-$('#featured').addEventListener('keydown', e => {
-    const shot = e.target.closest('.shot');
-    if (shot && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); openLightbox($('.shot-stage img.is-active', shot)); }
-});
 
 // Live access log in the BHHaccess mock
 let logTick = 5;
