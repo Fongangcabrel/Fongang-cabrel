@@ -349,20 +349,48 @@ ul, ol { list-style: none; }
 .facts dd a:hover { color: var(--accent); }
 
 .pillars { counter-reset: pillar; }
+/* Pillars: on hover a tinted panel sweeps in from the left, a glow follows
+   the cursor (--mx/--my set in main.js), the number becomes a tilted pill,
+   title and text slide with a small bounce, an arrow spins in. */
 .pillar {
-    position: relative; padding: 24px 0 24px 64px;
+    --mx: 50%; --my: 50%;
+    position: relative; isolation: isolate; padding: 24px 56px 24px 64px;
     border-top: 1px solid rgba(0, 0, 0, .12);
-    counter-increment: pillar;
+    counter-increment: pillar; cursor: default;
 }
 .pillar:last-child { border-bottom: 1px solid rgba(0, 0, 0, .12); }
 .pillar::before {
     content: counter(pillar, decimal-leading-zero);
-    position: absolute; left: 0; top: 26px;
+    position: absolute; left: -6px; top: 22px;
+    padding: 4px 8px; border-radius: 999px;
     font-family: var(--f-mono); font-size: 12px; color: var(--accent);
+    transition: background .35s, color .35s, transform .55s cubic-bezier(.34, 1.56, .64, 1);
 }
-.pillar h3 { font-family: var(--f-display); font-size: 22px; font-weight: 600; letter-spacing: -.02em; margin-bottom: 6px; transition: transform .4s var(--ease); }
-.pillar p { color: var(--ink-muted); font-size: 15px; }
-.pillar:hover h3 { transform: translateX(6px); }
+.pillar::after {
+    content: ''; position: absolute; inset: 0 -14px; z-index: -1; border-radius: 14px;
+    background:
+        radial-gradient(260px circle at var(--mx) var(--my), rgba(47, 107, 255, .2), transparent 65%),
+        linear-gradient(90deg, rgba(47, 107, 255, .1), rgba(47, 107, 255, .03));
+    transform: scaleX(0); transform-origin: left center;
+    transition: transform .6s var(--ease);
+}
+.pillar h3 {
+    font-family: var(--f-display); font-size: 22px; font-weight: 600; letter-spacing: -.02em; margin-bottom: 6px;
+    transition: transform .55s cubic-bezier(.34, 1.56, .64, 1), color .3s;
+}
+.pillar p { color: var(--ink-muted); font-size: 15px; transition: transform .55s cubic-bezier(.34, 1.56, .64, 1) .05s, color .3s; }
+.pillar-arrow {
+    position: absolute; right: 8px; top: 50%; width: 36px; height: 36px; margin-top: -18px;
+    display: grid; place-items: center; border-radius: 50%;
+    background: var(--accent); color: #fff; font-size: 16px;
+    opacity: 0; transform: translateX(-16px) scale(.6) rotate(0deg);
+    transition: opacity .3s, transform .55s cubic-bezier(.34, 1.56, .64, 1);
+}
+.pillar:hover::after { transform: scaleX(1); }
+.pillar:hover::before { background: var(--accent); color: #fff; transform: scale(1.12) rotate(-8deg); }
+.pillar:hover h3 { transform: translateX(14px); color: var(--accent); }
+.pillar:hover p { transform: translateX(14px); color: var(--ink); }
+.pillar:hover .pillar-arrow { opacity: 1; transform: translateX(0) scale(1) rotate(-45deg); }
 
 /* ── Work: featured ────────────────────────────────────── */
 .featured { display: grid; gap: clamp(28px, 4vw, 48px); margin-bottom: clamp(80px, 10vw, 130px); }

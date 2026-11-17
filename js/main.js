@@ -311,7 +311,7 @@ function renderStatement() {
 }
 
 function renderPillars() {
-    $('#pillars').innerHTML = T().about.pillars.map(p => `<li class="pillar"><h3>${p.t}</h3><p>${p.d}</p></li>`).join('');
+    $('#pillars').innerHTML = T().about.pillars.map(p => `<li class="pillar"><h3>${p.t}</h3><p>${p.d}</p><span class="pillar-arrow" aria-hidden="true">→</span></li>`).join('');
 }
 
 function linksHTML(p, tw, cls) {
@@ -685,6 +685,15 @@ marquee.addEventListener('click', e => {
     }
 });
 window.addEventListener('scroll', hideTip, { passive: true });
+
+// About pillars: the hover glow follows the cursor
+$('#pillars').addEventListener('mousemove', e => {
+    const pillar = e.target.closest('.pillar');
+    if (!pillar) return;
+    const r = pillar.getBoundingClientRect();
+    pillar.style.setProperty('--mx', (e.clientX - r.left + 14) + 'px');
+    pillar.style.setProperty('--my', (e.clientY - r.top) + 'px');
+});
 
 // Live access log in the BHHaccess mock
 let logTick = 5;
