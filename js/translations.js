@@ -11,6 +11,13 @@ window.T = {
 en: {
   meta: { title: 'Fongang Cabrel Kamara — Software Engineer, Full-Stack & DevOps' },
 
+  loader: {
+    hello: 'Welcome',
+    line: 'to my world.',
+    sub: 'Make yourself comfortable — let me show you around.',
+    enter: 'Click to enter'
+  },
+
   nav: { about: 'About', work: 'Work', experience: 'Experience', stack: 'Stack', startup: 'HellooTech', contact: 'Contact', cta: 'Let’s talk' },
 
   hero: {
@@ -213,6 +220,13 @@ en: {
 /* ─────────────────────────── FRANÇAIS ─────────────────────────── */
 fr: {
   meta: { title: 'Fongang Cabrel Kamara — Ingénieur logiciel, Full-Stack & DevOps' },
+
+  loader: {
+    hello: 'Bienvenue',
+    line: 'dans mon univers.',
+    sub: 'Installez-vous, je vous fais visiter.',
+    enter: 'Cliquez pour entrer'
+  },
 
   nav: { about: 'À propos', work: 'Projets', experience: 'Parcours', stack: 'Stack', startup: 'HellooTech', contact: 'Contact', cta: 'Discutons' },
 

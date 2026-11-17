@@ -72,7 +72,13 @@ const SERVICES_ART  = ['web', 'devops', 'devsecops', 'payment', 'cloud', 'automa
 const SERVICES_WIDE = ['web', 'transformation'];
 const SERVICES_MORE = ['mobile', 'data', 'sql', 'saas', 'monitoring', 'pm', 'maintenance'];
 
-const MARQUEE_A = ['Python', 'PHP', 'FastAPI', 'Laravel', 'PostgreSQL', 'MySQL', 'SQL Server', 'React', 'TypeScript', 'Docker', 'Grafana', 'GitHub Actions', 'Debian', 'Nginx', 'Redis'];
+/* [label, icon file in assets/icons (Devicon, MIT)] */
+const MARQUEE_A = [
+    ['Python', 'python'], ['PHP', 'php'], ['FastAPI', 'fastapi'], ['Laravel', 'laravel'],
+    ['PostgreSQL', 'postgresql'], ['MySQL', 'mysql'], ['SQL Server', 'microsoftsqlserver'],
+    ['React', 'react'], ['TypeScript', 'typescript'], ['Docker', 'docker'], ['Grafana', 'grafana'],
+    ['GitHub Actions', 'githubactions'], ['Debian', 'debian'], ['Nginx', 'nginx'], ['Redis', 'redis']
+];
 const MARQUEE_B = ['KPIFlow', 'BHHaccess', 'VYNTIX', 'SMARTY', 'cocosecret.shop', 'Coco Italia Beach', 'HospiConnect', 'FlowI', 'SSAS', 'SCRIPX'];
 
 /* Labels used inside the illustrative mock-ups */
@@ -355,7 +361,8 @@ function renderServices() {
 
 function renderMarquee() {
     const row = list => { const one = list.map(x => `<span class="marquee-item">${x}</span>`).join(''); return one + one; };
-    $('#marqueeA').innerHTML = row(MARQUEE_A);
+    $('#marqueeA').innerHTML = row(MARQUEE_A.map(([label, icon]) =>
+        `<img src="assets/icons/${icon}.svg" width="28" height="28" alt="" loading="lazy">${label}`));
     $('#marqueeB').innerHTML = row(MARQUEE_B);
 }
 
@@ -668,24 +675,50 @@ function heroTimeline(delay) {
 
 function intro() {
     const loader = $('#loader');
-    const seen = store.get('fc_seen', sessionStorage);
-    store.set('fc_seen', '1', sessionStorage);
-
     if (!MOTION) { loader.remove(); return; }
-    if (seen) { loader.remove(); heroTimeline(.05); return; }
 
     // Build the hero intro now (paused) so its start state is applied
     // while the loader still covers the page — no flash of content.
     const hero = heroTimeline(0).pause();
+    const L = T().loader || window.T.en.loader;
+    let finished = false;
+
+    $('#loaderHello').innerHTML = L.hello.split('').map(c => `<span>${c === ' ' ? '&nbsp;' : esc(c)}</span>`).join('');
+    $('#loaderLine').textContent = L.line;
+    $('#loaderSub').textContent = L.sub;
+    $('#loaderSkip').textContent = L.enter;
+
+    // ring centre = where the reveal circle opens from
+    const ring = $('.loader-ring').getBoundingClientRect();
+    loader.style.setProperty('--cy', (ring.top + ring.height / 2) + 'px');
+
     const count = $('#loaderCount');
     const o = { v: 0 };
-    gsap.timeline()
-        .from('.loader-name span', { yPercent: 110, duration: .8, ease: 'power3.out' })
-        .to(o, { v: 100, duration: 1.2, ease: 'power2.inOut', onUpdate: () => { count.textContent = Math.round(o.v); } }, 0)
-        .to('.loader-inner', { y: -30, opacity: 0, duration: .5, ease: 'power2.in' }, '+=.05')
-        .to(loader, { yPercent: -100, duration: 1, ease: 'expo.inOut' }, '-=.2')
-        .add(() => hero.play(), '-=.55')
-        .add(() => loader.remove());
+    const tl = gsap.timeline();
+    tl.from('.loader-ring', { scale: .6, opacity: 0, duration: 1, ease: 'expo.out' }, .1)
+      .to(o, { v: 100, duration: 3, ease: 'power1.inOut', onUpdate: () => {
+          count.textContent = Math.round(o.v);
+          $('#loaderRing').style.strokeDashoffset = 100 - o.v;
+      } }, .3)
+      .from('#loaderHello span', { opacity: 0, y: 30, filter: 'blur(14px)', duration: 1, stagger: .06, ease: 'power3.out' }, .5)
+      .from('#loaderLine', { opacity: 0, y: 16, filter: 'blur(10px)', duration: 1, ease: 'power3.out' }, 1.3)
+      .from('#loaderSub', { opacity: 0, y: 10, duration: .9, ease: 'power3.out' }, 1.9)
+      .from('.loader-skip', { opacity: 0, duration: .8 }, 1.2)
+      .to('.loader-ring', { scale: 1.08, duration: .25, yoyo: true, repeat: 1, ease: 'power2.out' }, 3.3)
+      .add(finish, 3.6);
+
+    function finish() {
+        if (finished) return;
+        finished = true;
+        tl.pause();
+        const max = Math.hypot(window.innerWidth, window.innerHeight);
+        gsap.timeline()
+            .to('.loader-inner, .loader-skip', { opacity: 0, scale: 1.04, filter: 'blur(6px)', duration: .5, ease: 'power2.in' })
+            .to(loader, { '--hole': max + 'px', duration: 1.3, ease: 'expo.inOut' }, '-=.25')
+            .add(() => hero.play(), '-=.9')
+            .add(() => loader.remove());
+    }
+    loader.addEventListener('click', finish);
 }
 
 function heroParallax() {

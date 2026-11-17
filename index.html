@@ -23,16 +23,25 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=20261117b">
 </head>
 <body>
 
 <!-- Intro loader (hidden when JS is off) -->
 <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader-orb a"></div>
+    <div class="loader-orb b"></div>
     <div class="loader-inner">
-        <span class="loader-name"><span><img class="loader-logo" src="assets/img/logo-fc.png" alt="">Fongang Cabrel Kamara</span></span>
+        <div class="loader-ring">
+            <svg viewBox="0 0 120 120"><circle class="track" cx="60" cy="60" r="54"/><circle class="fill" id="loaderRing" cx="60" cy="60" r="54" pathLength="100"/></svg>
+            <img class="loader-logo" src="assets/img/logo-fc.png" alt="">
+        </div>
         <span class="loader-count" id="loaderCount">0</span>
+        <p class="loader-hello" id="loaderHello"></p>
+        <p class="loader-line" id="loaderLine"></p>
+        <p class="loader-sub" id="loaderSub"></p>
     </div>
+    <span class="loader-skip" id="loaderSkip"></span>
 </div>
 
 <div class="progress" id="progress" aria-hidden="true"></div>
@@ -120,7 +129,7 @@
 </section>
 
 <!-- ═══════════════ MARQUEE ═══════════════ -->
-<div class="marquee" aria-hidden="true">
+<div class="marquee" id="tech" aria-hidden="true">
     <div class="marquee-mask">
         <div class="marquee-row" id="marqueeA"></div>
         <div class="marquee-row reverse" id="marqueeB"></div>
@@ -297,7 +306,7 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="js/translations.js"></script>
-<script src="js/main.js"></script>
+<script src="js/translations.js?v=20261117b"></script>
+<script src="js/main.js?v=20261117b"></script>
 </body>
 </html>
