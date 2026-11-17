@@ -895,7 +895,7 @@ function initScroll() {
     // background images drift slower than the page
     gsap.fromTo('.more-bg', { yPercent: -8 }, { yPercent: 8, ease: 'none', scrollTrigger: { trigger: '.more-wrap', start: 'top bottom', end: 'bottom top', scrub: true } });
     gsap.fromTo('.startup-bg', { yPercent: -6 }, { yPercent: 10, ease: 'none', scrollTrigger: { trigger: '#hellootech', start: 'top bottom', end: 'bottom top', scrub: true } });
-    gsap.fromTo('.contact-think', { y: 60, opacity: 0 }, { y: 0, opacity: 1, duration: 1.4, ease: 'power3.out', scrollTrigger: { trigger: '#contact', start: 'top 70%' } });
+    gsap.fromTo('.contact-think', { opacity: 0 }, { opacity: .3, duration: 1.6, ease: 'power3.out', scrollTrigger: { trigger: '#contact', start: 'top 70%' } });
 
     // experience timeline draws itself
     gsap.to('#tlProgress', { scaleY: 1, ease: 'none', scrollTrigger: { trigger: '#timeline', start: 'top 70%', end: 'bottom 60%', scrub: true } });
